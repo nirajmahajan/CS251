@@ -8,7 +8,7 @@ then
 fi
 > numberOfPrimeYears.txt
 prime_check () {
-	if [ $1 -le 1 ]
+	if [ $1 -le 1 ] 
 	then
 		return 0
 	fi
@@ -42,12 +42,14 @@ counter () {
 		fi
 		(( ig++ )) 
 	done
-	return $count
+	echo $count
 }
 
-prime_check $1
+ab=$1
+prime_check $ab
 out=$?
-cou=$(counter $1)
+
+cou=$(counter $ab)
 echo $cou | cat > numberOfPrimeYears.txt
 
 if [ $out == 1 ]
