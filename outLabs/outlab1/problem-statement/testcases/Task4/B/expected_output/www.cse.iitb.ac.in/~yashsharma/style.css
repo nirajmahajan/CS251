@@ -1,0 +1,146 @@
+body {
+    font: 20px Arial, sans-serif;
+    line-height: 1.8;
+    background-image: url(me2.jpg);
+    height: 100%;
+    width: 100%;
+    display: block;
+    z-index: -10;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+p {font-size: 18px;}
+.margin {margin-bottom: 45px;}
+.bg-1 { 
+    background-color: #8b0000;
+    color: #cccccc;
+}
+.bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+a {
+  color: #7aa5b5;
+}
+.bg-3 { 
+    color: #555555;
+}
+.bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+}
+.caption {
+    position: absolute;
+    left: 0;
+    top: 43%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption span.border {
+    font-family: "Arial", sans-serif;
+    background-color: #ffffff;
+    color: #8b0000;
+    padding: 10px;
+    font-size: 40px;
+}
+.caption span.ending {
+    color: #ffffff;
+    padding: 15px;
+    font-size: 25px; 
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+.internetfooter {
+  color: #ffffff;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 500px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+.fa-linkedin-in, .fa-github {
+    transition: 0.3s color;
+    cursor: pointer;
+    margin:2px;
+    color: #777;
+}
+
+.fa-linkedin-in:hover {
+  color:#0077b5;
+}
+
+.fa-github:hover {
+  color:#333333;
+}
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
