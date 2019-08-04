@@ -45,11 +45,16 @@ counter () {
 	echo $count
 }
 
+if [ $1 -eq 0 ]; then
+	echo "Invalid argument!" >&2 
+	exit 1
+fi
+
 ab=$1
 prime_check $ab
 out=$?
 
-cou=$(counter $ab)
+cou=$(counter 2019)
 echo $cou | cat > numberOfPrimeYears.txt
 
 if [ $out == 1 ]
