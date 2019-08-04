@@ -5,16 +5,10 @@ if [ ! $# -eq 2 ]; then
 	exit 1
 fi
 
-CURR_PATH=$(pwd)
-
-cd "$2"
-
 DOMAIN="$(echo ${url#*//})"
 DOMAIN="$(echo ${DOMAIN%%/*})"
 
-wget -qr -np --domains "$DOMAIN" "$1"
-
-cd "$CURR_PATH"
+wget -qr -np -p --convert-links -l100000 -P"$2" --domains "$DOMAIN" "$1"
 
 tree -J "$2" > "urlReport.json"
 
