@@ -5,7 +5,7 @@ i=0
 sum=0
 while [ $i -lt $attempts ]
 do
-	./findTheAnswer.sh
+	../B/findTheAnswer.sh
 	a=$(< howFarFromTruth.txt wc -l)
 	sum=$(( sum+a ))
 	((i++))
