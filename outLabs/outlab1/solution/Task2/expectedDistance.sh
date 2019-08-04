@@ -12,3 +12,5 @@ do
 done
 sum=$(( sum/attempts ))
 echo $sum
+
+/bin/rm howFarFromTruth.txt
