@@ -14,7 +14,6 @@ DOMAIN="$(echo ${DOMAIN%%/*})"
 
 wget -qr -np --domains "$DOMAIN" "$1"
 
-
 cd "$CURR_PATH"
 
 tree -J "$2" > "urlReport.json"
