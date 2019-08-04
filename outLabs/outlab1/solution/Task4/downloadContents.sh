@@ -9,7 +9,11 @@ CURR_PATH=$(pwd)
 
 cd "$2"
 
-wget -qr -np --domains "$(echo "$url" | sed -e 's/^.*\/\///' -e 's/\/.*$//')" "$1"
+DOMAIN="$(echo ${url#*//})"
+DOMAIN="$(echo ${DOMAIN%%/*})"
+
+wget -qr -np --domains "$DOMAIN" "$1"
+
 
 cd "$CURR_PATH"
 
