@@ -6,7 +6,7 @@ sum=0
 while [ $i -lt $attempts ]
 do
 	./findTheAnswer.sh
-	a=$(cat howFarFromTruth.txt)
+	a=$(wc -l howFarFromTruth.txt | awk '{ print $1 }')
 	sum=$(( sum+a ))
 	((i++))
 done
