@@ -8,14 +8,14 @@ then
 fi
 > numberOfPrimeYears.txt
 prime_check () {
-	if [ $1 -le 1 ] || [ $1 == 4 ]
+	if [ $1 -le 1 ]
 	then
 		return 0
 	fi
 	b=$1
 	i=2	
 	e=$(( i * i ))
-	while [ $e -lt $b ]
+	while [ $e -le $b ]
 	do
 		c=$(( b % i ))
 		if [ $c == 0 ]
@@ -47,8 +47,7 @@ counter () {
 
 prime_check $1
 out=$?
-counter $1
-cou=$?
+cou=$(counter $1)
 echo $cou | cat > numberOfPrimeYears.txt
 
 if [ $out == 1 ]
