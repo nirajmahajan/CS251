@@ -8,7 +8,7 @@ fi
 DOMAIN="$(echo ${url#*//})"
 DOMAIN="$(echo ${DOMAIN%%/*})"
 
-wget -qr -np -p --convert-links -l100000 -P"$2" --domains "$DOMAIN" "$1"
+wget -qr -np -p --convert-links -l100000 -P"$2" "$1"
 
 tree -J "$2" > "urlReport.json"
 
