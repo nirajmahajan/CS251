@@ -26,6 +26,20 @@ reducer () {
 	return $e
 }
 
-rand=$( od -vAn -N4 -tu4 < /dev/urandom )
-outp=$(reducer $rand $digits)
-echo $outp
+generate(){
+	local rand=$( od -vAn -N4 -tu4 < /dev/urandom )
+	local digitsrt=$1
+	local ans
+	if [ $digitsrt -le 8 ]
+	then
+		ans=$(reducer $rand $digitsrt)
+	else
+		ans=$(reducer $rand 8)
+		digitsrt=$(( digitsrt-8))
+		digitsrt=$(generate $digitsrt)
+		ans="$ans$digitsrt"
+	fi
+	echo $ans	
+}
+
+generate $1
