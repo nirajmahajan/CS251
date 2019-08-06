@@ -14,7 +14,7 @@ tree -J "$2" > "urlReport.json"
 
 md5sum "urlReport.json"
 
-COUNT=$(grep -c "{" "urlReport.json")
+COUNT=$(grep -o "{" "urlReport.json" | wc -l)
 echo "$COUNT"
 
 ANS=$(ps -q "$COUNT" -o comm=)
