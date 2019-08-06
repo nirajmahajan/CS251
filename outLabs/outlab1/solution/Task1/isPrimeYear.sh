@@ -12,9 +12,20 @@ prime_check () {
 	then
 		return 0
 	fi
+
+	if [ $1 == 2 ] 
+	then
+		return 1
+	fi
+	
 	b=$1
-	i=2	
+	i=3	
 	e=$(( i * i ))
+	ce=$(( b % 2 ))
+	if [ $ce == 0 ]
+	then
+		return 0
+	fi
 	while [ $e -le $b ]
 	do
 		c=$(( b % i ))
@@ -22,7 +33,7 @@ prime_check () {
 		then
 			return 0
 		fi
-		(( i++ ))
+		i=$(( i+2 ))
 		e=$(( i * i ))
 	done
 	return 1
