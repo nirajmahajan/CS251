@@ -6,7 +6,7 @@ Team Number : 4
 Team Members
 
 Niraj Mahajan - 180050069
-I solemnly swear that I will abide by the guidelines on academic honesty laid down by the professor
+I solemnly swear that I will abide by the guidelines on academic honesty laid down by the professor (bhak)
 
 Neel Aryan Gupta - 180050067
 
