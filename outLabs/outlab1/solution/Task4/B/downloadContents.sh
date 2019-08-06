@@ -12,7 +12,7 @@ wget -qr -np -p --convert-links -l100000 -P"$2" "$1"
 
 tree -J "$2" > "urlReport.json"
 
-md5sum "urlReport.json"
+md5sum "urlReport.json" | cut -d' ' -f1
 
 COUNT=$(grep -o "{" "urlReport.json" | wc -l)
 echo "$COUNT"
