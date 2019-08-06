@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf $2
+
 if [ ! $# -eq 2 ]; then
 	echo "Usage:  ./downloadContents.sh <url> <directory_path>"
 	exit 1
