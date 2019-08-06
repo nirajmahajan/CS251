@@ -7,6 +7,6 @@ fi
 
 wget -O "$$temp.pdf" -q "$1"
 
-pdftotext "$$temp.pdf" - | grep -wci "$2"
+pdftotext "$$temp.pdf" - | grep -iwo $2 | wc -l
 
 rm "$$temp.pdf"
