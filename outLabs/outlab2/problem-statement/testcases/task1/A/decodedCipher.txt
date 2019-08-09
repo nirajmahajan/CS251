@@ -1,0 +1,13 @@
+Example 1
+Y
+HELLO WORLD 
+
+
+Example 2
+F
+HELLO FRANDZ CHAI PI LO
+
+
+Example 3
+J
+SOFTWARE SYSTEMS LAB

@@ -1,0 +1,16 @@
+Example 1
+$ ./retaliation.sh Y
+HELLO WORLD					(inputted using the read command)
+FCJJM UMPJB					(STDOUT output)
+
+
+Example 2
+$ ./retaliation.sh F
+HELLO FRANDZ CHAI PI LO		(inputted using the read command)
+MJQQT KWFSIE HMFN UN QT		(STDOUT output)
+
+
+Example 3
+$ ./retaliation.sh J
+SOFTWARE SYSTEMS LAB		(inputted using the read command)
+BXOCFJAN BHBCNVB UJK		(STDOUT output)
