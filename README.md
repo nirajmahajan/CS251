@@ -9,5 +9,7 @@ Niraj Mahajan - 180050069
 I solemnly swear that I will abide by the guidelines on academic honesty laid down by the professor  
 
 Neel Aryan Gupta - 180050067  
+Yes, well, I'm not swearing anything.
 
 Rishi agarwal - 180050082  
+Hopefully, he doesn't. Okay, he might. 
