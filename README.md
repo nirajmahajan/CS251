@@ -1,7 +1,7 @@
 # CS251
 All code done by me and my teammates as a part of CS251, Fall 2019, IIT Bombay CSE.  
 
-Team Name : Ctrl Alt Defeat 
+Team Name : Ctrl Alt Defeat
 Team Number : 4  
 Team Members  
 
