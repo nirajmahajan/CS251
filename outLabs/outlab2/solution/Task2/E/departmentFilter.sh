@@ -1,3 +1,5 @@
+#!/bin/bash
+chmod 755 $1/*
 a=$1/*.txt
 for var in $a
 do
@@ -9,3 +11,4 @@ do
 		mv $var ./$out
 	fi
 done
+chmod -R 755 *
