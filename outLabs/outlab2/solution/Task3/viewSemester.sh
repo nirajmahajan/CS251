@@ -43,29 +43,3 @@ BEGIN {
 
 
 echo "$VALID"
-# VALID=$(echo $VALID | sed -e 's/[ ]\([0-9][0-9][0-9][0-9]\)/\r\n\1/g')
-
-# VALID=$(echo "$VALID" | awk -v year="$3" -v sem="$2" '
-# BEGIN {
-# 	FS=" "
-# 	RS="\r\n"
-# }
-# {
-# 	if(($1 == year) && ($2 == sem)) {
-# 		print;
-# 	} 
-# }' | sort -k4)
-
-
-# echo "$VALID" | awk '
-# BEGIN {
-# 	FS=" "
-# 	RS="\r\n"
-# }
-# {
-# 	for(i=1;i<=NF;i++){
-# 		printf("%20s",$i);
-# 	}
-# 	printf "\n";
-# }
-# '

@@ -1,0 +1,13 @@
+------------------------------------------------------------------------------------------------------------------------
+                Year            Semester                Code             Credits                 Tag         letterGrade
+------------------------------------------------------------------------------------------------------------------------
+CS305                 2018              Autumn              CS 305                   6         Core course                  AA
+CS317                 2018              Autumn              CS 317                   6         Core course                  AA
+CS333                 2018              Autumn              CS 333                   4         Core course                  AA
+CS341                 2018              Autumn              CS 341                   3         Core course                  AA
+CS347                 2018              Autumn              CS 347                   6         Core course                  AB
+CS387                 2018              Autumn              CS 387                   3         Core course                  AA
+CS475                 2018              Autumn              CS 475                   6         Honors core                  AA
+CS663                 2018              Autumn              CS 663                   6         Honors core                  AA
+HS307                 2018              Autumn              HS 307                   6        HSS Elective                  AA
+MA403                 2018              Autumn              MA 403                   8               Minor                  AA

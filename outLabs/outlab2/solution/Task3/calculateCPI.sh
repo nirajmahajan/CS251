@@ -17,6 +17,10 @@ BEGIN {
 	}
 } 
 END {
+	if (CRED_Sum == 0) {
+		print "No credits taken by this student";
+		exit 1;
+	}
 	printf("%.4f\n",(WEI_Sum / CRED_Sum));
 }
 ' $2 $1
