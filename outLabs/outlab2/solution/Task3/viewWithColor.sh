@@ -34,6 +34,8 @@ BEGIN {
 			}
 		}
 		if (FNR <= 3) {
+			system("echo \" \" >> back.out");
+			system("echo \" \" >> font.out");
 			next;
 		}else {
 			if (NF == 8) {
@@ -50,15 +52,19 @@ END {
 	print FNR;
 }' $2 $1)
 
-NRnow=$((NRnow+3))
 for (( i = 1; i <= NRnow; i++ )); do
+
+	if [ $i -le 3 ]; then
+		awk -v iter="$i" '{if (NR == iter) {print;}}' $1
+		continue
+	fi
 
 	CURR_FONT=$(awk -v iter="$i" 'BEGIN{FS="\n"}{if(NR == iter) {print;}}' font.out)
 	CURR_BACk=$(awk -v iter="$i" 'BEGIN{FS="\n"}{if(NR == iter) {print;}}' back.out)
 
 
-	NewFont=${!CURR_FONT}
-	NewBack=${!CURR_BACk}
+	NewFont="${!CURR_FONT}"
+	NewBack="${!CURR_BACk}"
 
 
 	awk -v toprint="$i" -v Font="$NewFont" -v Back="$NewBack" '
@@ -81,4 +87,4 @@ for (( i = 1; i <= NRnow; i++ )); do
 done
 
 rm back.out
-rm font.out
+# rm font.out
