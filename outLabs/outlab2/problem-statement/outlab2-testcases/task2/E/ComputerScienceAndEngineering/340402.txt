@@ -1,0 +1,5 @@
+Student Name:Ramiro Ament
+Roll Number:340402
+CPI:9.57
+Department:Computer Science And Engineering
+Courses Undertaken:Data Structures and Algorithms,Computer Networks,Software Systems Lab,Digital Logic Design,Design and Analysis of Algorithm,Abstractions and Paradigms,Logic for Computer Science,Data Analysis and Interpretation,Discrete Structures,Computer Programming and Utilization

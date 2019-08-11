@@ -1,0 +1,5 @@
+Student Name:Bess Markey
+Roll Number:549910
+CPI:9.53
+Department:Electrical Engineering
+Courses Undertaken:Digital Logic Design,Design and Analysis of Algorithm,Abstractions and Paradigms,Logic for Computer Science,Data Analysis and Interpretation,Discrete Structures,Computer Programming and Utilization,Testing and Verification of VLSI Circuits,Large Sparse Matrix Computations,Embedded Systems Design,Circuits Simulation in Power Electronics,Behavioral Theory of Systems,Digital Signal Processing Lab

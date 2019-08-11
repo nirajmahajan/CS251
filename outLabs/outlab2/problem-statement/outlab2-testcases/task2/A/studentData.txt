@@ -1,0 +1,90 @@
+--------------------------------------------------------------------
+Student Name:Ramiro Ament
+Roll Number:340402
+CPI:9.57
+Department:Computer Science And Engineering
+Courses Undertaken:Data Structures and Algorithms,Computer Networks,Software Systems Lab,Digital Logic Design,Design and Analysis of Algorithm,Abstractions and Paradigms,Logic for Computer Science,Data Analysis and Interpretation,Discrete Structures,Computer Programming and Utilization
+--------------------------------------------------------------------
+Student Name:Charlie Hirth
+Roll Number:923711
+CPI:8.71
+Department:Civil Engineering
+Courses Undertaken:Structural Engineering,Geotechnical Engineering,Water Resources Engineering,Remote Sensing,Transportation Systems Engineering,Ocean Engineering
+--------------------------------------------------------------------
+Student Name:Kelsie Morita
+Roll Number:219841
+CPI:9.97
+Department:Electrical Engineering
+Courses Undertaken:Testing and Verification of VLSI Circuits,Large Sparse Matrix Computations,Embedded Systems Design,Circuits Simulation in Power Electronics,Behavioral Theory of Systems,Digital Signal Processing Lab,Advanced Computing for Electrical Engineers,Aids for the motor and sensory disabled,Mixed Signal VLSI Design
+--------------------------------------------------------------------
+Student Name:Jennie Mcentyre
+Roll Number:239858
+CPI:7.97
+Department:Electrical Engineering
+Courses Undertaken:System Design,VLSI Technology,VLSI Design,Microelectronics Lab,Power Systems and Power Electronics Lab,Microprocessor Applications in Power Electronics,Foundations of VLSI CAD,Wavelets,Speech Processing,Power System Protection,HVDC Transmission,Switchgear Principles,Delta Sigma Data Converters and their Applications,Introduction to MEMS,Computer Vision
+--------------------------------------------------------------------
+Student Name:Emely Friedlander
+Roll Number:832971
+CPI:5.23
+Department:Computer Science And Engineering
+Courses Undertaken:New Trends in Information Technology,Implementation Techniques for Relational Database Systems,Information Retrieval & Mining for Hypertext & the Web,Fundamentals of Digital Image Processing,Computer Graphics,Advanced Computer Architecture,R & D Project I,Software Lab,Selected Topics in Automata and Logics,Topics in Mathematical Foundations of Formal Verification,Introduction to Computational Complexity,Foundations of machine learning
+--------------------------------------------------------------------
+Student Name:Miki Furry
+Roll Number:348721
+CPI:9.14
+Department:Computer Science And Engineering
+Courses Undertaken:Computer Graphics,Advanced Computer Architecture,R & D Project I,Software Lab,Selected Topics in Automata and Logics,Topics in Mathematical Foundations of Formal Verification,Introduction to Computational Complexity
+--------------------------------------------------------------------
+Student Name:Morton Agtarap
+Roll Number:893710
+CPI:9.89
+Department:Civil Engineering
+Courses Undertaken:Water Resources Engineering,Remote Sensing,Transportation Systems Engineering,Ocean Engineering,Construction Technology and Management
+--------------------------------------------------------------------
+Student Name:Karisa Funchess
+Roll Number:659390
+CPI:8.37
+Department:Computer Science And Engineering
+Courses Undertaken:New Trends in Information Technology,Implementation Techniques for Relational Database Systems,Information Retrieval & Mining for Hypertext & the Web,Fundamentals of Digital Image Processing,Computer Graphics,Advanced Computer Architecture,Remote Sensing
+--------------------------------------------------------------------
+Student Name:Summer Pounds
+Roll Number:729381
+CPI:9.04
+Department:Electrical Engineering
+Courses Undertaken:Power System Protection,HVDC Transmission,Switchgear Principles,Delta Sigma Data Converters and their Applications
+--------------------------------------------------------------------
+Student Name:Glendora Boissonneault
+Roll Number:839817
+CPI:10.00
+Department:Computer Science And Engineering
+Courses Undertaken:Structural Engineering,Geotechnical Engineering,Testing and Verification of VLSI Circuits,Large Sparse Matrix Computations,Embedded Systems Design,Circuits Simulation in Power Electronics,Behavioral Theory of Systems,Digital Signal Processing Lab,Computer Graphics,Advanced Computer Architecture,R & D Project I,Software Lab,Selected Topics in Automata and Logics,Topics in Mathematical Foundations of Formal Verification
+--------------------------------------------------------------------
+Student Name:Trent Gotto
+Roll Number:143901
+CPI:6.89
+Department:Civil Engineering
+Courses Undertaken:Discrete Structures,Computer Programming and Utilization,Water Resources Engineering,Remote Sensing,Transportation Systems Engineering,Ocean Engineering
+--------------------------------------------------------------------
+Student Name:Sherell Jeanes
+Roll Number:329810
+CPI:4.79
+Department:Computer Science And Engineering
+Courses Undertaken:Logic for Computer Science,Data Analysis and Interpretation,Discrete Structures,Computer Programming and Utilization,Transportation Systems Engineering,Ocean Engineering
+--------------------------------------------------------------------
+Student Name:Bess Markey
+Roll Number:549910
+CPI:9.53
+Department:Electrical Engineering
+Courses Undertaken:Digital Logic Design,Design and Analysis of Algorithm,Abstractions and Paradigms,Logic for Computer Science,Data Analysis and Interpretation,Discrete Structures,Computer Programming and Utilization,Testing and Verification of VLSI Circuits,Large Sparse Matrix Computations,Embedded Systems Design,Circuits Simulation in Power Electronics,Behavioral Theory of Systems,Digital Signal Processing Lab
+--------------------------------------------------------------------
+Student Name:Keva Doepke
+Roll Number:948101
+CPI:8.47
+Department:Computer Science And Engineering
+Courses Undertaken:Abstractions and Paradigms,Logic for Computer Science,Data Analysis and Interpretation,Discrete Structures,Computer Programming and Utilization,Remote Sensing,Transportation Systems Engineering,Ocean Engineering,Construction Technology and Management
+--------------------------------------------------------------------
+Student Name:Shawnta Coughlan
+Roll Number:680301
+CPI:9.29
+Department:Civil Engineering
+Courses Undertaken:Data Structures and Algorithms,Computer Networks,Software Systems Lab,Digital Logic Design,Structural Engineering,Geotechnical Engineering,Water Resources Engineering,Remote Sensing,Transportation Systems Engineering

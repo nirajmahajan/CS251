@@ -1,0 +1,5 @@
+Student Name:Glendora Boissonneault
+Roll Number:839817
+CPI:10.00
+Department:Computer Science And Engineering
+Courses Undertaken:Structural Engineering,Geotechnical Engineering,Testing and Verification of VLSI Circuits,Large Sparse Matrix Computations,Embedded Systems Design,Circuits Simulation in Power Electronics,Behavioral Theory of Systems,Digital Signal Processing Lab,Computer Graphics,Advanced Computer Architecture,R & D Project I,Software Lab,Selected Topics in Automata and Logics,Topics in Mathematical Foundations of Formal Verification

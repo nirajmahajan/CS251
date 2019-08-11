@@ -1,0 +1,5 @@
+Student Name:Summer Pounds
+Roll Number:729381
+CPI:9.04
+Department:Electrical Engineering
+Courses Undertaken:Power System Protection,HVDC Transmission,Switchgear Principles,Delta Sigma Data Converters and their Applications

@@ -1,0 +1,5 @@
+Student Name:Sherell Jeanes
+Roll Number:329810
+CPI:4.79
+Department:Computer Science And Engineering
+Courses Undertaken:Logic for Computer Science,Data Analysis and Interpretation,Discrete Structures,Computer Programming and Utilization,Transportation Systems Engineering,Ocean Engineering

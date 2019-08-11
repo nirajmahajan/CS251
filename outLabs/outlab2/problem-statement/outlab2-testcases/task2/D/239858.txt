@@ -1,0 +1,5 @@
+Student Name:Jennie Mcentyre
+Roll Number:239858
+CPI:7.97
+Department:Electrical Engineering
+Courses Undertaken:System Design,VLSI Technology,VLSI Design,Microelectronics Lab,Power Systems and Power Electronics Lab,Microprocessor Applications in Power Electronics,Foundations of VLSI CAD,Wavelets,Speech Processing,Power System Protection,HVDC Transmission,Switchgear Principles,Delta Sigma Data Converters and their Applications,Introduction to MEMS,Computer Vision

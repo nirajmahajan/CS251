@@ -1,0 +1,5 @@
+Student Name:Miki Furry
+Roll Number:348721
+CPI:9.14
+Department:Computer Science And Engineering
+Courses Undertaken:Computer Graphics,Advanced Computer Architecture,R & D Project I,Software Lab,Selected Topics in Automata and Logics,Topics in Mathematical Foundations of Formal Verification,Introduction to Computational Complexity

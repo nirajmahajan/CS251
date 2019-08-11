@@ -1,0 +1,5 @@
+Student Name:Trent Gotto
+Roll Number:143901
+CPI:6.89
+Department:Civil Engineering
+Courses Undertaken:Discrete Structures,Computer Programming and Utilization,Water Resources Engineering,Remote Sensing,Transportation Systems Engineering,Ocean Engineering

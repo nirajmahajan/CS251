@@ -1,0 +1,5 @@
+Student Name:Keva Doepke
+Roll Number:948101
+CPI:8.47
+Department:Computer Science And Engineering
+Courses Undertaken:Abstractions and Paradigms,Logic for Computer Science,Data Analysis and Interpretation,Discrete Structures,Computer Programming and Utilization,Remote Sensing,Transportation Systems Engineering,Ocean Engineering,Construction Technology and Management

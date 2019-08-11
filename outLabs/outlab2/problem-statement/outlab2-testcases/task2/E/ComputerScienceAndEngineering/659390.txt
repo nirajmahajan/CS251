@@ -1,0 +1,5 @@
+Student Name:Karisa Funchess
+Roll Number:659390
+CPI:8.37
+Department:Computer Science And Engineering
+Courses Undertaken:New Trends in Information Technology,Implementation Techniques for Relational Database Systems,Information Retrieval & Mining for Hypertext & the Web,Fundamentals of Digital Image Processing,Computer Graphics,Advanced Computer Architecture,Remote Sensing

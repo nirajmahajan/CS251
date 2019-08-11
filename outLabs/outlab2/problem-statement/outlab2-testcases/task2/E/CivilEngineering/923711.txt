@@ -1,0 +1,5 @@
+Student Name:Charlie Hirth
+Roll Number:923711
+CPI:8.71
+Department:Civil Engineering
+Courses Undertaken:Structural Engineering,Geotechnical Engineering,Water Resources Engineering,Remote Sensing,Transportation Systems Engineering,Ocean Engineering

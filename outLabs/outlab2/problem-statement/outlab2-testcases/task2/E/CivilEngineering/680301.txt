@@ -1,0 +1,5 @@
+Student Name:Shawnta Coughlan
+Roll Number:680301
+CPI:9.29
+Department:Civil Engineering
+Courses Undertaken:Data Structures and Algorithms,Computer Networks,Software Systems Lab,Digital Logic Design,Structural Engineering,Geotechnical Engineering,Water Resources Engineering,Remote Sensing,Transportation Systems Engineering

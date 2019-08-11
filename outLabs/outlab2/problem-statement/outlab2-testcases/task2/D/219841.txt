@@ -1,0 +1,5 @@
+Student Name:Kelsie Morita
+Roll Number:219841
+CPI:9.97
+Department:Electrical Engineering
+Courses Undertaken:Testing and Verification of VLSI Circuits,Large Sparse Matrix Computations,Embedded Systems Design,Circuits Simulation in Power Electronics,Behavioral Theory of Systems,Digital Signal Processing Lab,Advanced Computing for Electrical Engineers,Aids for the motor and sensory disabled,Mixed Signal VLSI Design
