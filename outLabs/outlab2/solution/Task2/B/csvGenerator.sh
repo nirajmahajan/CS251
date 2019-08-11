@@ -7,7 +7,8 @@ awk 'BEGIN{FS=" %"; RS="@"; OFS="|"}
 	 {print $2,$3,$4,$5,$6}' |
 sed -e '/||||/d' | 
 sed -e '1i\
-Student Name|Roll Number|CPI|Department|Courses Undertaken
-' | 
+Student Name|Roll Number|CPI|Department|Courses Undertaken' | 
+tr -dc '\0-\177' |
+sed -e 's/\r//g' |
 cat > studentData.csv
 chmod 755 *
