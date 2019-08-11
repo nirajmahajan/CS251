@@ -74,8 +74,8 @@ for (( i = 1; i <= NRnow; i++ )); do
 		if (NR == toprint && toprint <= 3) {
 			print;
 		} else if (NR == toprint) {
-			printf "" Font;
 			printf "" Back;
+			printf "" Font;
 			printf $0;
 			printf("'$RESET_ALL'")
 			printf "\n"
@@ -87,4 +87,4 @@ for (( i = 1; i <= NRnow; i++ )); do
 done
 
 rm back.out
-# rm font.out
+rm font.out
