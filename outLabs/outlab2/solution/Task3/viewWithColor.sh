@@ -41,7 +41,6 @@ BEGIN {
 			} else if (NF == 7) {
 				Tag = $6;
 			}
-
 			system("echo \""back[Tag]"\" >> back.out");
 			system("echo \""font[Tag]"\" >> font.out");
 		}
@@ -51,7 +50,7 @@ END {
 	print FNR;
 }' $2 $1)
 
-
+NRnow=$((NRnow+3))
 for (( i = 1; i <= NRnow; i++ )); do
 
 	CURR_FONT=$(awk -v iter="$i" 'BEGIN{FS="\n"}{if(NR == iter) {print;}}' font.out)
@@ -71,8 +70,9 @@ for (( i = 1; i <= NRnow; i++ )); do
 		} else if (NR == toprint) {
 			printf "" Font;
 			printf "" Back;
-			print;
+			printf $0;
 			printf("'$RESET_ALL'")
+			printf "\n"
 		}
 	}
 	END {
