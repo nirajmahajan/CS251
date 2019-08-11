@@ -52,39 +52,11 @@ END {
 	print FNR;
 }' $2 $1)
 
-for (( i = 1; i <= NRnow; i++ )); do
-
-	if [ $i -le 3 ]; then
-		awk -v iter="$i" '{if (NR == iter) {print;}}' $1
-		continue
-	fi
-
-	CURR_FONT=$(awk -v iter="$i" 'BEGIN{FS="\n"}{if(NR == iter) {print;}}' font.out)
-	CURR_BACk=$(awk -v iter="$i" 'BEGIN{FS="\n"}{if(NR == iter) {print;}}' back.out)
-
-
-	NewFont="${!CURR_FONT}"
-	NewBack="${!CURR_BACk}"
-
-
-	awk -v toprint="$i" -v Font="$NewFont" -v Back="$NewBack" '
-	BEGIN {
-	} 
-	{
-		if (NR == toprint && toprint <= 3) {
-			print;
-		} else if (NR == toprint) {
-			printf "" Back;
-			printf "" Font;
-			printf $0;
-			printf("'$RESET_ALL'")
-			printf "\n"
-		}
-	}
-	END {
-	}
-	' $1
-done
-
-rm back.out
-rm font.out
+var=$(awk 'BEGIN{} {} END{print NR}' ./resources/defineColors.sh)
+awk 'NR<4{print $0}' $1
+awk -v l1="$NRnow" -v l2="$var" -v res="$RESET_ALL" 'BEGIN{FS="[=,]"}
+{if(NR<=l2){a[$1]=$2}
+else if (NR<=l2+l1){font[FNR]=$1}
+else if (NR<=l2+2*l1){back[FNR]=$1}
+else {if(FNR>3){b=a[back[FNR]]; f=a[font[FNR]]; b=substr(b,2,length(b)-2); f=substr(f,2,length(f)-2);
+	system(b); system(f); printf $0; printf res; printf "\n";}}}' ./resources/defineColors.sh font.out back.out $1
