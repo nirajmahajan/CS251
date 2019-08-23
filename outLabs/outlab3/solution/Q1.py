@@ -41,7 +41,7 @@ else:
 				# 	fromlist=temp+fromlist
 				# else:
 				# 	fromlist=temp
-				print(fromlist)
+				#print(fromlist)
 				continue
 		else:
 			notexist.append(p)
