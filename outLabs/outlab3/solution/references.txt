@@ -1,3 +1,2 @@
-https://stackoverflow.com/questions/30239092/how-to-get-multiline-input-from-user
-
-https://www.geeksforgeeks.org/python-convert-dictionary-to-list-of-tuples/
+https://docs.python.org/2/howto/argparse.html
+https://www.geeksforgeeks.org/pattern-matching-python-regex/
