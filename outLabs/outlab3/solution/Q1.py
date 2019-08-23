@@ -11,14 +11,14 @@ else:
 	tar = tarfile.open(outpath, "w:gz")
 	fromlist=sys.argv[2:]
 	for p in fromlist:
-		print(p)
+		#print(p)
 		if os.path.exists(p):
 			existscount+=1
 			x=os.path.realpath(p)
-			print(x)
+			#print(x)
 			if os.path.isfile(p):
 				y=x.replace("/","-")
-				print(y)
+				#print(y)
 				j=os.path.dirname(x)
 				z=j+"/"+y
 				#os.rename(x,z)
