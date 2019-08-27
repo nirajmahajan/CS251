@@ -1,7 +1,7 @@
 import re
 import sys
 
-regex_mail = re.compile(r'((?!.*[\._][_\.].*)\b[0-9a-zA-Z_.]*[0-9a-zA-Z]@[0-9a-zA-Z.]*[a-zA-Z]\b)')
+regex_mail = re.compile(r'((?!.*[\._][_\.].*)\b[0-9a-zA-Z][0-9a-zA-Z_.]*@[0-9a-zA-Z.]*[a-zA-Z]\b))')
 regex_phone = re.compile(r'(\b[1-9][0-9]{9}\b)')
 
 diary = open(sys.argv[1])
