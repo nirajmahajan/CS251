@@ -1,7 +1,7 @@
 import re
 import sys
 
-regex_mail = re.compile(r'((?!.*[\._][_\.].*)\b[0-9a-zA-Z][0-9a-zA-Z_.]*@[0-9a-zA-Z.]*[a-zA-Z]\b)')
+regex_mail = re.compile(r'((?!.*[\._][_\.].*)\b[0-9a-zA-Z_.]*[0-9a-zA-Z]@[0-9a-zA-Z.]*[a-zA-Z]\b)')
 regex_phone = re.compile(r'(\b[1-9][0-9]{9}\b)')
 
 diary = open(sys.argv[1])
@@ -28,12 +28,17 @@ for a in mails:
 if (not sys.argv[2] in contacts):
 	contacts[sys.argv[2]] = 0
 
+cheater_count = 0;
 for a in contacts.keys():
 	if a == sys.argv[2]:
 		continue
 
+	
 	if contacts[a] > contacts[sys.argv[2]]:
 		print("Cheater alert! {} {}".format(a, contacts[a]))
+		cheater_count += 1
+if cheater_count == 0:
+	print('It’s all good yo!')
 
 
 # (?!.*[\._][_\.].*)\b[0-9a-zA-Z][0-9a-zA-Z_.]*@[0-9a-zA-Z.]*[a-zA-Z]\b

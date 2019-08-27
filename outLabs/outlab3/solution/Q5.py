@@ -29,7 +29,7 @@ parser.add_argument("--CGPA", help="display a square of a given number",
                     required=True)
 args = parser.parse_args()
 
-my_dic = {'First Name': args.first_name, 'Last Name': args.last_name, 'Roll Number': args.roll_no, 'Gender': args.gender, 'Mobile':args.mobile, 'CGPA': args.CGPA}
+my_dic = {'First Name': args.first_name, 'Last Name': args.last_name, 'Roll Number': args.roll_no, 'Gender': args.gender, 'Mobile':args.mobile, 'Dept':args.dept, 'CGPA': args.CGPA}
 
 createdNew = True
 

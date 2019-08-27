@@ -41,7 +41,7 @@ else:
 				print(p)
 	else:
 		print("All files are missing")
-		os.system("touch ab")
+		os.system("rm -rf {}".format(outpath))
 
 		
 
