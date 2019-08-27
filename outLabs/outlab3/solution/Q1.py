@@ -12,9 +12,9 @@ else:
 	fromlist = sys.argv[2:]
 	for p in fromlist:
 		if os.path.exists(p):
+			existscount += 1
 			x = os.path.realpath(p)
 			if os.path.isfile(p):
-				existscount += 1
 				y = x.replace("/","-")
 				j = os.path.dirname(x)
 				z = j + "/" + y
