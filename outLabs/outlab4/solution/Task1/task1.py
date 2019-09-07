@@ -23,6 +23,7 @@ def nth_derivative_plotter(fn, n, x_min, x_max, filename):
         n1=n+5
     temp[bool_a]=derivative(f, temp[bool_a],step,n,order=n1)
     plt.plot(ref,temp)
+    plt.title(str(n)+"th Order Derivative")
     plt.savefig(filename)
     plt.clf()
 
