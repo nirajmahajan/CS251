@@ -17,20 +17,23 @@ def reconstruct_from_noisy_patches(input_dict, shape):
 		upd_new[bool_black,0]=upd_new[bool_black,0]+1
 		upd_new[bool_white,1]=upd_new[bool_white,1]+1
 		bool_mid=np.logical_and(upd_new[:,:,4]<255 ,upd_new[:,:,4]>0)
-		# values[bool_black,0]=values[bool_black,0]+1
-		# values[bool_white,1]=values[bool_white,1]+1
-		#values[bool_mid,2]=values[bool_mid,2]+1
 		upd_new[bool_mid,2]=upd_new[bool_mid,2]+1
-		upd_new[:,:,3]=upd_new[:,:,3]+upd_new[:,:,4]
+		upd_new[bool_mid,3]=upd_new[bool_mid,3]+upd_new[bool_mid,4]
 		upd_new[:,:,5]=upd_new[:,:,5]+1
 		values[tlr:brr,tlc:brc]=upd_new[:,:]
-		#return update_val
-	# bool_b_more_w=np.logical_or(values[:,:,5]==0 , np.logical_and(values[:,:,2]==0 , values[:,:,0]>values[:,:,1]))
-	# output[bool_b_more_w]=0
+		
 	bool_not_b_more_w=np.logical_and(values[:,:,5]!=0 , np.logical_and(values[:,:,2]==0 ,values[:,:,0]<=values[:,:,1]))
 	output[bool_not_b_more_w]=255
 	bool_mid_exists=values[:,:,2]!=0
-	output[bool_mid_exists]=values[bool_mid_exists,3]/values[bool_mid_exists,2]
+	bool_b_more_w=np.logical_or(values[:,:,5]==0,np.logical_and(values[:,:,2]==0 , values[:,:,0]>values[:,:,1]))
+	output[bool_mid_exists]=values[bool_mid_exists,3]//values[bool_mid_exists,2]
+	# print(output[bool_mid_exists])
+	# print(output[bool_not_b_more_w])
+	# print(output[bool_b_more_w])
+	# print(output.shape)
+	# print(output.ndim)
+	# print(output.dtype)
+	output=output.astype('int64')
 	return output
 # return the reconstructed image
 # import numpy as np
