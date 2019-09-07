@@ -1,0 +1,11 @@
+## CS 251 Autumn 2019 Inlab 1 Autograder Script
+
+Instructions for using the script :
+1. Place your script file (not tar or gzip file just the script file) i.e., <roll no>-lab1-inlab.script in the master folder and run ./evaluate.sh
+2. You should see the output as   <roll_no>       <keywords_missing_in_your_script>      <partA marks>     <partB marks>
+3. Here Part A checks if your script contains certain keywords or not and partB checks the size of your script.
+4. Note that this inlab is graded leniently as this is the first inlab and we just checked if you tried various commands or not.
+
+
+Author:
+1. Saiteja Talluri

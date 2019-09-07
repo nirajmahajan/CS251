@@ -1,0 +1,8 @@
+Data/file1.txt:12:"It's quite too funny. I am sure you could never guess how I employed my morning, or what I ended by doing."
+Data/file3.txt:12:"It's quite too funny. I am sure you could never guess how I employed my morning, or what I ended by doing."
+Data/test001/cse004/cse005/file3.txt:12:"It's quite too funny. I am sure you could never guess how I employed my morning, or what I ended by doing."
+Data/test003/cse001/file1.txt:12:"It's quite too funny. I am sure you could never guess how I employed my morning, or what I ended by doing."
+Data/test003/cse006/cse001/file1.txt:12:"It's quite too funny. I am sure you could never guess how I employed my morning, or what I ended by doing."
+Data/test003/cse006/file3.txt:12:"It's quite too funny. I am sure you could never guess how I employed my morning, or what I ended by doing."
+Data/test004/cse004/file3.txt:12:"It's quite too funny. I am sure you could never guess how I employed my morning, or what I ended by doing."
+Data/test005/file1.txt:12:"It's quite too funny. I am sure you could never guess how I employed my morning, or what I ended by doing."

@@ -1,0 +1,8 @@
+Data/file1.txt:8:"Well, really!" he cried, and then he choked and laughed again until he was obliged to lie back, limp and helpless, in the chair.
+Data/file3.txt:8:"Well, really!" he cried, and then he choked and laughed again until he was obliged to lie back, limp and helpless, in the chair.
+Data/test001/cse004/cse005/file3.txt:8:"Well, really!" he cried, and then he choked and laughed again until he was obliged to lie back, limp and helpless, in the chair.
+Data/test003/cse001/file1.txt:8:"Well, really!" he cried, and then he choked and laughed again until he was obliged to lie back, limp and helpless, in the chair.
+Data/test003/cse006/cse001/file1.txt:8:"Well, really!" he cried, and then he choked and laughed again until he was obliged to lie back, limp and helpless, in the chair.
+Data/test003/cse006/file3.txt:8:"Well, really!" he cried, and then he choked and laughed again until he was obliged to lie back, limp and helpless, in the chair.
+Data/test004/cse004/file3.txt:8:"Well, really!" he cried, and then he choked and laughed again until he was obliged to lie back, limp and helpless, in the chair.
+Data/test005/file1.txt:8:"Well, really!" he cried, and then he choked and laughed again until he was obliged to lie back, limp and helpless, in the chair.

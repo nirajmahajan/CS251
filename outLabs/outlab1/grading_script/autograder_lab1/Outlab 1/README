@@ -1,0 +1,9 @@
+## CS 251 Autumn 2019 Outlab 1 Autograder Script
+
+Instructions for using the script :
+1. Place your folder (not tar or gzip folder, please untar and place) i.e., <roll no 1>-<roll no 2>-<roll no 3>-outlab1 in the master folder and run ./evaluate.sh <q no> ex : ./evaluate.sh 4
+2. You should see the output as   <roll_no 1>  <roll no 2>  <roll no 3>  <partA marks>  <partB marks>
+
+Author:
+1. Saiteja Talluri (P1, P3, P4A, P5)
+2. Yash Sharma (P2, P4B)
