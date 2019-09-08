@@ -20,16 +20,10 @@ if (not dim == 3) :
 	dim=3
 
 inim = inim.reshape(r*c, dim)
-
 centroid, label = kmeans2(inim, karg, iter=300, minit='++')
-
 outim = np.empty((r*c, dim))
-
 for i in range(r*c):
 	outim[i,:] = centroid[label[i],:]
-
 outim = np.asarray(outim, dtype='uint8')
-
 outim = outim.reshape(r,c,dim)
-
 imageio.imwrite(outpath, outim)

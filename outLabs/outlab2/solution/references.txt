@@ -1,7 +1,0 @@
-https://unix.stackexchange.com/questions/318755/shell-customize-the-color-of-each-line-of-a-log-file-based-on-a-pattern
-
-https://stackoverflow.com/questions/47739706/replace-newlines-in-some-lines-with-spaces-using-sed-or-awk
-
-https://stackoverflow.com/questions/3585846/color-text-in-terminal-applications-in-unix
-
-https://backreference.org/2010/02/10/idiomatic-awk/
