@@ -2,6 +2,7 @@ import numpy as np
 import pickle
 from PIL import Image
 from matplotlib import pyplot as plt
+
 def noisify(inp, noise_type, val):
     imshape = inp.shape
     if (noise_type == 'gauss'):
@@ -16,7 +17,7 @@ def noisify(inp, noise_type, val):
         zero_mask_inv = np.logical_not(randmat < p_by_2)
         one_mask = randmat > (1 - p_by_2)
         out_img = np.multiply(inp, zero_mask_inv)
-        return np.maximum(out_img, one_mask)
+        return clip_both_sides(np.maximum(out_img, one_mask*255))
 
 def rescale_mat(npa):
     minn, maxx = np.amin(npa), np.amax(npa)
@@ -34,14 +35,24 @@ def rescale_mat(npa):
 def rgb2gray(rgb): # copied from https://stackoverflow.com/a/12201744
     return np.dot(rgb[...,:3], [0.2989, 0.5870, 0.1140])
 
+def clip_both_sides(arr):
+    arr = np.rint(arr)
+    arr[arr < 0] = 0
+    arr[arr > 255] = 255
+    arr = arr.astype('int')
+    return arr
+
 def load_image(infilename, rescale=False, grayscale=True):
     img = Image.open(infilename)
     img.load()
     data = np.asarray(img, dtype="int")
+    # print('data', data)
     if grayscale:
         data = rgb2gray(data)
     if rescale:
         data = rescale_mat(data.astype('float'))
+    else:
+        data = clip_both_sides(data)
     return data
 
 def make_fig(nparr, cmap=None):
