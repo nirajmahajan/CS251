@@ -13,9 +13,10 @@ data = pd.read_csv(inpath)
 
 instance_group = data.groupby('instance')
 
-i=1
+instance_dict = {'small_scale':1, 'medium_scale':2, 'large_scale':3}
 
 for instance_name, instance_data in instance_group:
+	i = instance_dict[instance_name]
 	algo_group = instance_data.groupby('algorithm')
 
 	for algo_name, algo_data in algo_group:
@@ -27,7 +28,7 @@ for instance_name, instance_data in instance_group:
 				x_cords = [x for x,y in plot_data]
 				plot_data = plot_data.mean()
 				y_cords = list(plot_data['REG'])
-				pltlabel = 'epsilon-greedy '+ str(epsilon_name)
+				pltlabel = 'epsilon-greedy with epsilon='+ str(epsilon_name)
 				plt.plot(x_cords, y_cords, label=pltlabel)
 
 		else:
@@ -41,9 +42,8 @@ for instance_name, instance_data in instance_group:
 	plt.xscale('log')
 	plt.yscale('log')
 	plt.legend()
-	plt.title('Figure '+str(i) +": " + instance_name)
+	plt.title('Instance '+str(i) +": " + instance_name)
 	plt.xlabel('horizon')
-	plt.ylabel('regret')
+	plt.ylabel('Regret')
 	plt.savefig('instance'+str(i)+".png")
-	i = i+1
 	plt.close()
