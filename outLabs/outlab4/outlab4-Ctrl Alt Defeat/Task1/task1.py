@@ -21,9 +21,22 @@ def nth_derivative_plotter(fn, n, x_min, x_max, filename):
         n1=n+4
     else:
         n1=n+5
+    sal="th"
+    if(n%10==1):
+        sal="st"
+    elif(n%10==2):
+        sal="nd"
+    elif(n%10==3):
+        sal="rd"
+    if(n%100==11):
+        sal="th"
+    elif(n%100==12):
+        sal="th"
+    elif(n%100==13):
+        sal="th"    
     temp[bool_a]=derivative(f, temp[bool_a],step,n,order=n1)
     plt.plot(ref,temp)
-    plt.title(str(n)+"th Order Derivative")
+    plt.title(str(n)+sal+" Order Derivative")
     plt.savefig(filename)
     plt.clf()
 
@@ -63,5 +76,4 @@ def twodsinc(x,y):
 fn_plot1d(b,-2,2,'fn1plot.png')
 fn_plot2d(twodsinc, -1.5*np.pi,1.5*np.pi,-1.5*np.pi,1.5*np.pi,'fn2plot.png')
 for x in range(10):
-    filen="bd_"+str(x+1)+".png"
-    nth_derivative_plotter(b,x+1,-2,2,filen)
+    nth_derivative_plotter(b,x+1,-2,2,"bd_"+str(x+1)+".png")

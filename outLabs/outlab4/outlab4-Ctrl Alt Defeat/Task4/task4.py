@@ -1,7 +1,6 @@
 import numpy as np
 
-def mean_filter(arr,kernel_size):
-	k=int((kernel_size-1)/2)
+def mean_filter(arr,k):
 	bool_a=np.ones((arr.size,),dtype=bool)
 	a=np.append(np.zeros((k+1,)),np.cumsum(arr,dtype=float))
 	bool_a[arr.size-k:]=False
@@ -10,7 +9,7 @@ def mean_filter(arr,kernel_size):
 	out[bool_a]=a[temp[bool_a]+2*k+1]-a[temp[bool_a]]
 	bool_a=np.logical_not(bool_a)
 	out[bool_a]=a[arr.size+k]-a[temp[bool_a]]
-	return out/kernel_size
+	return out/(2*k+1)
 
 def generate_sin_wave(period,range_,num):
 	(xmin,xmax) = range_

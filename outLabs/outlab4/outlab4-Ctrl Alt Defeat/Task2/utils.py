@@ -55,8 +55,10 @@ def load_image(infilename, rescale=False, grayscale=True):
         data = clip_both_sides(data)
     return data
 
-def make_fig(nparr, cmap=None):
+def make_fig(nparr, cmap='gray', title=None):
     plt.figure()
+    if type(title) == str:
+        plt.title(title)
     if (cmap is None):
         plt.imshow(nparr)
     else:

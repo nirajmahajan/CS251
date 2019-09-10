@@ -12,7 +12,7 @@ def driver():
 	plt.plot(ref,dirty_sin)
 	plt.savefig('dirty_sin.png')
 	plt.clf()
-	cleaned_sin = t4.mean_filter(dirty_sin,3)
+	cleaned_sin = t4.mean_filter(dirty_sin,1)
 	plt.plot(ref,cleaned_sin)
 	plt.savefig('cleaned_sin.png')
 	plt.clf()
