@@ -16,3 +16,4 @@ def driver():
 	plt.plot(ref,cleaned_sin)
 	plt.savefig('cleaned_sin.png')
 	plt.clf()
+driver()
