@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage{geometry}\geometry{a4paper,total={6in,9in},left=3cm,top=1in,}
+\usepackage{geometry}\geometry{a4paper,width=6in,left=3cm,top=1in,bottom=1in}
 \usepackage{multirow}
 \usepackage{amsmath} 
 \usepackage[utf8]{inputenc}
@@ -13,7 +13,8 @@
 \usepackage{algorithmic}
 \usepackage[linesnumbered,ruled,boxruled]{algorithm2e}
 \usepackage{caption}
-\usepackage{csquotes}{}
+\usepackage{csquotes}
+\usepackage{microtype}
 \usepackage{calc}
 \usepackage{float}
 \usepackage{tabularx}
@@ -24,6 +25,11 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{graphicx}
 \usepackage{array}
+\renewcommand{\familydefault}{\sfdefault}
+% \usepackage{titlesec}
+% \titleformat*{\section}{\Large\bfseries}
+% \titleformat*{\subsection}{\Large\bfseries}
+% \titleformat*{\subsubsection}{\large\bfseries}
 \newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
 \graphicspath{ {./images/} }
 \begin{document}
@@ -42,10 +48,7 @@
 \tableofcontents
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
 \newpage
-This is a \LaTeX{} document for the course \textbf{Software Systems Lab} with course\newline
-code \textit{CS 251}. You need to replicate this document. Spacing need not be \newline
-matched perfectly but page numbers should be. \textbf{1 mark is for the title page.}\newline
-Bonus marks will be given only if you score (80/80) in the rest. 
+This is a \LaTeX{} document for the course \textbf{Software Systems Lab} with course code \textit{CS 251}. You need to replicate this document. Spacing need not be matched perfectly but page numbers should be. \textbf{1 mark is for the title page.} Bonus marks will be given only if you score (80/80) in the rest. 
 \section{Introduction (4 marks)}
 \textbf{\LaTeX{ }} is a word processor and document markup language. It is distinguished
 from typical word processors such as Microsoft Word and Apple Pages in that
@@ -82,13 +85,13 @@ changed to maths symbols.
 Here we are using \textbf{itemize} to generate unordered list.
 \renewcommand\labelitemi{\large$\bullet$}
 \begin{itemize}
-	\item \LaTeX{ } typesets a file of text using the TEX program.
+	\item \LaTeX{ } typesets a file of text using the TEX program.\\
 	\item \LaTeX{ } is widely used in academia for the communication and publication
 	of scientific documents in many fields, including mathematics, physics,
-	computer science, statistics, economics and political science.
+	computer science, statistics, economics and political science.\\
 	\item \LaTeX{ } can be used as a standalone document preparation system or as an
-	intermediate format.
-	\item  \textbf{We have used renewcommand for the bullets to be bigger.}
+	intermediate format.\\
+	\item  \textbf{We have used renewcommand for the bullets to be bigger.}\\
 	\item  Look at the \textbf{item separation space}, and \textbf{change it} accordingly.
 \end{itemize}
 For ordered lists we use \textbf{enumerate}.
@@ -114,6 +117,7 @@ Following is another type of a pointer \textbf{(description)}.
 	\item[CS 215] Data Analysis and Interpretation
 	\item[CS 251] Software Systems Lab
 \end{description}
+\newpage
 \section{Mathematical formulae and notations (15 marks)}
 \subsection{Equation Array (4 marks)}
 \begin{align}
@@ -145,31 +149,35 @@ $\displaystyle(\exists x)(\varphi(x))\wedge\psi(x))\longrightarrow((\exists(x)\v
 	\item $\displaystyle\frac{\pi}{4}=4\sum\limits_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)5^{2n+1}}-\sum\limits_{n=0}^\infty\frac{(-1)^n}{(2n+1)239^{2n+1}}$
 	\item $\displaystyle\pi=\frac{3\sqrt{3}}{4}-24\sum\limits_{n=0}^{\infty}\frac{\frac{(2n)!}{(n)}}{2n+1(2n+1)4^{2n+1}}$
 	\item $\displaystyle\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum\limits_{n=0}^{\infty}\frac{(4n)!(1103+26390n)}{(n)!^4396^{4n}}$
-	\item $\displaystyle\sum\nolimits_{i=0}^{\left[\frac{n}{2} \right]} \binom{x^{i^2}_{i,i+1}}{\left[\frac{i+3}{3}\right]} \frac{\sqrt{\mu(i)^{\frac{3}{2}}(i^2-1)}}{\sqrt[3]{\rho(i)-2}+\sqrt[3]{\rho(i)-1}}$
+	\item $\displaystyle\sum\nolimits_{i=0}^{\left[\frac{n}{2} \right]}\binom{x^{i^2}_{i,i+1}}{\left[\frac{i+3}{3}\right]} \frac{\sqrt{\mu(i)^{\frac{3}{2}}(i^2-1)}}{\sqrt[3]{\rho(i)-2}+\sqrt[3]{\rho(i)-1}}$
 \end{enumerate}
 \newpage
 \section{Tables (10 marks)}
 To combine rows a package must be imported with in your preamble, then you
 can use the XXXXXXX command in your document. The table below includes
 mathematical notations, which you can produce by embedding the expression
-in \$ \$ delimiters. For subscript, use underscore and for superscript, use carrot.
+in \$ \$ delimiters. For subscript, use underscore and for superscript, use carrot.\\
+\\
 \begin{table}[H]
-\resizebox{\textwidth}{!}{\scriptsize
-\begin{tabularx}{\linewidth}{x{2cm}x{1cm}|x{7.5mm}|x{7.5mm}|x{9mm}|x{8mm}|x{8mm}|x{7.5mm}|x{8mm}|x{11mm}|x{8mm}|}
+% \resizebom{\textwidth}{!}
+{\footnotesize
+\begin{tabularx}{\linewidth}{m{2cm}m{1cm}|m{7.5mm}|m{7.5mm}|m{9mm}|m{8mm}|m{8mm}|m{7.5mm}|m{8mm}|m{11mm}|m{8mm}|}
 \cline{3-11}
                                      				 &      & \multicolumn{5}{c|}{\textbf{Basic Properties}} & \multicolumn{4}{c|}{\textbf{Readability}} \\ \cline{3-11} 
-                                     				 &      & \textbf{WC}  & \textbf{SC}  & \textbf{C-W}   & \textbf{S-W}  & \textbf{W-S} & \textbf{FK}  & \textbf{GF}  & \textbf{SMOG}  & \textbf{LFX}  \\[1ex] \hline
-\multicolumn{1}{|x{2cm}|}{\multirow{2}{*}{$Baseline$}} & Mean & 0.84     & 0.41     & \textbf{0.56}     & \textbf{0.46}     & \textbf{0.55}     & \textbf{0.60}     & 0.56     & 0.57       & 0.63      \\ \cline{2-11} 
-\multicolumn{1}{|x{2cm}|}{}                          & SD   & 0.07     & 0.08     & 0.06     & 0.07     & 0.05     & 0.05     & 0.06     & 0.07       & 0.05      \\ \hline
+                                     				 &      & \textbf{WC}  & \textbf{SC}  & \textbf{C-W}   & \textbf{S-W}  & \textbf{W-S} & \textbf{FK}  & \textbf{GF}  & \textbf{SMOG}  & \textbf{LFX}  \\ \hline
+\multicolumn{1}{|m{2cm}|}{\multirow{2}{*}{$Baseline$}} & Mean & 0.84     & 0.41     & \textbf{0.56}     & \textbf{0.46}     & \textbf{0.55}     & \textbf{0.60}     & 0.56     & 0.57       & 0.63      \\ \cline{2-11} 
+\multicolumn{1}{|m{2cm}|}{}                          & SD   & 0.07     & 0.08     & 0.06     & 0.07     & 0.05     & 0.05     & 0.06     & 0.07       & 0.05      \\ \hline
 \end{tabularx}}
-\resizebox{\textwidth}{!}{\scriptsize
-\begin{tabularx}{\linewidth}{|x{2cm}|x{1cm}|x{7.5mm}|x{7.5mm}|x{9mm}|x{8mm}|x{8mm}|x{7.5mm}|x{8mm}|x{11mm}|x{8mm}|}
+% \resizebom{\textwidth}{!}
+{\footnotesize
+\begin{tabularx}{\linewidth}{|m{2cm}|m{1cm}|m{7.5mm}|m{7.5mm}|m{9mm}|m{8mm}|m{8mm}|m{7.5mm}|m{8mm}|m{11mm}|m{8mm}|}
 \hline
 \multirow{2}{*}{$ScaComp_h$}                       & Mean & 0.89     & 0.46   & 0.53     & 0.43     & 0.53     & 0.58     & 0.54     & 0.56       & 0.62      \\ \cline{2-11}
                                                 & SD   & 0.05     & 0.08     & 0.05     & 0.06     & 0.06     & 0.05     & 0.05     & 0.06       & 0.05      \\ \hline
 \end{tabularx}}
-\resizebox{\textwidth}{!}{\scriptsize
-\begin{tabularx}{\linewidth}{|x{2cm}|x{1cm}|x{7.5mm}|x{7.5mm}|x{9mm}|x{8mm}|x{8mm}|x{7.5mm}|x{8mm}|x{11mm}|x{8mm}|}
+% \resizebom{\textwidth}{!}
+{\footnotesize
+\begin{tabularx}{\linewidth}{|m{2cm}|m{1cm}|m{7.5mm}|m{7.5mm}|m{9mm}|m{8mm}|m{8mm}|m{7.5mm}|m{8mm}|m{11mm}|m{8mm}|}
 \hline
 \multirow{2}{*}{$ScaComp_l$}                       & Mean & \textbf{0.92}     & \textbf{0.48}     & 0.55     & 0.45     & 0.53     & 0.59     & \textbf{0.58}     & \textbf{0.61}       & \textbf{0.64}      \\ \cline{2-11} 
                                                 & SD   & 0.04     & 0.07     & 0.05     & 0.04     & 0.05     & 0.04     & 0.04     & 0.04       & 0.04      \\ \hline
@@ -196,6 +204,7 @@ the document, and avoid any overflow.
     \caption*{Figure 1: Screenshot: Mobile Interface}
     \label{fig:1}
   \end{subfigure}
+  \hspace{2mm}
   \begin{subfigure}[t]{0.37\textwidth}
     \includegraphics[width=\textwidth]{2}
     \caption*{Figure 2: Screenshot: Generated Notification}
@@ -208,10 +217,11 @@ images on Page 6.\par
 In case you would like to see an alternative method to align the images, for
 instance images as \textbf{subfigures}, here it is.
 \begin{figure}[H]
+    \hspace{1cm}
     \begin{subfigure}{.4\textwidth}
         \includegraphics[width=\linewidth, height=1.5in]{3}
         \caption{Welcome to Hotel California}
-    \end{subfigure}\hfill
+    \end{subfigure}\hspace{1.5cm}
     \begin{subfigure}{.4\textwidth}
         \includegraphics[width=\linewidth, height=1.5in]{4}
         \caption{50th Inter IIT Sports Meet}
