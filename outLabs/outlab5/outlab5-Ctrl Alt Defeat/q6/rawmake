@@ -25,10 +25,10 @@ installstatic : libMyEngineStatic.a
 	sudo cp libMyEngineStatic.a /usr/local/lib
 	sudo ldconfig -n /usr/local/lib
 
-mygamestatic : installstatic
+mygamestatic : ./mygame/mygame.cpp installstatic
 	$(CC) -static -lMyEngineStatic mygame/mygame.cpp -o mygamestatic
 
-mygamedynamic : installdynamic
+mygamedynamic : ./mygame/mygame.cpp installdynamic
 	$(CC) -lMyEngineDynamic mygame/mygame.cpp -o mygamedynamic
 
 clean :
