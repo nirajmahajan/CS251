@@ -1,38 +1,38 @@
-Research.Eng:Soft.Eng
+Research.Eng : Soft.Eng
 	@echo MS
 	@echo Research.Eng
-Soft.Eng:IIT
+Soft.Eng : IIT
 	@echo Soft.Eng
-MS:IIT
+MS : IIT
 	@echo MS
-IIT:JEE
+IIT : JEE
 	@echo IIT
-Hard.Eng:NIT
+Hard.Eng : NIT
 	@echo NIT
-NIT:JEE
+NIT : JEE
 	@echo NIT
-JEE:MPC
+JEE : MPC
 	@echo JEE
-MPC:school
+MPC : school
 	@echo MPC
-IVF.spec:Gynic 
+IVF.spec : Gynic 
 	@echo MD
 	@echo IVF.spec
-Gynic:AIIMS
+Gynic : AIIMS
 	@echo Gynic
-ENT:AIIMS
+ENT : AIIMS
 	@echo ENT
-MD:AIIMS
+MD : AIIMS
 	@echo MD
-AIIMS:NEET
+AIIMS : NEET
 	@echo AIIMS
-Dentist:CMC
-	@Dentist
-CMC:NEET
+Dentist : CMC
+	@echo Dentist
+CMC : NEET
 	@echo CMC
-NEET:BiPc
+NEET : BiPc
 	@echo NEET
-BiPc:school
+BiPc : school
 	@echo BiPc
-school:
+school :
 	@echo school
