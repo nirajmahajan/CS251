@@ -7,9 +7,8 @@
 \usepackage{bera}
 \usepackage{etoc}
 \usepackage{cite}
-\usepackage{blindtext}
 \usepackage{listings}
-\usepackage{tikz-qtree}
+\usepackage{qtree}
 \usepackage{algorithmic}
 \usepackage[linesnumbered,ruled,boxruled]{algorithm2e}
 \usepackage{caption}
@@ -25,7 +24,11 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{graphicx}
 \usepackage{array}
+% \usepackage[backend=biber,style=numeric,sorting=none,natbib=true]{biblatex}
+% \addbibresource{references.bib}
 \renewcommand{\familydefault}{\sfdefault}
+% \fontdimen2\font=1pt
+% \fontdimen3\font=0.1em
 % \usepackage{titlesec}
 % \titleformat*{\section}{\Large\bfseries}
 % \titleformat*{\subsection}{\Large\bfseries}
@@ -50,6 +53,7 @@
 \newpage
 This is a \LaTeX{} document for the course \textbf{Software Systems Lab} with course code \textit{CS 251}. You need to replicate this document. Spacing need not be matched perfectly but page numbers should be. \textbf{1 mark is for the title page.} Bonus marks will be given only if you score (80/80) in the rest. 
 \section{Introduction (4 marks)}
+\begin{footnotesize}
 \textbf{\LaTeX{ }} is a word processor and document markup language. It is distinguished
 from typical word processors such as Microsoft Word and Apple Pages in that
 the writer uses plain text as opposed to formatted text, relying on markup
@@ -71,6 +75,7 @@ of tables and figures, chapter and section headings, the inclusion of graphics,
 page layout, indexing and bibliographies.\par\mbox{}\\
 Below are some of the basic packages which you’ll be using. For other
 required packages, search over the net :).
+\end{footnotesize}
 \subsection{graphicx package}
 This package is used to import tables, and figure in the document. Our
 document type is article, and we are currently using a4 type paper with the
@@ -330,11 +335,7 @@ void BFS(list <long long int> queue,long long int length
 \caption{Breadth-First-Search}
 \end{algorithm}
 \section{Tree (Bonus - 4 marks) }
-\centerline{
-\begin{tikzpicture}[sibling distance=25pt]
-\tikzset{level distance=40pt}
-\tikzset{every tree node/.style={align=center,anchor=north}}
-\Tree [.If-statement if exp then [.S [.if if else then S ] ] ]\end{tikzpicture}}
+\Tree [.if-statement if exp \textit{then} [.S [.if if else \textit{then} S ] ] ]
 \newpage
 \section{Exotic Features (Bonus - 6 marks)}
 \subsection{Epigraph Style (3 marks)}
@@ -364,5 +365,6 @@ explicitly directed to do otherwise.}
 \section{Bibliography (4 marks)}
 4 marks for references using .bib file, otherwise 2 marks.\\
 \bibliographystyle{unsrt}
+% \printbibliography
 \bibliography{references}
 \end{document}
