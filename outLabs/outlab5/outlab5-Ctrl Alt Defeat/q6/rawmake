@@ -18,18 +18,16 @@ libMyEngineStatic.a : myengine/myengine.cpp myengine/myengine.hpp
 installdynamic : libMyEngineDynamic.so
 	sudo cp myengine/myengine.hpp /usr/local/include
 	sudo cp libMyEngineDynamic.so /usr/local/lib
-	sudo ldconfig -n /usr/local/lib
 	
 installstatic : libMyEngineStatic.a
 	sudo cp myengine/myengine.hpp /usr/local/include
 	sudo cp libMyEngineStatic.a /usr/local/lib
-	sudo ldconfig -n /usr/local/lib
+	
+mygamestatic : installstatic
+	$(CC) -static mygame/mygame.cpp -o mygamestatic -lMyEngineStatic
 
-mygamestatic : ./mygame/mygame.cpp installstatic
-	$(CC) -static -lMyEngineStatic mygame/mygame.cpp -o mygamestatic
-
-mygamedynamic : ./mygame/mygame.cpp installdynamic
-	$(CC) -lMyEngineDynamic mygame/mygame.cpp -o mygamedynamic
+mygamedynamic : installdynamic
+	$(CC) mygame/mygame.cpp -o mygamedynamic -lMyEngineDynamic
 
 clean :
 	rm -rf *.a *.o *.so mygamestatic mygamedynamic helloworld usespthread
