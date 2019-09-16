@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage{geometry}\geometry{a4paper,width=6in,left=3cm,top=1in,bottom=1in}
+\usepackage{geometry}\geometry{a4paper,right=3cm,left=3cm,top=1.2in,bottom=1in}
 \usepackage{multirow}
 \usepackage{amsmath} 
 \usepackage[utf8]{inputenc}
@@ -15,6 +15,7 @@
 \usepackage{csquotes}
 % \usepackage{microtype}
 \usepackage{calc}
+\usepackage[english]{babel}
 \usepackage{float}
 \usepackage{tabularx}
 \usepackage{xcolor}
@@ -25,6 +26,7 @@
 \usepackage{graphicx}
 \usepackage{array}
 \setlength{\parindent}{10pt}
+\renewcommand*{\thepage}{\footnotesize\arabic{page}}
 % \usepackage[backend=biber,style=numeric,sorting=none,natbib=true]{biblatex}
 % \addbibresource{references.bib}
 % \renewcommand{\familydefault}{\sfdefault}
@@ -33,12 +35,14 @@
 % \titleformat*{\subsection}{\Large\bfseries}
 % \titleformat*{\subsubsection}{\large\bfseries}
 \newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+% \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering}m{#1}}
 \graphicspath{ {./images/} }
 \begin{document}
 \sloppy
-% \fontdimen2\font=1ex
-% \fontdimen3\font=1em
-% \fontdimen4\font=0.4em
+% \fontdimen2\font=0.5ex
+% \fontdimen3\font=2em
+\fontdimen4\font=0.23em
 \begin{titlepage}
 \begin{center}
 \vspace*{72mm}
@@ -59,20 +63,20 @@ This is a \LaTeX{} document for the course \textbf{Software Systems Lab} with co
 % \begin{footnotesize}
 % \begingroup
 \fontsize{12}{13.5}\selectfont
-\textbf{\LaTeX{ }} is a word processor and document markup language. It is distinguished
+\textbf{\LaTeX{}} is a word processor and document markup language. It is distinguished
 from typical word processors such as Microsoft Word and Apple Pages in that
 the writer uses plain text as opposed to formatted text, relying on markup
 tagging conventions to define the general structure of a document (such as
 article, book, and letter), to stylise text throughout a document (such as \textbf{bold}
 and \textit{italic}), and to add citations and cross-referencing. A \textbf{\TeX} distribution such
-as \textbf{\TeX{ } Live} or \textbf{MikTeX} is used to produce an output file (such as PDF or DVI)
+as \textbf{\TeX{} Live} or \textbf{MikTeX} is used to produce an output file (such as PDF or DVI)
 suitable for printing or digital distribution.\\ \par
-\textbf{\LaTeX{ }} is used for the communication and publication of scientific documents
+\textbf{\LaTeX{}} is used for the communication and publication of scientific documents
 in many fields, including mathematics, physics, computer science, statistics,
 economics, and political science. It also has a prominent role in the preparation
-and publication of books and articles that contain complex multilingual materials, such as Sanskrit and Arabic. \textbf{\LaTeX{ }} uses the TeX typesetting program for
+and publication of books and articles that contain complex multilingual materials, such as Sanskrit and Arabic. \textbf{\LaTeX{}} uses the TeX typesetting program for
 formatting its output, and is itself written in the TeX macro language.\\ \par
-\textbf{\LaTeX{ }} is widely used in academia. \textbf{\LaTeX{ }} can be used as a standalone document preparation system, or as an intermediate format. In the latter role, for
+\textbf{\LaTeX{}} is widely used in academia. \textbf{\LaTeX{}} can be used as a standalone document preparation system, or as an intermediate format. In the latter role, for
 example, it is often used as part of a pipeline for translating DocBook and other
 XML-based formats to PDF. The typesetting system offers programmable desktop publishing features and extensive facilities for automating most aspects of
 typesetting and desktop publishing, including numbering and cross-referencing
@@ -168,33 +172,34 @@ To combine rows a package must be imported with in your preamble, then you
 can use the XXXXXXX command in your document. The table below includes
 mathematical notations, which you can produce by embedding the expression
 in \$ \$ delimiters. For subscript, use underscore and for superscript, use carrot.\\
-\\
+\vspace{3mm}
 \begin{table}[H]
-% \resizebom{\textwidth}{!}
-{\footnotesize
-\begin{tabularx}{\linewidth}{m{2cm}m{1cm}|m{7.5mm}|m{7.5mm}|m{9mm}|m{8mm}|m{8mm}|m{7.5mm}|m{8mm}|m{11mm}|m{8mm}|}
-\cline{3-11}
-                                     				 &      & \multicolumn{5}{c|}{\textbf{Basic Properties}} & \multicolumn{4}{c|}{\textbf{Readability}} \\ \cline{3-11} 
-                                     				 &      & \textbf{WC}  & \textbf{SC}  & \textbf{C-W}   & \textbf{S-W}  & \textbf{W-S} & \textbf{FK}  & \textbf{GF}  & \textbf{SMOG}  & \textbf{LFX}  \\ \hline
-\multicolumn{1}{|m{2cm}|}{\multirow{2}{*}{$Baseline$}} & Mean & 0.84     & 0.41     & \textbf{0.56}     & \textbf{0.46}     & \textbf{0.55}     & \textbf{0.60}     & 0.56     & 0.57       & 0.63      \\ \cline{2-11} 
-\multicolumn{1}{|m{2cm}|}{}                          & SD   & 0.07     & 0.08     & 0.06     & 0.07     & 0.05     & 0.05     & 0.06     & 0.07       & 0.05      \\ \hline
-\end{tabularx}}
-% \resizebom{\textwidth}{!}
+\centering
 \vspace{.1mm}
-{\footnotesize
-\begin{tabularx}{\linewidth}{|m{2cm}|m{1cm}|m{7.5mm}|m{7.5mm}|m{9mm}|m{8mm}|m{8mm}|m{7.5mm}|m{8mm}|m{11mm}|m{8mm}|}
-\hline
+{\fontsize{9}{11}\selectfont
+\noindent\makebox[\textwidth]{
+\begin{tabular}{C{16mm}C{7.5mm}|C{6.5mm}|C{6.5mm}|C{9mm}|C{7mm}|C{7mm}|C{6.5mm}|C{7mm}|C{9.5mm}|m{7mm}|}
+\cline{3-11}
+                                     				 &      & \multicolumn{5}{m{36mm}|}{\textbf{Basic Properties}} & \multicolumn{4}{m{30mm}|}{\textbf{Readability}} \\ \cline{3-11} 
+                                     				 &      & \textbf{WC}  & \textbf{SC}  & \textbf{C-W}   & \textbf{S-W}  & \textbf{W-S} & \textbf{FK}  & \textbf{GF}  & \textbf{SMOG}  & \textbf{LEX}  \\ \cline{1-11}
+\multicolumn{1}{|C{16mm}|}{\multirow{2}{*}{$Baseline$}} & Mean & 0.84     & 0.41     & \textbf{0.56}     & \textbf{0.46}     & \textbf{0.55}     & \textbf{0.60}     & 0.56     & 0.57       & 0.63      \\ \cline{2-11} 
+\multicolumn{1}{|C{16mm}|}{}                          & SD   & 0.07     & 0.08     & 0.06     & 0.07     & 0.05     & 0.05     & 0.06     & 0.07       & 0.05      \\ \cline{1-11}
+\end{tabular}}}
+\vspace{.1mm}
+{\fontsize{9}{11}\selectfont
+\noindent\makebox[\textwidth]{
+\begin{tabular}{|C{16mm}|C{7.5mm}|C{6.5mm}|C{6.5mm}|C{9mm}|C{7mm}|C{7mm}|C{6.5mm}|C{7mm}|C{9.5mm}|m{7mm}|}
+\cline{1-11}
 \multirow{2}{*}{$ScaComp_h$}                       & Mean & 0.89     & 0.46   & 0.53     & 0.43     & 0.53     & 0.58     & 0.54     & 0.56       & 0.62      \\ \cline{2-11}
-                                                & SD   & 0.05     & 0.08     & 0.05     & 0.06     & 0.06     & 0.05     & 0.05     & 0.06       & 0.05      \\ \hline
-\end{tabularx}}
-% \resizebom{\textwidth}{!}
-% \vspace{6mm}
-{\footnotesize
-\begin{tabularx}{\linewidth}{|m{2cm}|m{1cm}|m{7.5mm}|m{7.5mm}|m{9mm}|m{8mm}|m{8mm}|m{7.5mm}|m{8mm}|m{11mm}|m{8mm}|}
-\hline
+                                                & SD   & 0.05     & 0.08     & 0.05     & 0.06     & 0.06     & 0.05     & 0.05     & 0.06       & 0.05      \\ \cline{1-11}
+\end{tabular}}}
+{\fontsize{9}{11}\selectfont
+\noindent\makebox[\textwidth]{
+\begin{tabular}{|C{16mm}|C{7.5mm}|C{6.5mm}|C{6.5mm}|C{9mm}|C{7mm}|C{7mm}|C{6.5mm}|C{7mm}|C{9.5mm}|m{7mm}|}
+\cline{1-11}
 \multirow{2}{*}{$ScaComp_l$}                       & Mean & \textbf{0.92}     & \textbf{0.48}     & 0.55     & 0.45     & 0.53     & 0.59     & \textbf{0.58}     & \textbf{0.61}       & \textbf{0.64}      \\ \cline{2-11} 
-                                                & SD   & 0.04     & 0.07     & 0.05     & 0.04     & 0.05     & 0.04     & 0.04     & 0.04       & 0.04      \\ \hline
-\end{tabularx}}
+                                                & SD   & 0.04     & 0.07     & 0.05     & 0.04     & 0.05     & 0.04     & 0.04     & 0.04       & 0.04      \\ \cline{1-11}
+\end{tabular}}}
 \caption{Table depicting the use of both multirow and multicolumn}
 \label{Table:1}
 \end{table}
