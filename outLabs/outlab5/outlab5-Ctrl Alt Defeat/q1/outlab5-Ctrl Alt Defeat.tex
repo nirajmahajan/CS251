@@ -13,7 +13,7 @@
 \usepackage[linesnumbered,ruled,boxruled]{algorithm2e}
 \usepackage{caption}
 \usepackage{csquotes}
-\usepackage{microtype}
+% \usepackage{microtype}
 \usepackage{calc}
 \usepackage{float}
 \usepackage{tabularx}
@@ -24,11 +24,10 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{graphicx}
 \usepackage{array}
+\setlength{\parindent}{10pt}
 % \usepackage[backend=biber,style=numeric,sorting=none,natbib=true]{biblatex}
 % \addbibresource{references.bib}
-\renewcommand{\familydefault}{\sfdefault}
-% \fontdimen2\font=1pt
-% \fontdimen3\font=0.1em
+% \renewcommand{\familydefault}{\sfdefault}
 % \usepackage{titlesec}
 % \titleformat*{\section}{\Large\bfseries}
 % \titleformat*{\subsection}{\Large\bfseries}
@@ -36,6 +35,10 @@
 \newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
 \graphicspath{ {./images/} }
 \begin{document}
+\sloppy
+% \fontdimen2\font=1ex
+% \fontdimen3\font=1em
+% \fontdimen4\font=0.4em
 \begin{titlepage}
 \begin{center}
 \vspace*{72mm}
@@ -53,7 +56,9 @@
 \newpage
 This is a \LaTeX{} document for the course \textbf{Software Systems Lab} with course code \textit{CS 251}. You need to replicate this document. Spacing need not be matched perfectly but page numbers should be. \textbf{1 mark is for the title page.} Bonus marks will be given only if you score (80/80) in the rest. 
 \section{Introduction (4 marks)}
-\begin{footnotesize}
+% \begin{footnotesize}
+% \begingroup
+\fontsize{12}{13.5}\selectfont
 \textbf{\LaTeX{ }} is a word processor and document markup language. It is distinguished
 from typical word processors such as Microsoft Word and Apple Pages in that
 the writer uses plain text as opposed to formatted text, relying on markup
@@ -61,21 +66,22 @@ tagging conventions to define the general structure of a document (such as
 article, book, and letter), to stylise text throughout a document (such as \textbf{bold}
 and \textit{italic}), and to add citations and cross-referencing. A \textbf{\TeX} distribution such
 as \textbf{\TeX{ } Live} or \textbf{MikTeX} is used to produce an output file (such as PDF or DVI)
-suitable for printing or digital distribution.\par\mbox{}\\
+suitable for printing or digital distribution.\\ \par
 \textbf{\LaTeX{ }} is used for the communication and publication of scientific documents
 in many fields, including mathematics, physics, computer science, statistics,
 economics, and political science. It also has a prominent role in the preparation
 and publication of books and articles that contain complex multilingual materials, such as Sanskrit and Arabic. \textbf{\LaTeX{ }} uses the TeX typesetting program for
-formatting its output, and is itself written in the TeX macro language.\par\mbox{}\\
+formatting its output, and is itself written in the TeX macro language.\\ \par
 \textbf{\LaTeX{ }} is widely used in academia. \textbf{\LaTeX{ }} can be used as a standalone document preparation system, or as an intermediate format. In the latter role, for
 example, it is often used as part of a pipeline for translating DocBook and other
 XML-based formats to PDF. The typesetting system offers programmable desktop publishing features and extensive facilities for automating most aspects of
 typesetting and desktop publishing, including numbering and cross-referencing
 of tables and figures, chapter and section headings, the inclusion of graphics,
-page layout, indexing and bibliographies.\par\mbox{}\\
+page layout, indexing and bibliographies.\\ \par
 Below are some of the basic packages which you’ll be using. For other
 required packages, search over the net :).
-\end{footnotesize}
+% \end{footnotesize}
+% \endgroup
 \subsection{graphicx package}
 This package is used to import tables, and figure in the document. Our
 document type is article, and we are currently using a4 type paper with the
@@ -174,6 +180,7 @@ in \$ \$ delimiters. For subscript, use underscore and for superscript, use carr
 \multicolumn{1}{|m{2cm}|}{}                          & SD   & 0.07     & 0.08     & 0.06     & 0.07     & 0.05     & 0.05     & 0.06     & 0.07       & 0.05      \\ \hline
 \end{tabularx}}
 % \resizebom{\textwidth}{!}
+\vspace{.1mm}
 {\footnotesize
 \begin{tabularx}{\linewidth}{|m{2cm}|m{1cm}|m{7.5mm}|m{7.5mm}|m{9mm}|m{8mm}|m{8mm}|m{7.5mm}|m{8mm}|m{11mm}|m{8mm}|}
 \hline
@@ -181,6 +188,7 @@ in \$ \$ delimiters. For subscript, use underscore and for superscript, use carr
                                                 & SD   & 0.05     & 0.08     & 0.05     & 0.06     & 0.06     & 0.05     & 0.05     & 0.06       & 0.05      \\ \hline
 \end{tabularx}}
 % \resizebom{\textwidth}{!}
+% \vspace{6mm}
 {\footnotesize
 \begin{tabularx}{\linewidth}{|m{2cm}|m{1cm}|m{7.5mm}|m{7.5mm}|m{9mm}|m{8mm}|m{8mm}|m{7.5mm}|m{8mm}|m{11mm}|m{8mm}|}
 \hline
@@ -256,7 +264,7 @@ a standard (.pdf) file. Thus, the presentation of the document does not change
 on different machines.\newline
 Type style \cite{ref2} is used to indicate logical structure. Emphasized text appears in
 italic style type and input in typewriter style. Type style is specified by three
-components: shape, series, and family.\par\mbox{}\\
+components: shape, series, and family.\\ \par
 There are two ways of producing a bibliography \cite{ref3}. You can either produce
 a bibliography by manually listing the entries of the bibliography or producing
 it automatically using the BibTeX program of LaTeX. The bibliography style can
@@ -344,8 +352,10 @@ void BFS(list <long long int> queue,long long int length
 if my determination to succeed
 is strong enough."}}{\textit{og mandino}}
 \subsection{Minipage (3 marks)}
-\hspace{\dimexpr-\fboxrule-\fboxsep\relax}\fbox{%
-  \begin{minipage}[t]{9cm}
+% \hspace{\dimexpr-\fboxrule-\fboxsep\relax}
+\fbox{%
+  \begin{minipage}{7.75cm}
+  \normalsize{
     \textit{\LaTeX{ } typesets a file of text using the
 TEX program and the \LaTeX{ } “macro
 package” for TEX. That is, it processes
@@ -359,11 +369,12 @@ either (a) a string of letters or (b) a single non-letter. Arguments contained i
 square brackets, [], are optional while
 arguments contained in braces, \{\}, are
 required. \LaTeX{ } is case sensitive. Enter all commands in lower case unless
-explicitly directed to do otherwise.}
+explicitly directed to do otherwise.}}
   \end{minipage}}
   \newpage
 \section{Bibliography (4 marks)}
-4 marks for references using .bib file, otherwise 2 marks.\\
+\normalsize
+4 marks for references using .bib file, otherwise 2 marks.
 \bibliographystyle{unsrt}
 % \printbibliography
 \bibliography{references}
