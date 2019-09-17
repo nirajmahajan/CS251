@@ -14,7 +14,6 @@
 \usepackage{caption}
 \usepackage{csquotes}
 \usepackage{calc}
-% \usepackage[english]{babel}
 \usepackage{float}
 \usepackage{tabularx}
 \usepackage{xcolor}
@@ -26,12 +25,9 @@
 \usepackage{array}
 \setlength{\parindent}{10pt}
 \renewcommand*{\thepage}{\footnotesize\arabic{page}}
-% \usepackage[backend=biber,style=numeric,sorting=none,natbib=true]{biblatex}
-% \addbibresource{references.bib}
 \newcolumntype{C}[1]{>{\centering}m{#1}}
 \graphicspath{ {./images/} }
 \begin{document}
-% \sloppy
 \fontdimen4\font=0.23em
 \begin{titlepage}
 \begin{center}
@@ -46,7 +42,7 @@
 \end{center}
 \end{titlepage}
 \tableofcontents
-\addtocontents{toc}{~\hfill\textbf{Page}\par}
+\addtocontents{toc}{\vspace*{0.1mm}}
 \newpage
 This is a \LaTeX{} document for the course \textbf{Software Systems Lab} with course code \textit{CS 251}. You need to replicate this document. Spacing need not be matched perfectly but page numbers should be. \textbf{1 mark is for the title page.} Bonus marks will be given only if you score (80/80) in the rest. 
 \section{Introduction (4 marks)}
@@ -129,19 +125,19 @@ cos^3\theta+sin^3\theta &=(cos\theta+sin\theta)(cos2\theta-cos\theta sin\theta)\
 \end{align}
 \subsection{Prepositional Formulae using Various Operators (2 marks)}
 \mbox{}\\
-$\displaystyle(\varphi(x))\wedge\psi(x))\longleftrightarrow((\exists(x)\varphi(x)\wedge(\exists x)\psi(x))$\\
+$\displaystyle(\exists x)(\varphi(x)\wedge\psi(x))\longleftrightarrow((\exists(x)\varphi(x)\wedge(\exists x)\psi(x))$\\
 \\
-$\displaystyle(\exists x)(\varphi(x))\wedge\psi(x))\longrightarrow((\exists(x)\varphi(x)\wedge(\exists x)\varphi(x)\wedge(\exists x)\psi(x))$
+$\displaystyle(\exists x)(\varphi(x)\wedge\psi(x))\longrightarrow((\exists(x)\varphi(x)\wedge(\exists x)\varphi(x)\wedge(\exists x)\psi(x))$
 \subsection{Alphabets (3 marks + 1 mark for table)}
 \vspace*{5mm}
 \begin{center}
 \begin{tabular}{ |c|c|c| } 
  \hline
- Binary Operators: & $\times\otimes\oplus\cup\cap$ \\[2ex] 
+ Binary Operators: & $\times \otimes \oplus \cup \cap$ \\[2ex] 
  \hline
- Relation Operators: & $\subset\supset\subseteq\supseteq<>$ \\[2ex] 
+ Relation Operators: & $\subset \supset \subseteq \supseteq \textbf{< >}$ \\[2ex] 
  \hline
- Others: & $\int\oint\sum\prod$ \\[2ex]
+ Others: & $\int \oint \sum \prod$ \\[2ex]
  \hline
 \end{tabular}
 \end{center}
@@ -374,6 +370,5 @@ explicitly directed to do otherwise.}}
 \normalsize
 4 marks for references using .bib file, otherwise 2 marks.
 \bibliographystyle{unsrt}
-% \printbibliography
 \bibliography{references}
 \end{document}
