@@ -31,11 +31,11 @@
 \newcolumntype{C}[1]{>{\centering}m{#1}}
 \graphicspath{ {./images/} }
 \begin{document}
-\sloppy
+% \sloppy
 \fontdimen4\font=0.23em
 \begin{titlepage}
 \begin{center}
-\vspace*{72mm}
+\vspace*{67mm}
 \textbf{\Huge{Software Systems Lab: OutLab 5}}\\[3mm]
 \textbf{\Huge{\LaTeX{ }(80 marks)}}\\[1cm]
 \LARGE{Ctrl Alt Defeat}\\[5mm]
@@ -128,14 +128,16 @@ cos^3\theta+sin^3\theta &=(cos\theta+sin\theta)(cos2\theta-cos\theta sin\theta)\
 						&=(1/2)(cos\theta+sin\theta)(2-sin(2\theta))
 \end{align}
 \subsection{Prepositional Formulae using Various Operators (2 marks)}
+\mbox{}\\
 $\displaystyle(\varphi(x))\wedge\psi(x))\longleftrightarrow((\exists(x)\varphi(x)\wedge(\exists x)\psi(x))$\\
+\\
 $\displaystyle(\exists x)(\varphi(x))\wedge\psi(x))\longrightarrow((\exists(x)\varphi(x)\wedge(\exists x)\varphi(x)\wedge(\exists x)\psi(x))$
 \subsection{Alphabets (3 marks + 1 mark for table)}
+\vspace*{5mm}
 \begin{center}
 \begin{tabular}{ |c|c|c| } 
  \hline
  Binary Operators: & $\times\otimes\oplus\cup\cap$ \\[2ex] 
-% \rule{0pt}{2cm}
  \hline
  Relation Operators: & $\subset\supset\subseteq\supseteq<>$ \\[2ex] 
  \hline
@@ -143,6 +145,7 @@ $\displaystyle(\exists x)(\varphi(x))\wedge\psi(x))\longrightarrow((\exists(x)\v
  \hline
 \end{tabular}
 \end{center}
+\vspace*{1mm}
 \subsection{Mathematical Formulas (5 marks)}
 \boldmath
 \begin{enumerate}
@@ -155,7 +158,7 @@ $\displaystyle(\exists x)(\varphi(x))\wedge\psi(x))\longrightarrow((\exists(x)\v
 \newpage
 \section{Tables (10 marks)}
 To combine rows a package must be imported with in your preamble, then you
-can use the XXXXXXX command in your document. The table below includes
+can use the MULTIROW command in your document. The table below includes
 mathematical notations, which you can produce by embedding the expression
 in \$ \$ delimiters. For subscript, use underscore and for superscript, use carrot.\\
 \vspace{3mm}
@@ -170,6 +173,9 @@ in \$ \$ delimiters. For subscript, use underscore and for superscript, use carr
 \multicolumn{1}{|C{16mm}|}{\multirow{2}{*}{$Baseline$}} & Mean & 0.84     & 0.41     & \textbf{0.56}     & \textbf{0.46}     & \textbf{0.55}     & \textbf{0.60}     & 0.56     & 0.57       & 0.63      \\ \cline{2-11} 
 \multicolumn{1}{|C{16mm}|}{}                          & SD   & 0.07     & 0.08     & 0.06     & 0.07     & 0.05     & 0.05     & 0.06     & 0.07       & 0.05      \\ \cline{1-11}
 \end{tabular}}}
+\newline
+\vspace*{0.05mm}
+\newline
 {\fontsize{9}{11}\selectfont
 \noindent\makebox[\textwidth]{
 \begin{tabular}{|C{16mm}|C{7.5mm}|C{6.5mm}|C{6.5mm}|C{9mm}|C{7mm}|C{7mm}|C{6.5mm}|C{7mm}|C{9.5mm}|m{7mm}|}
@@ -177,6 +183,8 @@ in \$ \$ delimiters. For subscript, use underscore and for superscript, use carr
 \multirow{2}{*}{$ScaComp_h$}                       & Mean & 0.89     & 0.46   & 0.53     & 0.43     & 0.53     & 0.58     & 0.54     & 0.56       & 0.62      \\ \cline{2-11}
                                                 & SD   & 0.05     & 0.08     & 0.05     & 0.06     & 0.06     & 0.05     & 0.05     & 0.06       & 0.05      \\ \cline{1-11}
 \end{tabular}}}
+\newline
+\vspace*{-1.5mm}
 {\fontsize{9}{11}\selectfont
 \noindent\makebox[\textwidth]{
 \begin{tabular}{|C{16mm}|C{7.5mm}|C{6.5mm}|C{6.5mm}|C{9mm}|C{7mm}|C{7mm}|C{6.5mm}|C{7mm}|C{9.5mm}|m{7mm}|}
@@ -213,6 +221,7 @@ the document, and avoid any overflow.
     \label{fig:2}
   \end{subfigure}
 \end{figure}
+\noindent\par
 The images have been put in, and they are side by side in the same document
 on the same page. We have used the package \textbf{floatrow} and \textbf{graphicx} to import
 images on Page 6.\par
@@ -222,11 +231,11 @@ instance images as \textbf{subfigures}, here it is.
     \hspace{1cm}
     \begin{subfigure}{.4\textwidth}
         \includegraphics[width=\linewidth, height=1.5in]{3}
-        \caption{Welcome to Hotel California}
+        \caption{\normalsize Welcome to Hotel California}
     \end{subfigure}\hspace{1.5cm}
     \begin{subfigure}{.4\textwidth}
         \includegraphics[width=\linewidth, height=1.5in]{4}
-        \caption{50th Inter IIT Sports Meet}
+        \caption{\normalsize 50th Inter IIT Sports Meet}
     \end{subfigure}
     \caption*{Figure 3: These two images have nothing in common.}
 \end{figure}
@@ -337,12 +346,13 @@ void BFS(list <long long int> queue,long long int length
 \section{Exotic Features (Bonus - 6 marks)}
 \subsection{Epigraph Style (3 marks)}
 \large{\textbf{Chapter 1: Theory of Life}}
-\epigraph{\textit{"failure will never overtake me
+\epigraph{\normalsize{\textit{"failure will never overtake me
 if my determination to succeed
-is strong enough."}}{\textit{og mandino}}
+is strong enough."}}}{\normalsize{\textit{og mandino}}}
 \subsection{Minipage (3 marks)}
 \fbox{%
   \begin{minipage}{7.75cm}
+  \sloppy
   \normalsize{
     \textit{\LaTeX{ } typesets a file of text using the
 TEX program and the \LaTeX{ } “macro
