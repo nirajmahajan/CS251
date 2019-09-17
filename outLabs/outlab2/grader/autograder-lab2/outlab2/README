@@ -1,0 +1,3 @@
+due to too many contraints and changes in the problem statement you are tested on only the testcase provided to you.
+Put you file named "outlab2-<team-name>.tar.gz" in submissions folder.
+and then run ./test_teamq3.sh "<team-name>" . Note that the double quotes are there for teams having spaces in their names. The last 6 columns will be your marks in the 6 parts.

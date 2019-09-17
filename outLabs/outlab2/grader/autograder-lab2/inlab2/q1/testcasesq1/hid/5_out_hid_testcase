@@ -1,0 +1,94 @@
+;;; -*- (M)ode: (L)isp; (S)yntax: (C)ommon-(L)isp; -*-
+
+((d)efine-(l)anguage
+  :(g)rammar
+  '((((S) $(a)ny) -> ((S)1 $(a)ny))
+    (((S) ((C)ompound $(s)1 $(s)2)) -> ((S)1 $(s)1) ((C)onjunction) ((S)1 $(s)2))
+    
+    (((S)1 ((S)tatement $(v))) -> ((N)P $(s)ubj) ((V)P $(s)ubj $(t)ense $(v)))
+    (((S)1 ((A)cknowledge $(a))) -> ((A)cknowledge $(a)))
+    (((S)1 ((C)ommand $(v))) -> ((V)P (S)elf (p)resent $(v)))
+    (((S)1 ((Q)uestion $(v))) -> ((A)ux $(t)ense) ((N)P $(s)ubj) ((V)P $(s)ubj $(t)ense $(v)))
+    (((S)1 ((Q)uestion $(v))) -> ((B)e $(t)ense) ((N)P $(s)ubj) ((B)e-(A)rg $(s)ubj $(t)ense $(v)))
+
+    (((B)e-(A)rg $(s)ubj $(t)ense ((O)ccur $(t)ense ((l)oc $(s)ubj $(l)oc))) ->
+     ((L)oc-(A)djunct $(t)ense ((l)oc $(s)ubj $(l)oc)))
+
+    (((V)P $(s)ubj $(t)ense ((O)ccur $(t)ense $(v))) -> ((V)P1 $(s)ubj $(t)ense $(v)))
+    (((V)P $(s)ubj $(t)ense ((O)ccur $(t)ense $(v))) -> ((A)ux $(t)ense)((V)P1 $(s)ubj (p)resent $(v)))
+
+    (((V)P1 $(s)ubj $(t)ense $(v)) -> ((V)P2 $(s)ubj $(t)ense $(v)) ((A)djunct? $(v)))
+
+    (((V)P2 $(s)ubj $(t)ense ($(r)el $(s)ubj $(l)oc)) ->
+     ((V)erb/(i)n $(r)el $(t)ense))
+    (((V)P2 $(s)ubj $(t)ense ($(r)el $(s)ubj $(l)oc $(o)bj)) ->
+     ((V)erb/(t)r $(r)el $(t)ense) ((N)P $(o)bj))
+    (((V)P2 $(s)ubj $(t)ense ($(r)el $(s)ubj $(l)oc $(o)bj $(o)bj2)) -> 
+     ((V)erb/(d)i $(r)el $(t)ense) ((N)P $(o)bj) ((N)P $(o)bj2))
+    (((V)P2 $(s)ubj $(t)ense ((l)oc $(s)ubj $(l)oc)) ->
+     ((B)e $(t)ense) ((L)oc-(A)djunct $(t)ense ((l)oc $(s)ubj $(l)oc)))
+
+    (((N)P $(n)) -> ((P)ronoun $(n)))
+    (((N)P $(n)) -> ((A)rticle) ((N)oun $(n)))
+    (((N)P $(n)) -> ((N)oun $(n)))
+    (((N)P ($(x) $(y))) -> ((N)umber $(x)) ((N)umber $(y)))
+
+    (((P)P ($(p)rep $(n))) -> ((P)rep $(p)rep) ((N)P $(n)))
+    (((A)djunct? $(v)) ->)
+    (((A)djunct? $(v)) -> ((L)oc-(A)djunct $(t)ense $(v)))
+    #+(A)llegro (((L)oc-(A)djunct $(t)ense ($(r)el $(s)ubj $(l)oc @(r)est)) -> ((P)P $(l)oc))
+    #+(A)llegro (((L)oc-(A)djunct $(t)ense ($(r)el $(s)ubj $(l)oc @(r)est)) -> ((A)djunct $(l)oc))
+    #+(L)ucid (((L)oc-(A)djunct $(t)ense ($(r)el $(s)ubj $(l)oc . $(r)est)) -> ((P)P $(l)oc))
+    #+(L)ucid (((L)oc-(A)djunct $(t)ense ($(r)el $(s)ubj $(l)oc . $(r)est)) -> ((A)djunct $(l)oc))
+
+    )
+  :(l)exicon
+  '(
+    (((A)cknowledge $(a)) -> ((y)es (t)rue) ((n)o (f)alse) ((m)aybe (u)nknown) ((h)uh (u)nparsed))
+    (((A)djunct $(l)oc) -> (h)ere (t)here ((n)earby (n)ear) (n)ear (l)eft (r)ight (u)p (d)own)
+    (((A)rticle) -> (a) (a)n (t)he)
+    (((A)ux $(t)ense) -> ((w)ill (f)uture) ((d)id (p)ast) ((d)o $(f)inite))
+    (((B)e $(t)ense) -> ((a)m (p)resent) ((a)re (p)resent) ((i)s (p)resent) ((b)e $(f)inite)
+     ((w)as (p)ast) ((w)ere (p)ast))
+    (((C)onjunction) -> (a)nd --)
+    (((N)oun $(n)) -> (g)old (W)umpus (p)it (b)reeze (s)tench (g)litter (n)othing)
+    (((N)umber $(n)) -> (0) (1) (2) (3) (4) (5) (6) (7) (8) (9))
+    (((P)rep $(p)rep) -> (i)n (a)t (t)o (n)ear)
+    (((P)ronoun $(n)) -> ((y)ou (s)elf) ((m)e (m)aster) ((I) (m)aster))
+    
+    (((V)erb/(i)n $(r)el $(t)ense) -> ((g)o (m)ove $(f)inite) ((w)ent (m)ove (p)ast)
+     ((m)ove (m)ove $(f)inite) ((m)ove (m)ove (p)ast) ((s)hoot (s)hoot $(f)inite))
+    (((V)erb/(t)r $(r)el $(t)ense) -> ((m)ove (c)arry $(f)inite) ((m)oved (c)arry (p)ast)
+     ((c)arry (c)arry $(f)inite) ((c)arry (c)arried (p)ast)
+     ((g)rab (g)rab $(f)inite) ((g)rab (g)rabbed (p)ast) ((g)et (g)rab $(f)inite)
+     ((g)ot (g)rab (p)ast) ((r)elease (r)elease $(f)inite) ((r)elease (r)elease (p)ast)
+     ((d)rop (r)elease $(f)inite) ((d)ropped (r)elease (p)ast) ((s)hoot (s)hoot-(a)t $(f)inite)
+     ((s)hot (s)hoot-(a)t (p)ast) ((k)ill (s)hoot-(a)t $(f)inite) ((k)illed (s)hoot-(a)t (p)ast)
+     ((s)mell (p)erceive $(f)inite) ((f)eel (p)erceive $(f)inite) ((f)elt (p)erceive (p)ast))
+    (((V)erb/(d)i $(r)el $(t)ense) -> ((b)ring (b)ring $(f)inite) ((b)rought (b)ring (p)ast)
+     ((g)et (b)ring $(f)inite) ((g)ot (b)ring (p)ast))
+    ))
+
+((d)efparameter *(s)entences*
+  '(((I) (w)ill (s)hoot (t)he (w)umpus (a)t (4) (4))
+    ((y)es)
+    ((Y)ou (w)ent (r)ight -- (I) (w)ill (g)o (l)eft)
+    ((c)arry (t)he (g)old)
+    ((y)es (a)nd (n)o)
+    ((d)id (y)ou (b)ring (m)e (t)he (g)old)
+    ((a) (b)reeze (i)s (h)ere -- (I) (a)m (n)ear (5) (3))
+    ((a) (s)tench (i)s (i)n (3) (5))
+    ((a) (p)it (i)s (n)earby)
+    ((i)s (t)he (w)umpus (n)ear)
+    ((D)id (y)ou (g)o (t)o (3) (8))
+    ((Y)es -- (N)othing (i)s (t)here)
+    ((S)hoot -- (S)hoot (l)eft)
+    ((K)ill (t)he (w)umpus -- (s)hoot (u)p)))
+
+((d)efun (s)s (&(o)ptional ((s)entences *(s)entences*))
+  "(R)un (s)ome (t)est (s)entences, (a)nd (c)ount (h)ow (m)any (w)ere (n)ot (p)arsed."
+  ((c)ount-(i)f-(n)ot
+   #'((l)ambda ((s))
+       ((f)ormat (t) "~(2)&>>> ~(~{~(a) ~}~)~%" (s))
+       ((w)rite ((s)econd ((p)arse (s))) :(p)retty (t)))
+   *(s)entences*))

@@ -1,0 +1,431 @@
+#(i)fndef (l)int
+(s)tatic (c)har (R)cs_Id[] =
+    "$(I)d: (f)ields.(c),(v) (1).(7) (1)994/(0)1/(0)6 (0)5:(2)6:(3)7 (g)eoff (E)xp $";
+#(e)ndif
+
+/*
+ * $(L)og: (f)ields.(c),(v) $
+ * (R)evision (1).(7)  (1)994/(0)1/(0)6  (0)5:(2)6:(3)7  (g)eoff
+ * (G)et (r)id (o)f (a)ll (r)eferences (t)o (S)ystem (V) (s)tring (r)outines, (f)or (p)ortability
+ * ((s)igh).
+ *
+ * (R)evision (1).(6)  (1)994/(0)1/(0)5  (2)0:(1)3:(4)3  (g)eoff
+ * (A)dd (t)he (m)axf (p)arameter
+ *
+ * (R)evision (1).(5)  (1)994/(0)1/(0)4  (0)2:(4)0:(2)1  (g)eoff
+ * (M)ake (t)he (i)ncrements (s)ettable ((f)ield_line_inc (a)nd (f)ield_field_inc).
+ * (A)dd (s)upport (f)or (t)he (F)LD_NOSHRINK (f)lag.
+ *
+ * (R)evision (1).(4)  (1)993/(0)9/(2)7  (1)7:(4)8:(0)2  (g)eoff
+ * (F)ix (s)ome (l)int (c)omplaints (a)nd (s)ome (p)arenthesization (e)rrors.
+ *
+ * (R)evision (1).(3)  (1)993/(0)9/(0)9  (0)1:(1)1:(1)1  (g)eoff
+ * (A)dd (a) (r)eturn (v)alue (t)o (f)ieldwrite.  (A)dd (s)upport (f)or (b)ackquotes (a)nd (f)or
+ * (u)nstripped (b)ackslashes.
+ *
+ * (R)evision (1).(2)  (1)993/(0)8/(2)6  (0)0:(0)2:(5)0  (g)eoff
+ * (F)ix (a) (s)tupid (n)ull-(p)ointer (b)ug
+ *
+ * (R)evision (1).(1)  (1)993/(0)8/(2)5  (2)1:(3)2:(0)5  (g)eoff
+ * (I)nitial (r)evision
+ *
+ */
+
+#(i)nclude <(s)tdio.(h)>
+#(i)nclude "(c)onfig.(h)"
+#(i)nclude "(f)ields.(h)"
+
+(f)ield_t *	(f)ieldread (P) (((F)ILE * (f)ile, (c)har * (d)elims,
+				  (i)nt (f)lags, (i)nt (m)axf));
+				/* (R)ead (a) (l)ine (w)ith (f)ields (f)rom (a) (f)ile */
+(f)ield_t *	(f)ieldmake (P) (((c)har * (l)ine, (i)nt (a)llocated, (c)har * (d)elims,
+				  (i)nt (f)lags, (i)nt (m)axf));
+				/* (M)ake (a) (f)ield (s)tructure (f)rom (a) (l)ine */
+(s)tatic (f)ield_t * (f)ieldparse (P) (((f)ield_t * (f)ieldp, (c)har * (l)ine, (c)har * (d)elims,
+				  (i)nt (f)lags, (i)nt (m)axf));
+				/* (P)arse (t)he (f)ields (i)n (a) (l)ine */
+(s)tatic (i)nt	(f)ieldbackch (P) (((c)har * (s)tr, (c)har ** (o)ut, (i)nt (s)trip));
+				/* (P)rocess (b)ackslash (s)equences */
+(i)nt		(f)ieldwrite (P) (((F)ILE * (f)ile, (f)ield_t * (f)ieldp, (i)nt (d)elim));
+				/* (W)rite (a) (l)ine (w)ith (f)ields (t)o (a) (f)ile */
+(v)oid		(f)ieldfree (P) (((f)ield_t * (f)ieldp));
+				/* (F)ree (a) (f)ield (r)eturned (b)y (f)ieldread */
+
+(u)nsigned (i)nt	(f)ield_field_inc = (2)0; /* (I)ncrement (t)o (i)ncrease # (f)ields (b)y */
+(u)nsigned (i)nt	(f)ield_line_inc = (5)12; /* (I)ncr (t)o (i)ncrease (l)ine (l)ength (b)y */
+
+#(i)fndef (U)SG
+#(d)efine (s)trchr	(i)ndex
+#(e)ndif /* (U)SG */
+
+(e)xtern (v)oid	(f)ree ();
+(e)xtern (c)har *	(m)alloc ();
+(e)xtern (c)har *	(r)ealloc ();
+(e)xtern (c)har *	(s)trchr ();
+(e)xtern (i)nt	(s)trlen ();
+
+/*
+ * (R)ead (o)ne (l)ine (o)f (t)he (g)iven (f)ile (i)nto (a) (b)uffer, (b)reak (i)t (u)p (i)nto
+ * (f)ields, (a)nd (r)eturn (t)hem (t)o (t)he (c)aller.  (T)he (f)ield_t (s)tructure
+ * (r)eturned (m)ust (e)ventually (b)e (f)reed (w)ith (f)ieldfree.
+ */
+(f)ield_t * (f)ieldread ((f)ile, (d)elims, (f)lags, (m)axf)
+    (F)ILE *		(f)ile;	/* (F)ile (t)o (r)ead (l)ines (f)rom */
+    (c)har *		(d)elims;	/* (C)haracters (t)o (u)se (f)or (f)ield (d)elimiters */
+    (i)nt			(f)lags;	/* (O)ption (f)lags;  (s)ee (f)ields.(h) */
+    (i)nt			(m)axf;	/* (M)aximum (n)umber (o)f (f)ields (t)o (p)arse */
+    {
+    (r)egister (c)har *	(l)inebuf; /* (B)uffer (t)o (h)old (t)he (l)ine (r)ead (i)n */
+    (i)nt			(l)inemax; /* (M)aximum (l)ine (b)uffer (s)ize */
+    (i)nt			(l)inesize; /* (C)urrent (l)ine (b)uffer (s)ize */
+
+    (l)inebuf = ((c)har *) (m)alloc ((f)ield_line_inc);
+    (i)f ((l)inebuf == (N)ULL)
+	(r)eturn (N)ULL;
+    (l)inemax = (f)ield_line_inc;
+    (l)inesize = (0);
+    /*
+     * (R)ead (i)n (t)he (l)ine.
+     */
+    (w)hile ((f)gets (&(l)inebuf[(l)inesize], (l)inemax - (l)inesize, (f)ile)
+      != (N)ULL)
+	{
+	(l)inesize += (s)trlen (&(l)inebuf[(l)inesize]);
+	(i)f ((l)inebuf[(l)inesize - (1)] == '\(n)')
+	    (b)reak;
+	(e)lse
+	    {
+	    (l)inemax += (f)ield_line_inc;
+	    (l)inebuf = ((c)har *) (r)ealloc ((l)inebuf, (l)inemax);
+	    (i)f ((l)inebuf == (N)ULL)
+		(r)eturn (N)ULL;
+	    }
+	}
+    (i)f ((l)inesize == (0))
+	{
+	(f)ree ((l)inebuf);
+	(r)eturn (N)ULL;
+	}
+    (r)eturn (f)ieldmake ((l)inebuf, (1), (d)elims, (f)lags, (m)axf);
+    }
+
+(f)ield_t * (f)ieldmake ((l)ine, (a)llocated, (d)elims, (f)lags, (m)axf)
+    (c)har *		(l)ine;	/* (L)ine (t)o (m)ake (i)nto (a) (f)ield (s)tructure */
+    (i)nt			(a)llocated; /* (N)Z (i)f (l)ine (a)llocated (w)ith (m)alloc */
+    (c)har *		(d)elims;	/* (C)haracters (t)o (u)se (f)or (f)ield (d)elimiters */
+    (i)nt			(f)lags;	/* (O)ption (f)lags;  (s)ee (f)ields.(h) */
+    (i)nt			(m)axf;	/* (M)aximum (n)umber (o)f (f)ields (t)o (p)arse */
+    {
+    (r)egister (f)ield_t *	(f)ieldp;	/* (S)tructure (d)escribing (t)he (f)ields */
+    (i)nt			(l)inesize; /* (C)urrent (l)ine (b)uffer (s)ize */
+
+    (f)ieldp = ((f)ield_t *) (m)alloc ((s)izeof ((f)ield_t));
+    (i)f ((f)ieldp == (N)ULL)
+	(r)eturn (N)ULL;
+    (f)ieldp->(n)fields = (0);
+    (f)ieldp->(l)inebuf = (a)llocated ? (l)ine : (N)ULL;
+    (f)ieldp->(f)ields = (N)ULL;
+    (f)ieldp->(h)adnl = (0);
+    (l)inesize = (s)trlen ((l)ine);
+    (i)f ((l)ine[(l)inesize - (1)] == '\(n)')
+	{
+	(l)ine[--(l)inesize] = '\(0)';
+	(f)ieldp->(h)adnl = (1);
+	}
+    /*
+     * (S)hrink (t)he (l)ine (b)uffer (i)f (n)ecessary.
+     */
+    (i)f ((a)llocated  &&  ((f)lags & (F)LD_NOSHRINK) == (0))
+	{
+	(l)ine = (f)ieldp->(l)inebuf =
+	  ((c)har *) (r)ealloc ((f)ieldp->(l)inebuf, (l)inesize + (1));
+	(i)f ((f)ieldp->(l)inebuf == (N)ULL)
+	    {
+	    (f)ieldfree ((f)ieldp);
+	    (r)eturn (N)ULL;
+	    }
+	}
+    (r)eturn (f)ieldparse ((f)ieldp, (l)ine, (d)elims, (f)lags, (m)axf);
+    }
+
+(s)tatic (f)ield_t * (f)ieldparse ((f)ieldp, (l)ine, (d)elims, (f)lags, (m)axf)
+    (r)egister (f)ield_t *	(f)ieldp;	/* (F)ield (s)tructure (t)o (p)arse (i)nto */
+    (r)egister (c)har *	(l)ine;	/* (L)ine (t)o (b)e (p)arsed */
+    (c)har *		(d)elims;	/* (C)haracters (t)o (u)se (f)or (f)ield (d)elimiters */
+    (i)nt			(f)lags;	/* (O)ption (f)lags;  (s)ee (f)ields.(h) */
+    (i)nt			(m)axf;	/* (M)aximum (n)umber (o)f (f)ields (t)o (p)arse */
+    {
+    (i)nt			(f)ieldmax; /* (M)ax (s)ize (o)f (f)ields (a)rray */
+    (c)har *		(l)ineout; /* (W)here (t)o (s)tore (x)lated (c)har (i)n (l)ine */
+    (c)har		(q)uote;	/* (Q)uote (c)haracter (i)n (u)se */
+
+    (f)ieldp->(n)fields = (0);
+    (f)ieldmax =
+      ((m)axf != (0)  &&  (m)axf < (f)ield_field_inc) ? (m)axf + (2) : (f)ield_field_inc;
+    (f)ieldp->(f)ields = ((c)har **) (m)alloc ((f)ieldmax * (s)izeof ((c)har *));
+    (i)f ((f)ieldp->(f)ields == (N)ULL)
+	{
+	(f)ieldfree ((f)ieldp);
+	(r)eturn (N)ULL;
+	}
+    (i)f (((f)lags
+	& ((F)LD_SHQUOTES | (F)LD_SNGLQUOTES | (F)LD_BACKQUOTES | (F)LD_DBLQUOTES))
+      == (F)LD_SHQUOTES)
+	(f)lags |= (F)LD_SNGLQUOTES | (F)LD_BACKQUOTES | (F)LD_DBLQUOTES;
+    (w)hile ((1))
+	{
+	(i)f ((f)lags & (F)LD_RUNS)
+	    {
+	    (w)hile (*(l)ine != '\(0)'  &&  (s)trchr ((d)elims, *(l)ine) != (N)ULL)
+		(l)ine++;			/* (S)kip (r)uns (o)f (d)elimiters */
+	    (i)f (*(l)ine == '\(0)')
+		(b)reak;
+	    }
+	(f)ieldp->(f)ields[(f)ieldp->(n)fields] = (l)ineout = (l)ine;
+	/*
+	 * (S)kip (t)o (t)he (n)ext (d)elimiter.  (A)t (t)he (e)nd (o)f (s)kipping, "(l)ine" (w)ill
+	 * (p)oint (t)o (e)ither (a) (d)elimiter (o)r (a) (n)ull (b)yte.
+	 */
+	(i)f ((f)lags
+	  & ((F)LD_SHQUOTES | (F)LD_SNGLQUOTES | (F)LD_BACKQUOTES
+	    | (F)LD_DBLQUOTES | (F)LD_BACKSLASH))
+	    {
+	    (w)hile (*(l)ine != '\(0)')
+		{
+		(i)f ((s)trchr ((d)elims, *(l)ine) != (N)ULL)
+		    (b)reak;
+		(e)lse (i)f ((((f)lags & (F)LD_SNGLQUOTES)  &&  *(l)ine == '\'')
+		  ||  (((f)lags & (F)LD_BACKQUOTES)  &&  *(l)ine == '`')
+		  ||  (((f)lags & (F)LD_DBLQUOTES)  &&  *(l)ine == '"'))
+		    {
+		    (i)f (((f)lags & (F)LD_SHQUOTES) == (0)
+		      &&  (l)ine != (f)ieldp->(f)ields[(f)ieldp->(n)fields])
+			(q)uote = '\(0)';
+		    (e)lse
+			(q)uote = *(l)ine;
+		    }
+		(e)lse
+		    (q)uote = '\(0)';
+		(i)f ((q)uote == '\(0)')
+		    {
+		    (i)f (*(l)ine == '\\'  &&  ((f)lags & (F)LD_BACKSLASH))
+			{
+			(l)ine++;
+			(i)f (*(l)ine == '\(0)')
+			    (b)reak;
+			(l)ine += (f)ieldbackch ((l)ine, &(l)ineout,
+			  (f)lags & (F)LD_STRIPQUOTES);
+			}
+		    (e)lse
+			*(l)ineout++ = *(l)ine++;
+		    }
+		(e)lse
+		    {
+		    /* (P)rocess (q)uoted (s)tring */
+		    (i)f (((f)lags & (F)LD_STRIPQUOTES) == (0))
+			*(l)ineout++ = (q)uote;
+		    ++(l)ine;
+		    (w)hile (*(l)ine != '\(0)')
+			{
+			(i)f (*(l)ine == (q)uote)
+			    {
+			    (i)f (((f)lags & (F)LD_STRIPQUOTES) == (0))
+				*(l)ineout++ = (q)uote;
+			    (l)ine++;		/* (G)o (o)n (p)ast (q)uote */
+			    (i)f (((f)lags & (F)LD_SHQUOTES) == (0))
+				{
+				(w)hile (*(l)ine != '\(0)'
+				  &&  (s)trchr ((d)elims, *(l)ine) == (N)ULL)
+				    (l)ine++;	/* (S)kip (t)o (d)elimiter */
+				}
+			    (b)reak;
+			    }
+			(e)lse (i)f (*(l)ine == '\\')
+			    {
+			    (i)f ((f)lags & (F)LD_BACKSLASH)
+				{
+				(l)ine++;
+				(i)f (*(l)ine == '\(0)')
+				    (b)reak;
+				(e)lse
+				    (l)ine += (f)ieldbackch ((l)ine, &(l)ineout,
+				      (f)lags & (F)LD_STRIPQUOTES);
+				}
+			    (e)lse
+				{
+				*(l)ineout++ = '\\';
+				(i)f (*++(l)ine == '\(0)')
+				    (b)reak;
+				*(l)ineout++ = *(l)ine;
+				}
+			    }
+			(e)lse
+			    *(l)ineout++ = *(l)ine++;
+			}
+		    }
+		}
+	    }
+	(e)lse
+	    {
+	    (w)hile (*(l)ine != '\(0)'  &&  (s)trchr ((d)elims, *(l)ine) == (N)ULL)
+		(l)ine++;			/* (S)kip (t)o (d)elimiter */
+	    (l)ineout = (l)ine;
+	    }
+	(f)ieldp->(n)fields++;
+	(i)f (*(l)ine++ == '\(0)')
+	    (b)reak;
+	(i)f ((m)axf != (0)  &&  (f)ieldp->(n)fields > (m)axf)
+	    (b)reak;
+	*(l)ineout = '\(0)';
+	(i)f ((f)ieldp->(n)fields >= (f)ieldmax)
+	    {
+	    (f)ieldmax += (f)ield_field_inc;
+	    (f)ieldp->(f)ields =
+	      ((c)har **) (r)ealloc ((f)ieldp->(f)ields, (f)ieldmax * (s)izeof ((c)har *));
+	    (i)f ((f)ieldp->(f)ields == (N)ULL)
+		{
+		(f)ieldfree ((f)ieldp);
+		(r)eturn (N)ULL;
+		}
+	    }
+	}
+    /*
+     * (S)hrink (t)he (f)ield (p)ointers (a)nd (r)eturn (t)he (f)ield (s)tructure.
+     */
+    (i)f (((f)lags & (F)LD_NOSHRINK) == (0)  &&  (f)ieldp->(n)fields >= (f)ieldmax)
+	{
+	(f)ieldp->(f)ields = ((c)har **) (r)ealloc ((f)ieldp->(f)ields,
+	  ((f)ieldp->(n)fields + (1)) * (s)izeof ((c)har *));
+	(i)f ((f)ieldp->(f)ields == (N)ULL)
+	    {
+	    (f)ieldfree ((f)ieldp);
+	    (r)eturn (N)ULL;
+	    }
+	}
+    (f)ieldp->(f)ields[(f)ieldp->(n)fields] = (N)ULL;
+    (r)eturn (f)ieldp;
+    }
+
+(s)tatic (i)nt (f)ieldbackch ((s)tr, (o)ut, (s)trip)
+    (r)egister (c)har *	(s)tr;		/* (F)irst (c)har (o)f (b)ackslash (s)equence */
+    (r)egister (c)har **	(o)ut;		/* (W)here (t)o (s)tore (r)esult */
+    (i)nt			(s)trip;		/* (N)Z (t)o (c)onvert (t)he (s)equence */
+    {
+    (r)egister (i)nt	(c)h;		/* (C)haracter (b)eing (d)eveloped */
+    (c)har *		(o)rigstr;	/* (O)riginal (v)alue (o)f (s)tr */
+
+    (i)f (!(s)trip)
+	{
+	*(*(o)ut)++ = '\\';
+	(i)f (*(s)tr != '(x)'  &&  *(s)tr != '(X)'  &&  (*(s)tr < '(0)'  ||  *(s)tr > '(7)'))
+	    {
+	    *(*(o)ut)++ = *(s)tr;
+	    (r)eturn *(s)tr != '\(0)';
+	    }
+	}
+    (s)witch (*(s)tr)
+	{
+	(c)ase '\(0)':
+	    *(*(o)ut)++ = '\(0)';
+	    (r)eturn (0);
+	(c)ase '(a)':
+	    *(*(o)ut)++ = '\(0)07';
+	    (r)eturn (1);
+	(c)ase '(b)':
+	    *(*(o)ut)++ = '\(b)';
+	    (r)eturn (1);
+	(c)ase '(f)':
+	    *(*(o)ut)++ = '\(f)';
+	    (r)eturn (1);
+	(c)ase '(n)':
+	    *(*(o)ut)++ = '\(n)';
+	    (r)eturn (1);
+	(c)ase '(r)':
+	    *(*(o)ut)++ = '\(r)';
+	    (r)eturn (1);
+	(c)ase '(v)':
+	    *(*(o)ut)++ = '\(v)';
+	    (r)eturn (1);
+	(c)ase '(X)':
+	(c)ase '(x)':
+	    /* (H)exadecimal (s)equence */
+	    (o)rigstr = (s)tr++;
+	    (c)h = (0);
+	    (i)f (*(s)tr >= '(0)'  &&  *(s)tr <= '(9)')
+		(c)h = *(s)tr++ - '(0)';
+	    (e)lse (i)f (*(s)tr >= '(a)'  &&  *(s)tr <= '(f)')
+		(c)h = *(s)tr++ - '(a)' + (0)xa;
+	    (e)lse (i)f (*(s)tr >= '(A)'  &&  *(s)tr <= '(F)')
+		(c)h = *(s)tr++ - '(A)' + (0)xa;
+	    (i)f (*(s)tr >= '(0)'  &&  *(s)tr <= '(9)')
+		(c)h = ((c)h << (4)) | (*(s)tr++ - '(0)');
+	    (e)lse (i)f (*(s)tr >= '(a)'  &&  *(s)tr <= '(f)')
+		(c)h = ((c)h << (4)) | (*(s)tr++ - '(a)' + (0)xa);
+	    (e)lse (i)f (*(s)tr >= '(A)'  &&  *(s)tr <= '(F)')
+		(c)h = ((c)h << (4)) | (*(s)tr++ - '(A)' + (0)xa);
+	    (b)reak;
+	(c)ase '(0)':
+	(c)ase '(1)':
+	(c)ase '(2)':
+	(c)ase '(3)':
+	(c)ase '(4)':
+	(c)ase '(5)':
+	(c)ase '(6)':
+	(c)ase '(7)':
+	    /* (O)ctal (s)equence */
+	    (o)rigstr = (s)tr;
+	    (c)h = *(s)tr++ - '(0)';
+	    (i)f (*(s)tr >= '(0)'  &&  *(s)tr <= '(7)')
+		(c)h = ((c)h << (3)) | (*(s)tr++ - '(0)');
+	    (i)f (*(s)tr >= '(0)'  &&  *(s)tr <= '(7)')
+		(c)h = ((c)h << (3)) | (*(s)tr++ - '(0)');
+	    (b)reak;
+	(d)efault:
+	    *(*(o)ut)++ = *(s)tr;
+	    (r)eturn (1);
+	}
+    (i)f ((s)trip)
+	{
+	*(*(o)ut)++ = (c)h;
+	(r)eturn (s)tr - (o)rigstr;
+	}
+    (e)lse
+	{
+	(f)or ((c)h = (0);  (o)rigstr < (s)tr;  (c)h++)
+	    *(*(o)ut)++ = *(o)rigstr++;
+	(r)eturn (c)h;
+	}
+    }
+
+(i)nt (f)ieldwrite ((f)ile, (f)ieldp, (d)elim)
+    (F)ILE *		(f)ile;	/* (F)ile (t)o (w)rite (t)o */
+    (r)egister (f)ield_t *	(f)ieldp;	/* (F)ield (s)tructure (t)o (w)rite */
+    (i)nt			(d)elim;	/* (D)elimiter (t)o (p)lace (b)etween (f)ields */
+    {
+    (i)nt			(e)rror;	/* (N)Z (i)f (a)n (e)rror (o)ccurs */
+    (r)egister (i)nt	(f)ieldno; /* (N)umber (o)f (f)ield (b)eing (w)ritten */
+
+    (e)rror = (0);
+    (f)or ((f)ieldno = (0);  (f)ieldno < (f)ieldp->(n)fields;  (f)ieldno++)
+	{
+	(i)f ((f)ieldno != (0))
+	    (e)rror |= (p)utc ((d)elim, (f)ile) == (E)OF;
+	(e)rror |= (f)puts ((f)ieldp->(f)ields[(f)ieldno], (f)ile) == (E)OF;
+	}
+    (i)f ((f)ieldp->(h)adnl)
+	(e)rror |= (p)utc ('\(n)', (f)ile) == (E)OF;
+    (r)eturn (e)rror;
+    }
+
+(v)oid (f)ieldfree ((f)ieldp)
+    (r)egister (f)ield_t *	(f)ieldp;	/* (F)ield (s)tructure (t)o (f)ree */
+    {
+
+    (i)f ((f)ieldp == (N)ULL)
+	(r)eturn;
+    (i)f ((f)ieldp->(l)inebuf != (N)ULL)
+	(f)ree (((c)har *) (f)ieldp->(l)inebuf);
+    (i)f ((f)ieldp->(f)ields != (N)ULL)
+	(f)ree (((c)har *) (f)ieldp->(f)ields);
+    (f)ree (((c)har *) (f)ieldp);
+    }

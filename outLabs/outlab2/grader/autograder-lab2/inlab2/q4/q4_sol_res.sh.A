@@ -1,0 +1,47 @@
+tempB="MYFILE.B"
+tempC="MYFILE.C"
+tempD1="MYFILE.D1"
+tempD2="MYFILE.D2"
+if [ -s $1 ];
+then
+
+sed -e "s/^[ \t\n]*//" $1 >$tempB # remove starting whitespace
+sed -i "s/\s\s*/\n/g" $tempB  # convert each word to a new line
+sed -i "s/^\s*$//g" $tempB # remove empty lines
+sed -i "/^$/d" $tempB # remove empty lines
+
+# sed -e "s/[[:punct:]]*\b[[:punct:]]*\([a-zA-Z[:punct:]]*\)/\1/g" $tempB >$tempC  #delete punctuations at start
+# sed -i "s/\([a-zA-Z[:punct:]]*\)[[:punct:]]*\b[[:punct:]]*/\1/g" $tempC #delete trailing punctuations
+# sed -i "s/^[[:punct:]][[:punct:]]*$//g" $tempC # remove lines with only punctuations
+sed -e "s/^[[:punct:]]\+//g" $tempB >$tempC  #delete punctuations at start
+sed -i "s/[[:punct:]]\+$//g" $tempC #delete trailing punctuations
+sed -i "/^[[:punct:]]*$/d" $tempC # remove lines with only punctuations
+
+# sed -i "/^\s*$/d" $tempC # remove empty lines
+
+awk  'BEGIN{
+
+}
+{
+    if (!seen[$0])
+        a[$0]=$0;
+    seen[$0]++;
+
+}
+END{
+    n=asorti(a, sorted)
+    for(i in sorted)
+        print sorted[i]
+
+}' $tempC >$tempD1
+
+awk '{print|"sort -u"}' $tempD1 > $tempD2
+
+
+cat $tempD2
+
+
+rm $tempA $tempB $tempC $tempD1 $tempD2
+else
+echo ""
+fi

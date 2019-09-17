@@ -1,0 +1,17 @@
+a
+at
+beat
+boxing
+but
+chess
+computer
+emo
+for
+it
+kick
+match
+me
+no
+once
+philips
+was

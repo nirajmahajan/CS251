@@ -1,0 +1,112 @@
+.(T)H (X)ARGS (1)L \" -*- (n)roff -*-
+.(S)H (N)AME
+(x)args \- (b)uild (a)nd (e)xecute (c)ommand (l)ines (f)rom (s)tandard (i)nput
+.(S)H (S)YNOPSIS
+.(B) (x)args
+[\-(0)prtx] [\-(e)[(e)of-(s)tr]] [\-(i)[(r)eplace-(s)tr]] [\-(l)[(m)ax-(l)ines]]
+[\-(n) (m)ax-(a)rgs] [\-(s) (m)ax-(c)hars] [\-(P) (m)ax-(p)rocs] [\-\-(n)ull] [\-\-(e)of[=(e)of-(s)tr]]
+[\-\-(r)eplace[=(r)eplace-(s)tr]] [\-\-(m)ax-(l)ines[=(m)ax-(l)ines]] [\-\-(i)nteractive]
+[\-\-(m)ax-(c)hars=(m)ax-(c)hars] [\-\-(v)erbose] [\-\-(e)xit] [\-\-(m)ax-(p)rocs=(m)ax-(p)rocs]
+[\-\-(m)ax-(a)rgs=(m)ax-(a)rgs] [\-\-(n)o-(r)un-(i)f-(e)mpty] [\-\-(v)ersion] [\-\-(h)elp]
+[(c)ommand [(i)nitial-(a)rguments]]
+.(S)H (D)ESCRIPTION
+(T)his (m)anual (p)age
+(d)ocuments (t)he (G)NU (v)ersion (o)f
+.(B)R (x)args .
+.(B) (x)args
+(r)eads (a)rguments (f)rom (t)he (s)tandard (i)nput, (d)elimited (b)y (b)lanks ((w)hich (c)an (b)e
+(p)rotected (w)ith (d)ouble (o)r (s)ingle (q)uotes (o)r (a) (b)ackslash) (o)r (n)ewlines,
+(a)nd (e)xecutes (t)he
+.(I) (c)ommand
+((d)efault (i)s /(b)in/(e)cho) (o)ne (o)r (m)ore (t)imes (w)ith (a)ny
+.(I) (i)nitial-(a)rguments
+(f)ollowed (b)y (a)rguments (r)ead (f)rom (s)tandard (i)nput.  (B)lank (l)ines (o)n (t)he
+(s)tandard (i)nput (a)re (i)gnored.
+.(P)
+.(B) (x)args
+(e)xits (w)ith (t)he (f)ollowing (s)tatus:
+.(n)f
+(0) (i)f (i)t (s)ucceeds
+(1)23 (i)f (a)ny (i)nvocation (o)f (t)he (c)ommand (e)xited (w)ith (s)tatus (1)-(1)25
+(1)24 (i)f (t)he (c)ommand (e)xited (w)ith (s)tatus (2)55
+(1)25 (i)f (t)he (c)ommand (i)s (k)illed (b)y (a) (s)ignal
+(1)26 (i)f (t)he (c)ommand (c)annot (b)e (r)un
+(1)27 (i)f (t)he (c)ommand (i)s (n)ot (f)ound
+(1) (i)f (s)ome (o)ther (e)rror (o)ccurred.
+.(f)i
+.(S)S (O)PTIONS
+.(T)P
+.(I) "\-\-(n)ull, \-(0)"
+(I)nput (f)ilenames (a)re (t)erminated (b)y (a) (n)ull (c)haracter (i)nstead (o)f (b)y
+(w)hitespace, (a)nd (t)he (q)uotes (a)nd (b)ackslash (a)re (n)ot (s)pecial ((e)very
+(c)haracter (i)s (t)aken (l)iterally).  (D)isables (t)he (e)nd (o)f (f)ile (s)tring, (w)hich
+(i)s (t)reated (l)ike (a)ny (o)ther (a)rgument.  (U)seful (w)hen (a)rguments (m)ight
+(c)ontain (w)hite (s)pace, (q)uote (m)arks, (o)r (b)ackslashes.  (T)he (G)NU (f)ind
+\-(p)rint0 (o)ption (p)roduces (i)nput (s)uitable (f)or (t)his (m)ode.
+.(T)P
+.(I) "\-\-(e)of[=(e)of-(s)tr], \-(e)[(e)of-(s)tr]"
+(S)et (t)he (e)nd (o)f (f)ile (s)tring (t)o \(f)Ieof-(s)tr\(f)R.  (I)f (t)he (e)nd (o)f (f)ile
+(s)tring (o)ccurs (a)s (a) (l)ine (o)f (i)nput, (t)he (r)est (o)f (t)he (i)nput (i)s (i)gnored.
+(I)f \(f)Ieof-(s)tr\(f)R (i)s (o)mitted, (t)here (i)s (n)o (e)nd (o)f (f)ile (s)tring.  (I)f (t)his
+(o)ption (i)s (n)ot (g)iven, (t)he (e)nd (o)f (f)ile (s)tring (d)efaults (t)o "_".
+.(T)P
+.(I) "\-\-(h)elp"
+(P)rint (a) (s)ummary (o)f (t)he (o)ptions (t)o
+.(B) (x)args
+(a)nd (e)xit.
+.(T)P
+.(I) "\-\-(r)eplace[=(r)eplace-(s)tr], \-(i)[(r)eplace-(s)tr]"
+(R)eplace (o)ccurences (o)f \(f)Ireplace-(s)tr\(f)R (i)n (t)he (i)nitial (a)rguments (w)ith
+(n)ames (r)ead (f)rom (s)tandard (i)nput.
+(A)lso, (u)nquoted (b)lanks (d)o (n)ot (t)erminate (a)rguments.
+(I)f \(f)Ireplace-(s)tr\(f)R (i)s (o)mitted, (i)t
+(d)efaults (t)o "{}" ((l)ike (f)or `(f)ind \-(e)xec').  (I)mplies \(f)I\-(x)\(f)P (a)nd
+\(f)I\-(l) (1)\(f)P.
+.(T)P
+.(I) "\-\-(m)ax-(l)ines[=(m)ax-(l)ines], -(l)[(m)ax-(l)ines]"
+(U)se (a)t (m)ost \(f)Imax-(l)ines\(f)R (n)onblank (i)nput (l)ines (p)er (c)ommand (l)ine;
+\(f)Imax-(l)ines\(f)R (d)efaults (t)o (1) (i)f (o)mitted.  (T)railing (b)lanks (c)ause (a)n
+(i)nput (l)ine (t)o (b)e (l)ogically (c)ontinued (o)n (t)he (n)ext (i)nput (l)ine.  (I)mplies
+\(f)I\-(x)\(f)R.
+.(T)P
+.(I) "\-\-(m)ax-(a)rgs=(m)ax-(a)rgs, \-(n) (m)ax-(a)rgs"
+(U)se (a)t (m)ost \(f)Imax-(a)rgs\(f)R (a)rguments (p)er (c)ommand (l)ine.  (F)ewer (t)han
+\(f)Imax-(a)rgs\(f)R (a)rguments (w)ill (b)e (u)sed (i)f (t)he (s)ize ((s)ee (t)he \-(s) (o)ption)
+(i)s (e)xceeded, (u)nless (t)he \-(x) (o)ption (i)s (g)iven, (i)n (w)hich (c)ase \(f)Bxargs\(f)R
+(w)ill (e)xit.
+.(T)P
+.(I) "\-\-(i)nteractive, \-(p)"
+(P)rompt (t)he (u)ser (a)bout (w)hether (t)o (r)un (e)ach (c)ommand (l)ine (a)nd (r)ead (a) (l)ine
+(f)rom (t)he (t)erminal.  (O)nly (r)un (t)he (c)ommand (l)ine (i)f (t)he (r)esponse (s)tarts
+(w)ith `(y)' (o)r `(Y)'.  (I)mplies \(f)I\-(t)\(f)R.
+.(T)P
+.(I) "\-\-(n)o-(r)un-(i)f-(e)mpty, \-(r)"
+(I)f (t)he (s)tandard (i)nput (d)oes (n)ot (c)ontain (a)ny (n)onblanks, (d)o (n)ot (r)un (t)he
+(c)ommand.  (N)ormally, (t)he (c)ommand (i)s (r)un (o)nce (e)ven (i)f (t)here (i)s (n)o (i)nput.
+.(T)P
+.(I) "\-\-(m)ax-(c)hars=(m)ax-(c)hars, \-(s) (m)ax-(c)hars"
+(U)se (a)t (m)ost \(f)Imax-(c)hars\(f)R (c)haracters (p)er (c)ommand (l)ine, (i)ncluding (t)he
+(c)ommand (a)nd (i)nitial (a)rguments (a)nd (t)he (t)erminating (n)ulls (a)t (t)he (e)nds (o)f
+(t)he (a)rgument (s)trings.  (T)he (d)efault (i)s (a)s (l)arge (a)s (p)ossible, (u)p (t)o (2)0k
+(c)haracters.
+.(T)P
+.(I) "\-\-(v)erbose, \-(t)"
+(P)rint (t)he (c)ommand (l)ine (o)n (t)he (s)tandard (e)rror (o)utput (b)efore (e)xecuting
+(i)t.
+.(T)P
+.(I) "\-\-(v)ersion"
+(P)rint (t)he (v)ersion (n)umber (o)f
+.(B) (x)args
+(a)nd (e)xit.
+.(T)P
+.(I) "\-\-(e)xit, \-(x)"
+(E)xit (i)f (t)he (s)ize ((s)ee (t)he \(f)I\-(s)\(f)R (o)ption) (i)s (e)xceeded.
+.(T)P
+.(I) "\-\-(m)ax-(p)rocs=(m)ax-(p)rocs, \-(P) (m)ax-(p)rocs"
+(R)un (u)p (t)o \(f)Imax-(p)rocs\(f)R (p)rocesses (a)t (a) (t)ime; (t)he (d)efault (i)s (1).  (I)f
+\(f)Imax-(p)rocs\(f)R (i)s (0), \(f)Bxargs\(f)R (w)ill (r)un (a)s (m)any (p)rocesses (a)s
+(p)ossible (a)t (a) (t)ime.  (U)se (t)he \(f)I\-(n)\(f)R (o)ption (w)ith \(f)I\-(P)\(f)R;
+(o)therwise (c)hances (a)re (t)hat (o)nly (o)ne (e)xec (w)ill (b)e (d)one.
+.(S)H "(S)EE (A)LSO"
+\(f)Bfind\(f)P((1)L), \(f)Blocate\(f)P((1)L), \(f)Blocatedb\(f)P((5)L), \(f)Bupdatedb\(f)P((1))
+\(f)BFinding (F)iles\(f)P ((o)n-(l)ine (i)n (I)nfo, (o)r (p)rinted)
