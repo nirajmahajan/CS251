@@ -17,11 +17,12 @@ libMyEngineStatic.a : myengine/myengine.cpp myengine/myengine.hpp
 
 installdynamic : libMyEngineDynamic.so
 	sudo cp myengine/myengine.hpp /usr/local/include
-	sudo cp libMyEngineDynamic.so /usr/local/lib
+	sudo mv libMyEngineDynamic.so /usr/local/lib
+	sudo ldconfig
 	
 installstatic : libMyEngineStatic.a
 	sudo cp myengine/myengine.hpp /usr/local/include
-	sudo cp libMyEngineStatic.a /usr/local/lib
+	sudo mv libMyEngineStatic.a /usr/local/lib
 	
 mygamestatic : installstatic
 	$(CC) -static mygame/mygame.cpp -o mygamestatic -lMyEngineStatic
