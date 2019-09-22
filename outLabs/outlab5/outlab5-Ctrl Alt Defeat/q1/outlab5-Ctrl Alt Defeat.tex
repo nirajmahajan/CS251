@@ -25,7 +25,6 @@
 \usepackage{array}
 \setlength{\parindent}{10pt}
 \renewcommand*{\thepage}{\footnotesize\arabic{page}}
-\newcolumntype{C}[1]{>{\centering}m{#1}}
 \graphicspath{ {./images/} }
 \begin{document}
 \fontdimen4\font=0.23em
@@ -143,7 +142,6 @@ $\displaystyle(\exists x)(\varphi(x)\wedge\psi(x))\longrightarrow((\exists(x)\va
 \end{center}
 \vspace*{1mm}
 \subsection{Mathematical Formulas (5 marks)}
-\boldmath
 \begin{enumerate}
 	\item $\displaystyle\int_a^b x^3 dx=\frac{1}{4}x^4\bigg\rvert_a^b$
 	\item $\displaystyle\frac{\pi}{4}=4\sum\limits_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)5^{2n+1}}-\sum\limits_{n=0}^\infty\frac{(-1)^n}{(2n+1)239^{2n+1}}$
@@ -157,36 +155,21 @@ To combine rows a package must be imported with in your preamble, then you
 can use the MULTIROW command in your document. The table below includes
 mathematical notations, which you can produce by embedding the expression
 in \$ \$ delimiters. For subscript, use underscore and for superscript, use carrot.\\
-\vspace{3mm}
+\vspace{2.5mm}
 \begin{table}[H]
 \centering
+\resizebox{0.915\textwidth}{!}{%
 {\fontsize{9}{11}\selectfont
-\noindent\makebox[\textwidth]{
-\begin{tabular}{C{16mm}C{7.5mm}|C{6.5mm}|C{6.5mm}|C{9mm}|C{7mm}|C{7mm}|C{6.5mm}|C{7mm}|C{9.5mm}|m{7mm}|}
+\begin{tabular}{cc|c|c|c|c|c|c|c|c|c|}
 \cline{3-11}
-                                     				 &      & \multicolumn{5}{c|}{\textbf{Basic Properties}} & \multicolumn{4}{c|}{\textbf{Readability}} \\ \cline{3-11} 
-                                     				 &      & \textbf{WC}  & \textbf{SC}  & \textbf{C-W}   & \textbf{S-W}  & \textbf{W-S} & \textbf{FK}  & \textbf{GF}  & \textbf{SMOG}  & \textbf{LEX}  \\ \cline{1-11}
-\multicolumn{1}{|C{16mm}|}{\multirow{2}{*}{$Baseline$}} & Mean & 0.84     & 0.41     & \textbf{0.56}     & \textbf{0.46}     & \textbf{0.55}     & \textbf{0.60}     & 0.56     & 0.57       & 0.63      \\ \cline{2-11} 
-\multicolumn{1}{|C{16mm}|}{}                          & SD   & 0.07     & 0.08     & 0.06     & 0.07     & 0.05     & 0.05     & 0.06     & 0.07       & 0.05      \\ \cline{1-11}
-\end{tabular}}}
-\newline
-\vspace*{0.05mm}
-\newline
-{\fontsize{9}{11}\selectfont
-\noindent\makebox[\textwidth]{
-\begin{tabular}{|C{16mm}|C{7.5mm}|C{6.5mm}|C{6.5mm}|C{9mm}|C{7mm}|C{7mm}|C{6.5mm}|C{7mm}|C{9.5mm}|m{7mm}|}
-\cline{1-11}
-\multirow{2}{*}{$ScaComp_h$}                       & Mean & 0.89     & 0.46   & 0.53     & 0.43     & 0.53     & 0.58     & 0.54     & 0.56       & 0.62      \\ \cline{2-11}
-                                                & SD   & 0.05     & 0.08     & 0.05     & 0.06     & 0.06     & 0.05     & 0.05     & 0.06       & 0.05      \\ \cline{1-11}
-\end{tabular}}}
-\newline
-\vspace*{-1.5mm}
-{\fontsize{9}{11}\selectfont
-\noindent\makebox[\textwidth]{
-\begin{tabular}{|C{16mm}|C{7.5mm}|C{6.5mm}|C{6.5mm}|C{9mm}|C{7mm}|C{7mm}|C{6.5mm}|C{7mm}|C{9.5mm}|m{7mm}|}
-\cline{1-11}
-\multirow{2}{*}{$ScaComp_l$}                       & Mean & \textbf{0.92}     & \textbf{0.48}     & 0.55     & 0.45     & 0.53     & 0.59     & \textbf{0.58}     & \textbf{0.61}       & \textbf{0.64}      \\ \cline{2-11} 
-                                                & SD   & 0.04     & 0.07     & 0.05     & 0.04     & 0.05     & 0.04     & 0.04     & 0.04       & 0.04      \\ \cline{1-11}
+\multicolumn{2}{c|}{} & \multicolumn{5}{c|}{\textbf{Basic Properties}} & \multicolumn{4}{c|}{\textbf{Readability}} \\ \cline{3-11} 
+ &  & \textbf{WC} & \textbf{SC} & \textbf{C-W} & \textbf{S-W} & \textbf{W-S} & \textbf{FK} & \textbf{GF} & \textbf{SMOG} & \textbf{LEX} \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{$Baseline$}} & Mean & 0.84 & 0.41 & \textbf{0.56} & \textbf{0.46} & \textbf{0.55} & \textbf{0.60} & 0.56 & 0.57 & 0.63 \\ \cline{2-11} 
+\multicolumn{1}{|c|}{} & SD & 0.07 & 0.08 & 0.06 & 0.07 & 0.05 & 0.05 & 0.06 & 0.07 & 0.05 \\ \hline \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{$ScaComp_h$}} & Mean & 0.89 & 0.46 & 0.53 & 0.43 & 0.53 & 0.58 & 0.54 & 0.56 & 0.62 \\ \cline{2-11} 
+\multicolumn{1}{|c|}{} & SD & 0.05 & 0.08 & 0.05 & 0.06 & 0.06 & 0.05 & 0.05 & 0.06 & 0.05 \\ \hline \hline 
+\multicolumn{1}{|c|}{\multirow{2}{*}{$ScaComp_l$}} & Mean & \textbf{0.92} & \textbf{0.48} & 0.55 & 0.45 & 0.53 & 0.59 & \textbf{0.58} & \textbf{0.61} & \textbf{0.64} \\ \cline{2-11} 
+\multicolumn{1}{|c|}{} & SD & 0.04 & 0.07 & 0.05 & 0.04 & 0.05 & 0.04 & 0.04 & 0.04 & 0.04 \\ \hline
 \end{tabular}}}
 \caption{Table depicting the use of both multirow and multicolumn}
 \label{Table:1}
