@@ -5,27 +5,18 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{bera}
-\usepackage{etoc}
-\usepackage{cite}
 \usepackage{listings}
 \usepackage{qtree}
-\usepackage{algorithmic}
 \usepackage[linesnumbered,ruled,boxruled]{algorithm2e}
-\usepackage{caption}
 \usepackage{csquotes}
-\usepackage{calc}
 \usepackage{float}
-\usepackage{tabularx}
 \usepackage{xcolor}
 \usepackage{epigraph}
 \usepackage{subcaption}
-\usepackage{nccmath}
 \usepackage[shortlabels]{enumitem}
 \usepackage{graphicx}
-\usepackage{array}
 \setlength{\parindent}{10pt}
 \renewcommand*{\thepage}{\footnotesize\arabic{page}}
-\graphicspath{ {./images/} }
 \begin{document}
 \fontdimen4\font=0.23em
 \begin{titlepage}
@@ -43,7 +34,10 @@
 \tableofcontents
 \addtocontents{toc}{\vspace*{0.1mm}}
 \newpage
-This is a \LaTeX{} document for the course \textbf{Software Systems Lab} with course code \textit{CS 251}. You need to replicate this document. Spacing need not be matched perfectly but page numbers should be. \textbf{1 mark is for the title page.} Bonus marks will be given only if you score (80/80) in the rest. 
+This is a \LaTeX{} document for the course \textbf{Software Systems Lab} with course code 
+\textit{CS 251}. You need to replicate this document. Spacing need not be matched perfectly 
+but page numbers should be. \textbf{1 mark is for the title page.} Bonus marks will be 
+given only if you score (80/80) in the rest. 
 \section{Introduction (4 marks)}
 \fontsize{12}{13.5}\selectfont
 \textbf{\LaTeX{}} is a word processor and document markup language. It is distinguished
@@ -57,11 +51,14 @@ suitable for printing or digital distribution.\\ \par
 \textbf{\LaTeX{}} is used for the communication and publication of scientific documents
 in many fields, including mathematics, physics, computer science, statistics,
 economics, and political science. It also has a prominent role in the preparation
-and publication of books and articles that contain complex multilingual materials, such as Sanskrit and Arabic. \textbf{\LaTeX{}} uses the TeX typesetting program for
+and publication of books and articles that contain complex multilingual materials, 
+such as Sanskrit and Arabic. \textbf{\LaTeX{}} uses the TeX typesetting program for
 formatting its output, and is itself written in the TeX macro language.\\ \par
-\textbf{\LaTeX{}} is widely used in academia. \textbf{\LaTeX{}} can be used as a standalone document preparation system, or as an intermediate format. In the latter role, for
-example, it is often used as part of a pipeline for translating DocBook and other
-XML-based formats to PDF. The typesetting system offers programmable desktop publishing features and extensive facilities for automating most aspects of
+\textbf{\LaTeX{}} is widely used in academia. \textbf{\LaTeX{}} can be used as a 
+standalone document preparation system, or as an intermediate format. In the latter 
+role, for example, it is often used as part of a pipeline for translating DocBook and other
+XML-based formats to PDF. The typesetting system offers programmable desktop publishing 
+features and extensive facilities for automating most aspects of
 typesetting and desktop publishing, including numbering and cross-referencing
 of tables and figures, chapter and section headings, the inclusion of graphics,
 page layout, indexing and bibliographies.\\ \par
@@ -116,6 +113,7 @@ Following is another type of a pointer \textbf{(description)}.
 \newpage
 \section{Mathematical formulae and notations (15 marks)}
 \subsection{Equation Array (4 marks)}
+\vspace*{1mm}
 \begin{align}
 cos^3\theta+sin^3\theta &=(cos\theta+sin\theta)(cos2\theta-cos\theta sin\theta)\label{eq1}\\
 						&=(cos\theta+sin\theta)(1-cos\theta sin\theta)\\
@@ -175,7 +173,8 @@ in \$ \$ delimiters. For subscript, use underscore and for superscript, use carr
 \label{Table:1}
 \end{table}
 \begin{Large}
-In table 1 above, we try to demonstrate all the features required to be demonstrated in a table. We use
+In table 1 above, we try to demonstrate all the features 
+required to be demonstrated in a table. We use
 multiple newline, we use a package to enable the use
 of multiple rows, and multiple columns in the table.
 Additionally, We have also drawn lines from specific
@@ -223,7 +222,8 @@ instance images as \textbf{subfigures}, here it is.
 \subsection{Quotation (2 marks)}
 The margins of the quotation environment are indented on both the left and the
 right. The text is justified at both margins. Leaving a blank line between text
-produces a new paragraph. The package \textbf{csquotes} offers a multilingual solution to quotations, with integration to citation mechanisms offered by BibTeX.
+produces a new paragraph. The package \textbf{csquotes} offers a multilingual 
+solution to quotations, with integration to citation mechanisms offered by BibTeX.
 This package allows one for example to switch languages and quotation styles
 according to babel language selections.\newline
 \begin{displayquote}
@@ -254,7 +254,8 @@ with IIT thesis manual are plain.bst and alpha.bst. They are part of the LaTeX
 package; a student does not need to download it. The plain.bst and alpha.bst
 styles are explained below. The symbols in a math formula fall into different
 classes that correspond more or less to the part of speech each symbol would
-have if the formula were ex pressed in words. Certain spacing and positioning cues are traditionally used for the different symbol classes to increase the
+have if the formula were expressed in words. Certain spacing and positioning 
+cues are traditionally used for the different symbol classes to increase the
 readability of formulas.\cite{ref4} \par
 My citations are in proper order as per references ref1, ref2, ref3, and ref4.
 \newpage
@@ -301,18 +302,18 @@ void BFS(list <long long int> queue,long long int length
   \Input{A graph Graph and a starting vertex root of Graph}
   \Output{All vertices’s reachable from root labeled as explored.}
   Breadth-First-Search(Graph, root):\\
-  \For{each node n in Graph :}{
-  n.\textbf{distance} = INFINITY\\
-  n.\textbf{parent} = NIL
+  \For{$each$ $node$ $n$ $in$ $Graph$ $:$}{
+  $n$.\textbf{distance} = INFINITY\\
+  $n$.\textbf{parent} = NIL
   }
   create empty \textbf{queue} Q\\
   root.\textbf{distance} = 0\\
   Q.\textbf{enqueue}(root)\\
-  \While{Q is not empty}
+  \While{$Q$ $is$ $not$ $empty$}
    {
       current = Q.dequeue()\\
-      \For{each node n that is adjacent to current}{
-      \If{n.\textbf{distance} == INFINITY}
+      \For{$each$ $node$ $n$ $that$ $is$ $adjacent$ $to$ $current$}{
+      \If{$n$.\textbf{distance} \textit{== INFINITY}}
     {
        n.\textbf{distance} = current.\textbf{distance} + 1 n.\textbf{parent} = current\\
        Q.\textbf{enqueue}(n)\\
