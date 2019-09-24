@@ -1,7 +1,7 @@
 \documentclass[english,12pt]{article}
 \usepackage{geometry}\geometry{a4paper,right=3cm,left=3cm,top=1.2in,bottom=1in}
 \usepackage{multirow}
-\usepackage{amsmath} 
+\usepackage{amssymb} 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{bera}
@@ -12,6 +12,8 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{epigraph}
+\usepackage{relsize}
+\usepackage{indentfirst}
 \usepackage{subcaption}
 \usepackage[shortlabels]{enumitem}
 \usepackage{graphicx}
@@ -65,18 +67,21 @@ page layout, indexing and bibliographies.\\ \par
 Below are some of the basic packages which you’ll be using. For other
 required packages, search over the net :).
 \subsection{graphicx package}
+\noindent
 This package is used to import tables, and figure in the document. Our
 document type is article, and we are currently using a4 type paper with the
 following margin geometry: (total={6in, 8in}, margin=1.2in, bottom=1in),
 which is specified in the beginning.
 \subsection{amssymb package}
+\noindent
 This package is used to import mathematical symbols in the document. We
 encapsulate the mathematical equations and symbols under \$, and they are
 changed to maths symbols.
 \newpage
 \section{Pointers (3 + 2 + 1 marks)}
+\noindent
 Here we are using \textbf{itemize} to generate unordered list.
-\renewcommand\labelitemi{\large$\bullet$}
+\renewcommand\labelitemi{\normalsize$\bullet$}
 \begin{itemize}
 	\item \LaTeX{ } typesets a file of text using the TEX program.\\
 	\item \LaTeX{ } is widely used in academia for the communication and publication
@@ -113,13 +118,14 @@ Following is another type of a pointer \textbf{(description)}.
 \newpage
 \section{Mathematical formulae and notations (15 marks)}
 \subsection{Equation Array (4 marks)}
-\vspace*{1mm}
-\begin{align}
-cos^3\theta+sin^3\theta &=(cos\theta+sin\theta)(cos2\theta-cos\theta sin\theta)\label{eq1}\\
-						&=(cos\theta+sin\theta)(1-cos\theta sin\theta)\\
-						&=(cos\theta+sin\theta)(1/2)(2-2cos\theta sin\theta)\\
-						&=(1/2)(cos\theta+sin\theta)(2-sin(2\theta))
-\end{align}
+\noindent
+\begin{eqnarray}
+cos^3\theta+sin^3\theta 
+&=&(cos\theta+sin\theta)(cos2\theta-cos\theta sin\theta)\label{eq1}\\
+&=&(cos\theta+sin\theta)(1-cos\theta sin\theta)\\
+&=&(cos\theta+sin\theta)(1/2)(2-2cos\theta sin\theta)\\
+&=&(1/2)(cos\theta+sin\theta)(2-sin(2\theta))
+\end{eqnarray}
 \subsection{Prepositional Formulae using Various Operators (2 marks)}
 \mbox{}\\
 $\displaystyle(\exists x)(\varphi(x)\wedge\psi(x))\longleftrightarrow((\exists(x)\varphi(x)\wedge(\exists x)\psi(x))$\\
@@ -132,7 +138,7 @@ $\displaystyle(\exists x)(\varphi(x)\wedge\psi(x))\longrightarrow((\exists(x)\va
  \hline
  Binary Operators: & $\times \otimes \oplus \cup \cap$ \\[2ex] 
  \hline
- Relation Operators: & $\subset \supset \subseteq \supseteq \textbf{< >}$ \\[2ex] 
+ Relation Operators: & $\subset$ $\supset$ $\subseteq$ $\supseteq$ $\textbf{< >}$ \\[2ex] 
  \hline
  Others: & $\int \oint \sum \prod$ \\[2ex]
  \hline
@@ -140,15 +146,19 @@ $\displaystyle(\exists x)(\varphi(x)\wedge\psi(x))\longrightarrow((\exists(x)\va
 \end{center}
 \vspace*{1mm}
 \subsection{Mathematical Formulas (5 marks)}
-\begin{enumerate}
-	\item $\displaystyle\int_a^b x^3 dx=\frac{1}{4}x^4\bigg\rvert_a^b$
-	\item $\displaystyle\frac{\pi}{4}=4\sum\limits_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)5^{2n+1}}-\sum\limits_{n=0}^\infty\frac{(-1)^n}{(2n+1)239^{2n+1}}$
-	\item $\displaystyle\pi=\frac{3\sqrt{3}}{4}-24\sum\limits_{n=0}^{\infty}\frac{\frac{(2n)!}{(n)}}{2n+1(2n+1)4^{2n+1}}$
-	\item $\displaystyle\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum\limits_{n=0}^{\infty}\frac{(4n)!(1103+26390n)}{(n)!^4396^{4n}}$
-	\item $\displaystyle\sum\nolimits_{i=0}^{\left[\frac{n}{2} \right]}\binom{x^{i^2}_{i,i+1}}{\left[\frac{i+3}{3}\right]} \frac{\sqrt{\mu(i)^{\frac{3}{2}}(i^2-1)}}{\sqrt[3]{\rho(i)-2}+\sqrt[3]{\rho(i)-1}}$
+\begin{large}
+\begin{enumerate}[font=\normalsize]
+	\item $\mathlarger{\int}_a^b x^3 dx=\frac{1}{4}x^4\Bigg{\vert}_a^b$
+	\item $\frac{\pi}{4}=4\sum\limits_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)5^{2n+1}}-\sum\limits_{n=0}^\infty\frac{(-1)^n}{(2n+1)239^{2n+1}}$
+	\item $\pi=\frac{3\sqrt{3}}{4}-24\sum\limits_{n=0}^{\infty}\frac{\frac{(2n)!}{(n)}}{2n+1(2n+1)4^{2n+1}}$
+	\item $\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum\limits_{n=0}^{\infty}\frac{(4n)!(1103+26390n)}{(n)!^4396^{4n}}$
+	\item $\sum\nolimits_{i=0}^{\left[\frac{n}{2} \right]}{{x^{i^2}_{i,i+1}}\choose{\left[\frac{i+3}{3}\right]}}\frac{\sqrt{\mu(i)^{\frac{3}{2}}(i^2-1)}}{\sqrt[3]{\rho(i)-2}+\sqrt[3]{\rho(i)-1}}$
 \end{enumerate}
+\end{large}
 \newpage
 \section{Tables (10 marks)}
+\setlength{\parindent}{15pt}
+\noindent
 To combine rows a package must be imported with in your preamble, then you
 can use the MULTIROW command in your document. The table below includes
 mathematical notations, which you can produce by embedding the expression
@@ -220,6 +230,7 @@ instance images as \textbf{subfigures}, here it is.
 \newpage
 \section{Quotation and Citation (4 marks)}
 \subsection{Quotation (2 marks)}
+\noindent
 The margins of the quotation environment are indented on both the left and the
 right. The text is justified at both margins. Leaving a blank line between text
 produces a new paragraph. The package \textbf{csquotes} offers a multilingual 
@@ -233,6 +244,7 @@ there are different quotation marks used in English (UK) and English
 (US).”
 \end{displayquote}
 \subsection{Citation (2 marks)}
+\noindent
 Latex \cite{ref1} is a document preparation system for typesetting program. It is used
 to create different types of document structures. A Latex file (.tex) is created
 using any text editor (vim, emacs, gedit, etc.). There are also many LaTeX
@@ -261,6 +273,7 @@ My citations are in proper order as per references ref1, ref2, ref3, and ref4.
 \newpage
 \section{Algorithm and Pseudo Code (22 marks)}
 \subsection{Listing (10 marks)}
+\vspace{2ex}
 \hrule
 \lstdefinestyle{mystyle}{
     commentstyle=\color{green},
@@ -325,11 +338,13 @@ void BFS(list <long long int> queue,long long int length
 \newpage
 \section{Exotic Features (Bonus - 6 marks)}
 \subsection{Epigraph Style (3 marks)}
+\noindent
 \large{\textbf{Chapter 1: Theory of Life}}
 \epigraph{\normalsize{\textit{"failure will never overtake me
 if my determination to succeed
 is strong enough."}}}{\normalsize{\textit{og mandino}}}
 \subsection{Minipage (3 marks)}
+\noindent
 \fbox{%
   \begin{minipage}{7.75cm}
   \sloppy
@@ -351,8 +366,10 @@ explicitly directed to do otherwise.}}
   \end{minipage}}
   \newpage
 \section{Bibliography (4 marks)}
+\noindent
 \normalsize
 4 marks for references using .bib file, otherwise 2 marks.
+\vspace{-1ex}
 \bibliographystyle{unsrt}
 \bibliography{references}
 \end{document}
