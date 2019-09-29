@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<title>Tic Tac Toe</title>
+	<style>
+		.leftMargin {
+			margin-left: 50px;
+			float: right;
+		}
+		.table1, .table1 th, .table1 td{
+			border: 3px solid black;
+			border-collapse: collapse;
+			text-align: center;
+			font-size: 90px;
+			font-family: Arial, sans-serif;
+		}
+		.table1 td {
+			height: 120px;
+			width: 120px;
+		}
+		.table1 td:hover {
+			background: #7f7f7f !important;
+		}
+		.table2, .table2 th, .table2 td{
+			font-size: 25px;
+			padding: 5px;
+			border: 1px solid black;
+			border-collapse: collapse;
+			text-align: center;
+		}
+		.container{overflow: }
+	</style>
+</head>
+<body>
+	<h1 style="font-size: 60px">Tic Tac Toe! (with bonus completed)</h1>
+
+	<div style="height: auto;">
+		<table class="table1";id="board"; style="float: left;">
+			<tr>
+				<td id="pos0"; onclick="f(this.id)"></td>
+				<td id="pos1"; onclick="f(this.id)"></td>
+				<td id="pos2"; onclick="f(this.id)"></td>
+			</tr>
+			<tr>
+				<td id="pos3"; onclick="f(this.id)"></td>
+				<td id="pos4"; onclick="f(this.id)"></td>
+				<td id="pos5"; onclick="f(this.id)"></td>
+			</tr>
+			<tr>
+				<td id="pos6"; onclick="f(this.id)"></td>
+				<td id="pos7"; onclick="f(this.id)"></td>
+				<td id="pos8"; onclick="f(this.id)"></td>
+			</tr>
+		</table>
+		<br><br><br><br>
+		<div style="text-align: center;">
+			<h1 id="player1_item">Player 1 : X</h1>
+			<h1 id="player2_item">Player 2 : O</h1>
+			<br>
+			<h2 id="who_plays">Player1's move</h2>
+
+			<h1 id="tv_result"; style="font-size: 40px; margin-top: 40px"></h1>
+			<h1 id="tv_timer"; style="font-size: 40px;"></h1>
+		</div>
+	</div>
+	<br><br><br><br><br>
+	<h1>Results!</h1>
+	<table class="table2"; id="results">
+		<tr>
+			<th>Round Number</th>
+			<th>Results (Won By)</th>
+			<th>Cumulative Score of P1</th>
+			<th>Cumulative Score of P2</th>
+		</tr>
+	</table>
+
+
+
+	<script src="helpers.js" ></script>
+</body>
+</html>
