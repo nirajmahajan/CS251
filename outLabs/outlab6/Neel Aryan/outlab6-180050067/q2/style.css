@@ -1,0 +1,34 @@
+.table-hover-cells > tbody > tr > th:hover,
+.table-hover-cells > tbody > tr > td:hover {
+background-color: lightblue !important;
+}
+.table-hover-cells > tbody > tr > th.active:hover,
+.table-hover-cells > tbody > tr > td.active:hover,
+.table-hover-cells > tbody > tr.active > th:hover,
+.table-hover-cells > tbody > tr.active > td:hover {
+background-color: lightblue !important;
+}
+.table-hover.table-hover-cells > tbody > tr:hover > th:hover,
+.table-hover.table-hover-cells > tbody > tr:hover > td:hover {
+background-color: lightblue !important;
+}
+.table-hover.table-hover-cells > tbody > tr.active:hover > th:hover,
+.table-hover.table-hover-cells > tbody > tr.active:hover > td:hover {
+background-color: lightblue !important;
+}
+.table td,th {
+text-align: center;
+}
+.table {
+   display: block !important;
+}
+.td, tr, img, th  { padding: 0px; margin: 0px; border: none; }
+.table.table-bordered > thead > tr > th{
+    border:2px solid lightblue;
+}
+.table.table-bordered > tbody > tr > th{
+    border:2px solid lightblue;
+}
+.table.table-bordered > tbody > tr > td{
+    border:2px solid lightblue;
+}

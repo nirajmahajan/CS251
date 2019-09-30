@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tic Tac Toe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="bootstrap/jquery.min.js"></script>
+    <script src="bootstrap/popper.min.js"></script>
+    <script src="bootstrap/bootstrap.min2.js"></script>
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <br><br>
+      <center>
+      <h1 class="page-header">
+      Tic Tac Toe
+      </h1>
+      <h3 id="turn">Turn : X</h3>
+      <h5 id="turn1">Player 1 : X</h5>
+      <h5 id="turn2">Player 2 : O</h5>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover-cells">
+          <tbody>
+            <tr>
+              <td><img src="empty.png" id="c00" width="90px" onclick="func(0,0)"></img></td>
+              <td><img src="empty.png" id="c01" width="90px" onclick="func(0,1)"></img></td>
+              <td><img src="empty.png" id="c02" width="90px" onclick="func(0,2)"></img></td>
+            </tr>
+            <tr>
+              <td><img src="empty.png" id="c10" width="90px" onclick="func(1,0)"></img></td>
+              <td><img src="empty.png" id="c11" width="90px" onclick="func(1,1)"></img></td>
+              <td><img src="empty.png" id="c12" width="90px" onclick="func(1,2)"></img></td>
+            </tr>
+            <tr>
+              <td><img src="empty.png" id="c20" width="90px" onclick="func(2,0)"></img></td>
+              <td><img src="empty.png" id="c21" width="90px" onclick="func(2,1)"></img></td>
+              <td><img src="empty.png" id="c22" width="90px" onclick="func(2,2)"></img></td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-primary" onclick="update('T')">Reset</button>
+        <br><br>
+        <div id="timed"></div>
+        <br>
+        <div id="table">
+        <div class="table-responsive">
+          <table id="table" class="table table-bordered table-hover-cells">
+            <thead>
+              <tr>
+                <th>Serial no.</th><th>Result</th><th>Player 1</th><th>Player 2</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+      </center>
+    </div>
+    <script src="script.js">
+    </script>
+  </body>
+</html>
