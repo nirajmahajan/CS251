@@ -1,6 +1,6 @@
 import sqlite3
-mydb=sqlite3.connect('ipl.db')
-c=mydb.cursor()
+mydb = sqlite3.connect('ipl.db')
+c = mydb.cursor()
 
 c.execute('''
 	SELECT venue_name,AVG(runs_sum) AS avg
@@ -13,9 +13,8 @@ c.execute('''
 	)
 	GROUP BY venue_name
 	ORDER BY avg DESC ;
-	'''
-	)
-rows=c.fetchall()
+	''')
+rows = c.fetchall()
 
 for i in rows:
-	print("{},{}".format(i[0],i[1]))
+    print("{},{}".format(i[0], i[1]))
