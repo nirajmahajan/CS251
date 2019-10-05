@@ -6,7 +6,7 @@ c.execute('''
 	SELECT venue_name, AVG(runs_sum) AS avg
 	FROM
 	(
-		SELECT MATCH.venue_name AS venue_name, SUM(runs_scored + extra_runs) AS runs_sum
+		SELECT MATCH.venue_name AS venue_name, SUM(runs_scored) AS runs_sum
 		FROM BALL_BY_BALL
 		INNER JOIN MATCH ON MATCH.match_id = BALL_BY_BALL.match_id
 		GROUP BY BALL_BY_BALL.match_id
