@@ -14,7 +14,7 @@ c.execute('''
 		FROM BALL_BY_BALL
 		INNER JOIN PLAYER ON PLAYER.player_id = striker
 		GROUP BY striker
-		ORDER BY striker
+		ORDER BY sixes DESC
 	)
 	ORDER BY avg DESC;
 ''')
