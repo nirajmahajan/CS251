@@ -3,7 +3,7 @@ mydb = sqlite3.connect('ipl.db')
 c = mydb.cursor()
 
 c.execute('''
-	SELECT striker, player, ball_count,sixes, 1.0*sixes/ball_count as avg
+	SELECT striker, player, sixes, ball_count, 1.0*sixes/ball_count as avg
 	FROM
 	(
 		SELECT striker, PLAYER.player_name as player, COUNT(striker) as ball_count, 
@@ -14,7 +14,7 @@ c.execute('''
 		FROM BALL_BY_BALL
 		INNER JOIN PLAYER ON PLAYER.player_id = striker
 		GROUP BY striker
-		ORDER BY sixes DESC
+		ORDER BY striker
 	)
 	ORDER BY avg DESC;
 ''')
