@@ -8,13 +8,15 @@ c.execute('''
 	(
 		SELECT PLAYER.player_id as id, PLAYER.player_name AS name,  COUNT(striker) AS ball_count
 		FROM BALL_BY_BALL
-		INNER JOIN PLAYER ON PLAYER.player_id=BALL_BY_BALL.striker
+		INNER JOIN PLAYER ON PLAYER.player_id = BALL_BY_BALL.striker
 		GROUP BY BALL_BY_BALL.match_id	
 	)
 	GROUP BY id
-	ORDER BY avrg DESC ;''')
+	ORDER BY avrg DESC ;
+''')
 
 row = c.fetchall()
+mydb.close()
 
 for i in row[:10]:
     print("{},{},{}".format(i[0], i[1], round(i[2])))
