@@ -34,7 +34,6 @@ for a in col_names:
 	temp = input()
 	input_vals.append(temp)
 
-print(input_vals)
 c.execute(add_statement, input_vals)
 mydb.commit()
 mydb.close()
