@@ -15,7 +15,7 @@ c.execute('''
 		INNER JOIN PLAYER ON PLAYER.player_id = striker
 		GROUP BY striker
 	)
-	ORDER BY avg DESC, sixes DESC, ball_count DESC, striker;
+	ORDER BY avg DESC, sixes DESC, ball_count DESC;
 ''')
 rows = c.fetchall()
 mydb.close()
