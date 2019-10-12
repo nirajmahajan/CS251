@@ -11,10 +11,10 @@ import java.util.HashMap;
 public class FetchAndProcessFromDisk implements FetchAndProcess {
 	private Map<String, String> data = new HashMap<String, String>();
 	@Override
-    public Map<String, String> exposeData() {
-	return data;
-    }
-    @Override
+	public Map<String, String> exposeData() {
+		return data;
+	}
+	@Override
 	public void fetch(List<String> paths) {
 		for (String s : paths) {
 			File file = new File(s);
@@ -23,16 +23,15 @@ public class FetchAndProcessFromDisk implements FetchAndProcess {
 			try {
 				breader = new BufferedReader(new FileReader(s));
 				String content;
-				while ((content = breader.readLine()) != null)
-					data.put(content, p);
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					if (breader != null) breader.close();
-				} catch (Exception ex) {
-					ex.printStackTrace();
+				while ((content = breader.readLine()) != null) {
+					if (data.containsKey(content)) {
+						data.put(content, data.get(content) + "@@@" + p);
+					} else  data.put(content, p);
 				}
+				if (breader != null) breader.close();
+			} catch (Exception e) {
+				System.out.println("Error occured");
+				// e.printStackTrace();
 			}
 		}
 	}

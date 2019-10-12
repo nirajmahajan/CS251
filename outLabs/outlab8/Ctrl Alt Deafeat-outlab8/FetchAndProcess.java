@@ -42,9 +42,11 @@ default List<String> process() {
             PreparedStatement stat = conn.prepareStatement(sMakeInsert);
             for (Map.Entry<String, String> el : temp.entrySet()) {
                 try {
-                    stat.setString(1, el.getKey());
-                    stat.setString(2, el.getValue());
-                    stat.executeUpdate();
+                    for (String s : el.getValue().split("@@@")) {
+                        stat.setString(1, el.getKey());
+                        stat.setString(2, s);
+                        stat.executeUpdate();
+                    }
                 } catch (Exception e) {
                     // Duplicate Insertion Attempt! Skipped
                     continue;
