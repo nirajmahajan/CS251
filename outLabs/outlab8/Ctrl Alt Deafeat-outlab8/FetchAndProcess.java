@@ -55,7 +55,7 @@ default List<String> process() {
             stat.close();
             conn.close();
         } catch (Exception ex) {
-            ex.printStackTrace();
+            // ex.printStackTrace();
             System.out.println("Error occured");
             return null;
         }
