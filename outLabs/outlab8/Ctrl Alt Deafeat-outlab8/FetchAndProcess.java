@@ -46,10 +46,8 @@ default List<String> process() {
                     stat.setString(2, el.getValue());
                     stat.executeUpdate();
                 } catch (Exception e) {
-                    // e.printStackTrace();
-                    conn.rollback();
-                    System.out.println("Duplicate Insertion Attempt! Terminated.");
-                    return null;
+                    // Duplicate Insertion Attempt! Skipped
+                    continue;
                 }
             }
             conn.commit();
@@ -57,7 +55,7 @@ default List<String> process() {
             stat.close();
             conn.close();
         } catch (Exception ex) {
-            // ex.printStackTrace();
+            ex.printStackTrace();
             System.out.println("Error occured");
             return null;
         }
