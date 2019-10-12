@@ -36,6 +36,7 @@ default List<String> process() {
         try {
             Class.forName(sDriverName);
             Connection conn = DriverManager.getConnection(sDbUrl);
+            conn.setAutoCommit(false);
             Statement stmt = conn.createStatement();
             stmt.executeUpdate( sMakeTable );
             PreparedStatement stat = conn.prepareStatement(sMakeInsert);
@@ -46,11 +47,14 @@ default List<String> process() {
                     stat.executeUpdate();
                 } catch (Exception e) {
                     // e.printStackTrace();
+                    conn.rollback();
                     System.out.println("Duplicate Insertion Attempt! Terminated.");
                     return null;
                 }
             }
+            conn.commit();
             stmt.close();
+            stat.close();
             conn.close();
         } catch (Exception ex) {
             // ex.printStackTrace();
