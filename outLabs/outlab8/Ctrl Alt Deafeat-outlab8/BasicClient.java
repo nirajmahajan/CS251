@@ -90,7 +90,7 @@ public class BasicClient {
                     System.out.println("No Server");
                     System.exit(1);
                 } catch (IOException e) {
-                    System.err.println("Couldn't get I/O for the connection to RA");
+                    System.err.println("No Server");
                     //System.out.println("No Server");
                     System.exit(1);
                 }
