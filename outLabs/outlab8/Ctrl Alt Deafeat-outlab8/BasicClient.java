@@ -48,12 +48,12 @@ public class BasicClient {
                                 int change;
                                 if(m.containsKey(i))
                                 {
-                                    change=serverInput-m.put(i,serverInput);
+                                    change=serverInput-m.get(i);
                                     delta=delta+change;
                                 }
                                 else
                                 {
-                                    m.put(i,serverInput);
+                                    //m.put(i,serverInput);
                                     change=serverInput;
                                     delta=delta+serverInput;
                                 }
@@ -61,14 +61,20 @@ public class BasicClient {
                                 System.out.print(" ");
                                 System.out.println(change);
                         }
-                        else{
+                        else if(myin[0].equals("add")){
+                                out.println(userInput);
+                                serverInput=Integer.parseInt(in.readLine());
+                                int i=Integer.parseInt(myin[1]);
+                                m.put(i,serverInput);
+                        }
+                        /*else{
                                 //System.out.print("till");
                                 out.println(userInput);
                                 //System.out.print("till");
                                 serverInput=Integer.parseInt(in.readLine());
                                 //System.out.print("till");
                                 //System.out.println(serverInput);
-                        }
+                        }*/
                         userInput=stdIn.readLine();
                         myin=userInput.split(" ",2);
                     }
@@ -100,6 +106,6 @@ public class BasicClient {
                 System.exit(1);
             }
         }
-        System.out.println("Delta is : " + delta);
+        System.out.println(delta);
     }
 }

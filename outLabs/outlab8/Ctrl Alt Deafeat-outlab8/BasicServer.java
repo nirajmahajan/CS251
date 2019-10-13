@@ -67,7 +67,7 @@ public class BasicServer {
                 }
         
                 System.out.println("DIS");
-                m= new HashMap<Integer,Integer>();
+                //m= new HashMap<Integer,Integer>();
                 out.close();in.close();
                 serverSocket.close();
             } catch (IOException e) {
