@@ -7,8 +7,8 @@ public class BasicClient {
          
         if (args.length != 1) {
             System.err.println(
-                "Usage: java EchoClient <host name> <port number>");
-            System.exit(1);
+                "Usage: java BasicClient <host name> <port number>");
+            System.exit(0);
         }
         int delta=0;
         Map<Integer,Integer> m= new HashMap<Integer,Integer>();

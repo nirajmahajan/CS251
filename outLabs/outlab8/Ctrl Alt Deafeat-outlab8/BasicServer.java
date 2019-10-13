@@ -71,7 +71,7 @@ public class BasicServer {
                 out.close();in.close();
                 serverSocket.close();
             } catch (IOException e) {
-                System.out.println("here");
+                System.out.println("IOException " + e);
                 /*System.out.println("Exception caught when trying to listen on port "
                     + portNumber + " or listening for a connection");
                 System.out.println(e.getMessage());*/
