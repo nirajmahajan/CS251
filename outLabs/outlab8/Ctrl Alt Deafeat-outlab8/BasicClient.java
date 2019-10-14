@@ -83,7 +83,7 @@ public class BasicClient {
                     out.println("disconnect");
                     out.close();
                     in.close();
-                    echoSocket.close();
+                    // echoSocket.close();
                     System.out.println("OK");
                     //Thread.sleep(100);
                     userInput=stdIn.readLine();
