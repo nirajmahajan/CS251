@@ -76,7 +76,9 @@ public class BasicClient {
                                 //System.out.println(serverInput);
                         }*/
                         userInput=stdIn.readLine();
-                        myin=userInput.split(" ",2);
+                        if(userInput != null){
+                            myin=userInput.split(" ",2);
+                        }
                     }
                     out.println("disconnect");
                     out.close();

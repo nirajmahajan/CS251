@@ -24,52 +24,52 @@ public class BasicServer {
                 
                 int portNumber = 5000;
                 String inputLine;
-                inputLine = in.readLine();
-                String[] arr=inputLine.split(" ",2);
-                while (!arr[0].equals("disconnect")) {
-                    
-                    //System.out.println(arr[0]+"@"+arr[1]);
-                    if(arr[0].equals("add"))
-                    {
-                        //System.out.println("HERE");
-                        int i=Integer.parseInt(arr[1]);
-                        int ans;
-                        if(m.containsKey(i))
+                if((inputLine = in.readLine()) != null){
+                    String[] arr=inputLine.split(" ",2);
+                    while (!arr[0].equals("disconnect")) {
+                        
+                        //System.out.println(arr[0]+"@"+arr[1]);
+                        if(arr[0].equals("add"))
                         {
-                            ans=m.put(i,m.get(i)+1);
-                            ans++;
+                            //System.out.println("HERE");
+                            int i=Integer.parseInt(arr[1]);
+                            int ans;
+                            if(m.containsKey(i))
+                            {
+                                ans=m.put(i,m.get(i)+1);
+                                ans++;
+                            }
+                            else
+                            {
+                                m.put(i,1);
+                                ans=1;
+                            }
+                            out.println(ans);
+                            System.out.println("ADD "+i);
                         }
-                        else
+                        else if(arr[0].equals("read"))
                         {
-                            m.put(i,1);
-                            ans=1;
+                            int i=Integer.parseInt(arr[1]);
+                            int ans;
+                            if(m.containsKey(i))
+                            {
+                                ans=m.get(i);
+                            }
+                            else
+                            {
+                                ans=0;
+                            }
+                            out.println(ans);
+                            System.out.println("READ "+i+" "+ans);   
                         }
-                        out.println(ans);
-                        System.out.println("ADD "+i);
+                        inputLine = in.readLine();
+                        arr=inputLine.split(" ",2); 
                     }
-                    else if(arr[0].equals("read"))
-                    {
-                        int i=Integer.parseInt(arr[1]);
-                        int ans;
-                        if(m.containsKey(i))
-                        {
-                            ans=m.get(i);
-                        }
-                        else
-                        {
-                            ans=0;
-                        }
-                        out.println(ans);
-                        System.out.println("READ "+i+" "+ans);   
-                    }
-                    inputLine = in.readLine();
-                    arr=inputLine.split(" ",2); 
+                    System.out.println("DIS");
+                    //m= new HashMap<Integer,Integer>();
+                    out.close();in.close();
+                    serverSocket.close();
                 }
-        
-                System.out.println("DIS");
-                //m= new HashMap<Integer,Integer>();
-                out.close();in.close();
-                serverSocket.close();
             } catch (IOException e) {
                 System.out.println("IOException " + e);
                 /*System.out.println("Exception caught when trying to listen on port "
