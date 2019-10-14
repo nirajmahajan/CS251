@@ -4,24 +4,20 @@ import java.util.*;
 //check closing the sockets
 public class BasicServer {
     public static void main(String[] args) throws IOException {
-         
+        ServerSocket serverSocket = new ServerSocket(5000);         
         
         System.out.println("Listening on 5000"); 
         Map<Integer,Integer> m= new HashMap<Integer,Integer>();
         while(true){ 
             try (
 
-                ServerSocket serverSocket =
-                    new ServerSocket(5000);
                 Socket clientSocket = serverSocket.accept();     
                 PrintWriter out =
-                    new PrintWriter(clientSocket.getOutputStream(), true);                   
-                BufferedReader in = new BufferedReader(
-                    new InputStreamReader(clientSocket.getInputStream()));
-            ) 
-
-            {
-                
+                        new PrintWriter(clientSocket.getOutputStream(), true);                   
+                    BufferedReader in = new BufferedReader(
+                        new InputStreamReader(clientSocket.getInputStream()));
+                ){
+                    
                 int portNumber = 5000;
                 String inputLine;
                 if((inputLine = in.readLine()) != null){
@@ -68,7 +64,7 @@ public class BasicServer {
                     System.out.println("DIS");
                     //m= new HashMap<Integer,Integer>();
                     out.close();in.close();
-                    serverSocket.close();
+                    // serverSocket.close();
                 }
             } catch (IOException e) {
                 System.out.println("IOException " + e);

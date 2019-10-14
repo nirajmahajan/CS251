@@ -1,0 +1,12 @@
+connect localhost 5000
+add 2
+read 2
+read 2
+read 2
+disconnect
+connect localhost 5000
+add 1
+read 1
+read 1
+read 1
+disconnect
