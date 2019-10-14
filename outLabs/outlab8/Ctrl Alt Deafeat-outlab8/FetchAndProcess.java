@@ -30,7 +30,7 @@ default List<String> process() {
         String sDriverName = "org.sqlite.JDBC";
         String sJdbc = "jdbc:sqlite";
         String sDbUrl = sJdbc + ":" + DB_NAME;
-        String sMakeTable = String.format("CREATE TABLE IF NOT EXISTS %s (pokemon_name TEXT NOT NULL, source_path TEXT, PRIMARY KEY (pokemon_name, source_path))", TABLE_NAME);
+        String sMakeTable = String.format("CREATE TABLE IF NOT EXISTS %s (pokemon_name TEXT NOT NULL, source_path TEXT NOT NULL, PRIMARY KEY (pokemon_name, source_path))", TABLE_NAME);
         String sMakeInsert = String.format("INSERT INTO %s (pokemon_name, source_path) VALUES(?, ?)", TABLE_NAME);
         Map<String, String> temp = this.exposeData();
         try {
