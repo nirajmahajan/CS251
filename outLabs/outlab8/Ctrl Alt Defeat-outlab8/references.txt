@@ -1,0 +1,7 @@
+https://crunchify.com/how-to-run-multiple-threads-concurrently-in-java-executorservice-approach/
+
+http://tutorials.jenkov.com/java-util-concurrent/executorservice.html
+
+https://en.wikibooks.org/wiki/Java_JDBC_using_SQLite/Connecting
+
+https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html

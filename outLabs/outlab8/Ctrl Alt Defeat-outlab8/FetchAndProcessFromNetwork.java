@@ -1,44 +1,37 @@
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.BufferedReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-/* add some more imports */
-import java.io.BufferedReader;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 
-public class FetchAndProcessFromNetworkFast implements FetchAndProcess {
+public class FetchAndProcessFromNetwork implements FetchAndProcess {
     private Map<String, String> data = new HashMap<String, String>();
     @Override
     public Map<String, String> exposeData() {
         return data;
     }
-    class MyRunnable implements Runnable {
-        private final String url;
-        MyRunnable(String url) {
-            this.url = url;
-        }
-        @Override
-        public void run() {
+    @Override
+    public void fetch(List<String> paths) {
+        for (String s : paths) {
             try {
-                URL curr = new URL(url);
+                URL curr = new URL(s);
                 URLConnection conn = curr.openConnection();
                 conn.connect();
                 BufferedReader breader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 String inputLine;
                 while ((inputLine = breader.readLine()) != null) {
                     if (data.containsKey(inputLine)) {
-                        data.put(inputLine, data.get(inputLine) + "@@@" + url);
-                    } else  data.put(inputLine, url);
+                        data.put(inputLine, data.get(inputLine) + "@@@" + s);
+                    } else  data.put(inputLine, s);
                 }
                 if (breader != null) breader.close();
             } catch (Exception ex) {
@@ -46,18 +39,6 @@ public class FetchAndProcessFromNetworkFast implements FetchAndProcess {
                 // ex.printStackTrace();
             }
         }
-    }
-
-    @Override
-    public void fetch(List<String> paths) {
-        // Implement here, just do it parallely!
-        ExecutorService executor = Executors.newCachedThreadPool();
-        for (String s : paths) {
-            Runnable worker = new MyRunnable(s);
-            executor.execute(worker);
-        }
-        executor.shutdown();
-        while (!executor.isTerminated()) {}
     }
     @Override
     public List<String> process() {
@@ -78,7 +59,8 @@ public class FetchAndProcessFromNetworkFast implements FetchAndProcess {
             List<String> outp = new ArrayList<String>();
             while (rs.next())
                 outp.add(rs.getString("pokemon_name"));
-            // System.out.println(outp);
+            for(String s : outp)
+                System.out.println(s);
             stmt.close();
             conn.close();
             return outp;
