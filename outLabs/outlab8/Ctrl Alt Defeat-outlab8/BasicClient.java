@@ -87,7 +87,7 @@ public class BasicClient {
                     System.out.println("OK");
                     //Thread.sleep(100);
                     userInput=stdIn.readLine();
-                    m= new HashMap<Integer,Integer>();
+                    //m= new HashMap<Integer,Integer>();
                 } catch (UnknownHostException e) {
                     System.out.println("No Server");
                     System.exit(1);
