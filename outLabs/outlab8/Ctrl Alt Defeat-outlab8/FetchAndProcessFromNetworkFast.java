@@ -51,7 +51,7 @@ public class FetchAndProcessFromNetworkFast implements FetchAndProcess {
     @Override
     public void fetch(List<String> paths) {
         // Implement here, just do it parallely!
-        ExecutorService executor = Executors.newCachedThreadPool();
+        ExecutorService executor = Executors.newFixedThreadPool(10);
         for (String s : paths) {
             Runnable worker = new MyRunnable(s);
             executor.execute(worker);
