@@ -1,5 +1,6 @@
 package android.example.Planner;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -198,8 +200,9 @@ public class GameTemplate extends AppCompatActivity
         descriptionBox.setHint("Description");
         layout.addView(descriptionBox);
 
-        final EditText dateBox = new EditText(context);
-        dateBox.setHint("Date");
+        final Button dateBox = new Button(context);
+        dateBox.setText("Click here to Select Date");
+        dateBox.setId(12345);
         layout.addView(dateBox);
 
         AlertDialog.Builder db = new AlertDialog.Builder(this);
@@ -216,6 +219,34 @@ public class GameTemplate extends AppCompatActivity
         });
         db.setNegativeButton("Cancel", null);
         db.setView(layout);
+        Button dater = (Button)dateBox.findViewById(12345);
+        dater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int mYear, mMonth, mDay, mHour, mMinute;
+                final Calendar c = Calendar.getInstance();
+                mYear = c.get(Calendar.YEAR);
+                mMonth = c.get(Calendar.MONTH);
+                mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(GameTemplate.this,
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year,
+                                                  int monthOfYear, int dayOfMonth) {
+
+                                String date = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                                dateBox.setText(date);
+
+                            }
+                        }, mYear, mMonth, mDay);
+                datePickerDialog.show();
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
+                datePickerDialog.setCancelable(false);
+            }
+        });
         db.setCancelable(false);
         return db.create();
     }

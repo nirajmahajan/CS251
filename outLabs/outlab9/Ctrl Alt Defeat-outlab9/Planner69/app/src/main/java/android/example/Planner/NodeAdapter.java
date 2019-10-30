@@ -73,7 +73,7 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
 
                 if(canGoDeeper) {
                     Long prev_time = times.get(curr.getId());
-                    if (prev_time != -1) {
+                    if (prev_time != null && prev_time != -1) {
                         Long curr_time = System.currentTimeMillis();
                         times.put(curr.getId(), System.currentTimeMillis());
                         if (curr_time - prev_time < 350) {
