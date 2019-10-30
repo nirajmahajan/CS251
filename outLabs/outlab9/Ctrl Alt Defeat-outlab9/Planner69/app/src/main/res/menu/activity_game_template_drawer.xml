@@ -5,8 +5,8 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/Home"
-            android:title="Home" />
+            android:id="@+id/nav_scoreboard"
+            android:title="Scoreboard" />
     </group>
 
     <item

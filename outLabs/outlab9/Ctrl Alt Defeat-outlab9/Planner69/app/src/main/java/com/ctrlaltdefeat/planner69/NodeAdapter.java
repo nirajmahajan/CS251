@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder> {
     private Context mContext;
     private Cursor mCursor;
-   public NodeAdapter(Context context, Cursor cursor){
-       mContext = context;
-       mCursor = cursor;
-   }
+    public NodeAdapter(Context context, Cursor cursor){
+        mContext = context;
+        mCursor = cursor;
+    }
     public class NodeViewHolder extends RecyclerView.ViewHolder{
         public TextView nameText;
         public TextView descText;
