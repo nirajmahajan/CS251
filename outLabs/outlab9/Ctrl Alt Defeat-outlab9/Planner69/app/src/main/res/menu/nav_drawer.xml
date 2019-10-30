@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/Home"
+            android:title="Home" />
+    </group>
+
+    <item
+        android:title="Edit Game Details">
+        <menu>
+            <item
+                android:id="@+id/nav_player_edit_mode"
+                android:title="Player Details"/>
+            <item
+                android:id="@+id/nav_score_edit_mode"
+                android:title="Edit Score" />
+            <item
+                android:id="@+id/nav_dealer_edit_mode"
+                android:title="Change Dealer" />
+        </menu>
+    </item>
+
+    <item
+        android:title="Game Log">
+        <menu>
+            <item
+                android:id="@+id/nav_round_log"
+                android:title="Round log"/>
+            <item
+                android:id="@+id/nav_edit_score_log"
+                android:title="Edit Score Log" />
+        </menu>
+    </item>
+
+</menu>

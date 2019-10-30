@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Zen");
-        setContentView(R.layout.home);
+        setContentView(R.layout.activity_main);
 
         mTextView = findViewById(R.id.curr_desc);
 
