@@ -1,5 +1,6 @@
 package android.example.Planner;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -28,6 +30,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class GameTemplate extends AppCompatActivity
@@ -110,23 +113,33 @@ public class GameTemplate extends AppCompatActivity
         this.toolbar_id = toolbar_id;
     }
 
-//    public void setToolbarTitle (String title) {
-//        toolbar.setTitle(title);
-//        setSupportActionBar(toolbar);
-//        toolbar.setTitleTextColor(Color.WHITE);
-//        toggle = new ActionBarDrawerToggle(
-//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        if (useDrawer())
-//        {
-//            drawer.addDrawerListener(toggle);
-//            toggle.syncState();
-//            navigationView.setNavigationItemSelectedListener(this);
-//        }
-//        else
-//        {
-//            drawer.setVisibility(View.GONE);
-//        }
-//    }
+    public void chooseDateAndChange(){
+        // Get Current Date
+        int mYear, mMonth, mDay, mHour, mMinute;
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+
+                        String date = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                        mAdapter.nodes = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByDate(date);
+                        mAdapter.notifyDataSetChanged();
+                        descrip.setText("Entries for the date : " + date);
+
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.show();
+        datePickerDialog.setCancelable(false);
+
+    }
 
     @Override
     public void onBackPressed() {
@@ -151,7 +164,7 @@ public class GameTemplate extends AppCompatActivity
                 popup().show();
                 return true;
             case R.id.action_date_selector:
-                popup().show();
+                chooseDateAndChange();
                 return true;
 
             default:

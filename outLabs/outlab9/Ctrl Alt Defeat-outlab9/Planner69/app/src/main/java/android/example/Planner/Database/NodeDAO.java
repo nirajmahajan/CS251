@@ -12,22 +12,22 @@ public interface NodeDAO {
     @Query("Select COUNT(*) FROM nodes")
     int countNodes();
 
-    @Query("Select * FROM nodes")
+    @Query("Select * FROM nodes ORDER BY name DESC")
     List<Node> getAllNodes();
 
-    @Query("Select * FROM nodes WHERE name LIKE :name")
+    @Query("Select * FROM nodes WHERE name LIKE :name ORDER BY name DESC")
     List<Node> findByName(String name);
 
-    @Query("Select * FROM nodes WHERE parent LIKE :parent")
+    @Query("Select * FROM nodes WHERE parent LIKE :parent ORDER BY name DESC")
     List<Node> findByParent(String parent);
 
-    @Query("Select * FROM nodes WHERE description LIKE :description")
+    @Query("Select * FROM nodes WHERE description LIKE :description ORDER BY name DESC")
     List<Node> findByDescription(String description);
 
-    @Query("Select * FROM nodes WHERE date LIKE :date")
+    @Query("Select * FROM nodes WHERE date LIKE :date ORDER BY name DESC")
     List<Node> findByDate(String date);
 
-    @Query("Select * FROM nodes WHERE expanded LIKE :expanded")
+    @Query("Select * FROM nodes WHERE expanded LIKE :expanded ORDER BY name DESC")
     List<Node> findExpanded(boolean expanded);
 
     @Query("Select * FROM nodes ORDER BY name DESC")
