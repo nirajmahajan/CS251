@@ -20,7 +20,7 @@ public class TaskActivity extends GameTemplate {
         super.onCreate(savedInstanceState);
         name = getIntent().getStringExtra("NAME");
         super.setParentName(name);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_task);
 
         AppDatabase.buildAppDatabase(getApplicationContext());
 

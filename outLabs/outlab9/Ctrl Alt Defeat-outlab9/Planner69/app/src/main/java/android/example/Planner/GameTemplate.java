@@ -41,6 +41,7 @@ public class GameTemplate extends AppCompatActivity
     AppCompatActivity activity = this;
     private NodeAdapter mAdapter;
     private String parent;
+    private int toolbar_id;
     TextView descrip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,6 @@ public class GameTemplate extends AppCompatActivity
     @Override
     public void setContentView(int layoutResID)
     {
-
         fullView = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_game_template, null);
         FrameLayout activityContainer = (FrameLayout) fullView.findViewById(R.id.game_template_activity_content);
         getLayoutInflater().inflate(layoutResID, activityContainer, true);
@@ -88,17 +88,26 @@ public class GameTemplate extends AppCompatActivity
 
     protected void setParentName(String name) {
         this.parent = name;
+        toolbar_id = R.menu.main_menu;
     }
 
     protected void setmAdapter(NodeAdapter mAdapter) {
         this.mAdapter = mAdapter;
         descrip = (TextView) findViewById(R.id.description);
-        List<Node> temp = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName(parent);
-        if(temp.size() <= 0){
-            descrip.setText("No description Found");
-            return;
+        if(parent.equals("Day View")) {
+            descrip.setText("Day View for all entries");
+        } else {
+            List<Node> temp = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName(parent);
+            if (temp.size() <= 0) {
+                descrip.setText("No description Found");
+                return;
+            }
+            descrip.setText(AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName(parent).get(0).getDescription());
         }
-        descrip.setText(AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName(parent).get(0).getDescription());
+    }
+
+    protected void setToolbar(int toolbar_id){
+        this.toolbar_id = toolbar_id;
     }
 
 //    public void setToolbarTitle (String title) {
@@ -131,7 +140,7 @@ public class GameTemplate extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        getMenuInflater().inflate(toolbar_id, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -139,6 +148,9 @@ public class GameTemplate extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add_task:
+                popup().show();
+                return true;
+            case R.id.action_date_selector:
                 popup().show();
                 return true;
 

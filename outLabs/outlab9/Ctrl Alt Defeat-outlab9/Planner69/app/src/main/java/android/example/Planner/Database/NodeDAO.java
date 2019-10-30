@@ -30,6 +30,9 @@ public interface NodeDAO {
     @Query("Select * FROM nodes WHERE expanded LIKE :expanded")
     List<Node> findExpanded(boolean expanded);
 
+    @Query("Select * FROM nodes ORDER BY name DESC")
+    List<Node> getOrdered();
+
     @Insert
     long[] Insert(Node... nodes);
 
