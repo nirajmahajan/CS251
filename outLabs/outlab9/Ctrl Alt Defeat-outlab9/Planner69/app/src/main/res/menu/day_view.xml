@@ -5,4 +5,8 @@
         android:id="@+id/action_date_selector"
         android:title="Date Selector"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_all_again"
+        android:title="All dates"
+        app:showAsAction="never" />
 </menu>

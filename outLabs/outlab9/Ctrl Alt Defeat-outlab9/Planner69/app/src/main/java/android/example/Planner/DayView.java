@@ -35,6 +35,7 @@ public class DayView extends GameTemplate {
         ((SimpleItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new NodeAdapter(this, AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().getOrdered(), false);
+        mAdapter.isDayView = true;
         super.setmAdapter(mAdapter);
         recyclerView.setAdapter(mAdapter);
     }

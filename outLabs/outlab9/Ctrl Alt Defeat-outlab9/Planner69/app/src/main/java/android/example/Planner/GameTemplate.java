@@ -168,6 +168,11 @@ public class GameTemplate extends AppCompatActivity
             case R.id.action_date_selector:
                 chooseDateAndChange();
                 return true;
+            case R.id.action_all_again:
+                mAdapter.nodes = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().getOrdered();
+                mAdapter.notifyDataSetChanged();
+                descrip.setText("Entries for all dates");
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -175,6 +180,13 @@ public class GameTemplate extends AppCompatActivity
     }
 
     private void addItem(String title, String desc, String date) {
+        List<Node> temp1 = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName(title);
+        if(temp1.size() != 0) {
+            Toast.makeText(getApplicationContext(), "Name already taken", Toast.LENGTH_LONG);
+            return;
+        }
+
+        if(date.equals("Click here to Select Date")){date = "";}
         Node temp = new Node();
         temp.setName(title);
         temp.setDescription(desc);

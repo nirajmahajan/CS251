@@ -34,4 +34,14 @@ public abstract class AppDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
+
+    public static String heirarchy(String node) {
+
+        if(node.equals("Zen")) {
+            return "Zen";
+        } else {
+            String parent = INSTANCE.nodeDAO().findByName(node).get(0).getParent();
+            return heirarchy(parent) + "/" + node;
+        }
+    }
 }

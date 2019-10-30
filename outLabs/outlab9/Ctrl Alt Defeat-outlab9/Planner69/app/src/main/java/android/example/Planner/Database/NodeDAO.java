@@ -18,6 +18,9 @@ public interface NodeDAO {
     @Query("Select * FROM nodes WHERE name LIKE :name ORDER BY name DESC")
     List<Node> findByName(String name);
 
+    @Query("Select * FROM nodes WHERE id LIKE :id ORDER BY name DESC")
+    Node findById(int id);
+
     @Query("Select * FROM nodes WHERE parent LIKE :parent ORDER BY name DESC")
     List<Node> findByParent(String parent);
 
@@ -29,6 +32,9 @@ public interface NodeDAO {
 
     @Query("Select * FROM nodes WHERE expanded LIKE :expanded ORDER BY name DESC")
     List<Node> findExpanded(boolean expanded);
+
+    @Query("Select * FROM nodes WHERE expanded LIKE :expanded AND name LIKE :name AND description LIKE :desc AND date LIKE :date ORDER BY name DESC")
+    List<Node> findExact(String name, String desc, String date, boolean expanded);
 
     @Query("Select * FROM nodes ORDER BY name DESC")
     List<Node> getOrdered();
