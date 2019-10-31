@@ -1,5 +1,6 @@
 package android.example.Planner;
 
+import android.content.Intent;
 import android.example.Planner.Database.AppDatabase;
 import android.example.Planner.Database.Node;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ public class DayView extends GameTemplate {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.setParentName(name);
+        super.setParentIdName(-1, name);
         super.setToolbar(R.menu.day_view);
         setContentView(R.layout.activity_day_view);
 
@@ -34,10 +35,16 @@ public class DayView extends GameTemplate {
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         ((SimpleItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new NodeAdapter(this, AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().getOrdered(), false);
-        mAdapter.isDayView = true;
+        mAdapter = new NodeAdapter(this, AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().getOrdered(), false, true);
         super.setmAdapter(mAdapter);
         recyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
 

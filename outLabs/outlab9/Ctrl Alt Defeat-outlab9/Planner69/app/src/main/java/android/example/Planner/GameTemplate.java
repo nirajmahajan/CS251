@@ -45,7 +45,8 @@ public class GameTemplate extends AppCompatActivity
     ActionBarDrawerToggle toggle;
     AppCompatActivity activity = this;
     private NodeAdapter mAdapter;
-    private String parent;
+    private String parent_name;
+    private int parent_id;
     private int toolbar_id;
     TextView descrip;
     @Override
@@ -63,7 +64,7 @@ public class GameTemplate extends AppCompatActivity
 
         toolbar = findViewById(R.id.game_toolbar);
         setSupportActionBar(toolbar);
-        setTitle(parent);
+        setTitle(parent_name);
         toolbar.setTitleTextColor(Color.WHITE);
 
         drawer = findViewById(R.id.drawer_layout);
@@ -91,23 +92,24 @@ public class GameTemplate extends AppCompatActivity
         return true;
     }
 
-    protected void setParentName(String name) {
-        this.parent = name;
+    protected void setParentIdName(int id, String name) {
+        this.parent_name = name;
+        this.parent_id = id;
         toolbar_id = R.menu.main_menu;
     }
 
     protected void setmAdapter(NodeAdapter mAdapter) {
         this.mAdapter = mAdapter;
         descrip = (TextView) findViewById(R.id.description);
-        if(parent.equals("Day View")) {
+        if(parent_name.equals("Day View")) {
             descrip.setText("Day View for all entries");
         } else {
-            List<Node> temp = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName(parent);
+            List<Node> temp = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findById(parent_id);
             if (temp.size() <= 0) {
                 descrip.setText("No description Found");
                 return;
             }
-            descrip.setText(AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName(parent).get(0).getDescription());
+            descrip.setText(AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findById(parent_id).get(0).getDescription());
         }
     }
 
@@ -186,10 +188,10 @@ public class GameTemplate extends AppCompatActivity
         temp.setDescription(desc);
         temp.setDate(date);
         temp.setExpanded(false);
-        temp.setParent(parent);
+        temp.setParentId(parent_id);
 
         AppDatabase.Insert(temp);
-        mAdapter.nodes = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByParent(parent);
+        mAdapter.nodes = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByParentId(parent_id);
         mAdapter.notifyDataSetChanged();
     }
 
@@ -270,9 +272,11 @@ public class GameTemplate extends AppCompatActivity
         } else if (id == R.id.nav_dayview) {
             Intent intent = new Intent(getApplicationContext(), DayView.class);
             startActivity(intent);
+            finish();
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(getApplicationContext(), About.class);
             startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

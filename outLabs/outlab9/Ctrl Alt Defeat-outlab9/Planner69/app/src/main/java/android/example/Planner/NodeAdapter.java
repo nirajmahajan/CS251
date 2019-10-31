@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.example.Planner.Database.AppDatabase;
 import android.example.Planner.Database.Node;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,21 +23,30 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
 
 public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder> {
     private Context mContext;
+    private int parent_id = -1;
+    private String parent_name = null;
     public static List<Node> nodes;
     private Node currentexp = null;
     public boolean canGoDeeper;
     public boolean isDayView = false;
     public HashMap<Integer, Long> times;
-    public NodeAdapter(Context context, List<Node> nodes, boolean canGoDeeper){
+    public NodeAdapter(Context context, List<Node> nodes, boolean canGoDeeper, boolean isDayView){
         mContext = context;
+        this.isDayView = isDayView;
         this.canGoDeeper = canGoDeeper;
         this.nodes = nodes;
+        if(!nodes.isEmpty() && !isDayView) {
+            Node first = nodes.get(0);
+            parent_id = first.getParentId();
+            parent_name = AppDatabase.getAppDatabase(mContext).nodeDAO().findById(parent_id).get(0).getName();
+        }
         this.times = new HashMap<>();
         for(int i = 0; i < nodes.size(); i++) {
             times.put(nodes.get(i).getId(), Long.valueOf("-1"));
@@ -44,9 +54,25 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
     }
     public static void removeFromNodes(Node node) {
         nodes.remove(node);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            nodes.sort(new Comparator<Node>() {
+                @Override
+                public int compare(Node o1, Node o2) {
+                    return -o1.getName().compareTo(o2.getName());
+                }
+            });
+        }
     }
     public static void insertIntoNodes(Node node) {
         nodes.add(node);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            nodes.sort(new Comparator<Node>() {
+                @Override
+                public int compare(Node o1, Node o2) {
+                    return -o1.getName().compareTo(o2.getName());
+                }
+            });
+        }
     }
 
     public class NodeViewHolder extends RecyclerView.ViewHolder{
@@ -77,16 +103,26 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         View view = inflater.inflate(R.layout.child, parent, false);
         return new NodeViewHolder(view);
     }
-    private void addItem(String title, String desc, String date, String parent) {
+    private void addItem(String title, String desc, String date, int parentId) {
         Node temp = new Node();
         temp.setName(title);
         temp.setDescription(desc);
         temp.setDate(date);
         temp.setExpanded(false);
-        temp.setParent(parent);
+        temp.setParentId(parentId);
+
+        if((parent_id == -1 || parent_name == null) && !isDayView) {
+            this.parent_id = parentId;
+            Node temp_par = AppDatabase.getAppDatabase(mContext).nodeDAO().findById(parentId).get(0);
+            this.parent_name = temp_par.getName();
+        }
 
         AppDatabase.Insert(temp);
-        nodes = AppDatabase.getAppDatabase(mContext).nodeDAO().findByParent(parent);
+        if(isDayView) {
+            nodes = AppDatabase.getAppDatabase(mContext).nodeDAO().getOrdered();
+        } else {
+            nodes = AppDatabase.getAppDatabase(mContext).nodeDAO().findByParentId(parentId);
+        }
         notifyDataSetChanged();
     }
 
@@ -97,7 +133,7 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         String desc = curr.getDescription();
         String date = curr.getDate();
         String c1, c2, c3;
-        List<Node> allChildren = AppDatabase.getAppDatabase(mContext).nodeDAO().findByParent(curr.getName());
+        List<Node> allChildren = AppDatabase.getAppDatabase(mContext).nodeDAO().findByParentId(curr.getId());
         if(allChildren.size() == 1)  {
             c1 = allChildren.get(0).getName();
             holder.child1.setText(c1);
@@ -132,8 +168,11 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         TextView subItem = holder.itemView.findViewById(R.id.child_desc);
         subItem.setVisibility(expanded ? View.VISIBLE : View.GONE);
 
+        TextView child_tit = holder.itemView.findViewById(R.id.tit);
+        child_tit.setVisibility((expanded && !isDayView) ? View.VISIBLE : View.GONE);
+
         Button edit_it = holder.itemView.findViewById(R.id.edit);
-        edit_it.setVisibility((expanded && canGoDeeper) ? View.VISIBLE : View.GONE);
+        edit_it.setVisibility((expanded) ? View.VISIBLE : View.GONE);
 
         if(isDayView){
             TextView subItem1 = holder.itemView.findViewById(R.id.child1);
@@ -179,6 +218,7 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         edit_it.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final Node curr = nodes.get(position);
                 Context context = mContext;
                 LinearLayout layout = new LinearLayout(context);
                 layout.setOrientation(LinearLayout.VERTICAL);
@@ -207,8 +247,10 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
                         String title = String.valueOf(titleBox.getText());
                         String desc = String.valueOf(descriptionBox.getText());
                         String date = String.valueOf(dateBox.getText());
-                        if(title.trim().length() != 0 && desc.trim().length() != 0)
-                            addItem(title, desc, date, curr.getParent());
+                        if(title.trim().length() != 0 && desc.trim().length() != 0) {
+                            addItem(title, desc, date, curr.getParentId());
+                            currentexp = null;
+                        }
                     }
                 });
                 db.setNegativeButton("Cancel", null);
@@ -248,6 +290,7 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Node curr = nodes.get(position);
 
                 if(canGoDeeper) {
                     Long prev_time = times.get(curr.getId());
@@ -255,6 +298,10 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
                         Long curr_time = System.currentTimeMillis();
                         times.put(curr.getId(), System.currentTimeMillis());
                         if (curr_time - prev_time < 350) {
+                            AppDatabase.Delete(curr);
+                            curr.setExpanded(false);
+                            AppDatabase.Insert(curr);
+                            currentexp = null;
                             Intent intent = new Intent(mContext, TaskActivity.class);
                             intent.putExtra("NAME", curr.getId());
                             mContext.startActivity(intent);
@@ -272,7 +319,12 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
                 }
                 NodeAdapter.this.notifyDataSetChanged();
 
-                if(curr != currentexp) {
+                if(currentexp == null) {
+                    AppDatabase.Delete(curr);
+                    curr.setExpanded(true);
+                    AppDatabase.Insert(curr);
+                    currentexp = curr;
+                } else if(curr.getId() != currentexp.getId()) {
                     AppDatabase.Delete(curr);
                     curr.setExpanded(true);
                     AppDatabase.Insert(curr);

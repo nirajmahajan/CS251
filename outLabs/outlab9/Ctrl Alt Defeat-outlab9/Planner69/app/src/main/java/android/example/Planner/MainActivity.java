@@ -17,11 +17,13 @@ public class MainActivity extends GameTemplate {
     private static final String name = "Zen";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        super.setParentName(name);
-        setContentView(R.layout.activity_main);
 
+        super.onCreate(savedInstanceState);
         AppDatabase.buildAppDatabase(getApplicationContext());
+
+        int curr_par_id = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName("Zen").get(0).getId();
+        super.setParentIdName(curr_par_id, name);
+        setContentView(R.layout.activity_main);
 
         for(Node elem : AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().getAllNodes()) {
             AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().deletefrom(elem);
@@ -32,7 +34,7 @@ public class MainActivity extends GameTemplate {
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         ((SimpleItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new NodeAdapter(this, AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByParent(name), true);
+        mAdapter = new NodeAdapter(this, AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByParentId(curr_par_id), true, false);
         super.setmAdapter(mAdapter);
         recyclerView.setAdapter(mAdapter);
     }

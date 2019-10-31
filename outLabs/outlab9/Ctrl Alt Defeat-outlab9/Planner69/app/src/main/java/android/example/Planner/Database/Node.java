@@ -1,5 +1,6 @@
 package android.example.Planner.Database;
 
+import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -18,8 +19,8 @@ public class Node {
     @ColumnInfo(name = "date")
     private String date;
 
-    @ColumnInfo(name = "parent")
-    private String parent;
+    @ColumnInfo(name = "parentId")
+    private int parentId;
 
     @ColumnInfo(name = "expanded")
     private boolean expanded;
@@ -56,12 +57,18 @@ public class Node {
         this.date = date;
     }
 
-    public String getParent() {
-        return parent;
+    public void setParentId(int parentId) {
+        this.parentId = parentId;
     }
 
-    public void setParent(String parent) {
-        this.parent = parent;
+    public int getParentId() {
+        return parentId;
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        Node other = (Node) obj;
+        return this.id == other.getId();
     }
 
     public boolean isExpanded() {
