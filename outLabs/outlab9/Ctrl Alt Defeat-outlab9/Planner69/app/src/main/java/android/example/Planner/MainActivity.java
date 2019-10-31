@@ -14,14 +14,16 @@ import java.util.List;
 
 public class MainActivity extends GameTemplate {
     private NodeAdapter mAdapter;
-    private static final String name = "Zen";
+    private static String name;
+    private int curr_par_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        name = "Zen";
+        curr_par_id = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName("Zen").get(0).getId();
 
         super.onCreate(savedInstanceState);
         AppDatabase.buildAppDatabase(getApplicationContext());
 
-        int curr_par_id = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName("Zen").get(0).getId();
         super.setParentIdName(curr_par_id, name);
         setContentView(R.layout.activity_main);
 

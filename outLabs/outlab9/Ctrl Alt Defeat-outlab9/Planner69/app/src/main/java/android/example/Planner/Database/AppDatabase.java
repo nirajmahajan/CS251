@@ -23,13 +23,7 @@ public abstract class AppDatabase extends RoomDatabase {
                             .allowMainThreadQueries()
                             .build();
             INSTANCE.nodeDAO().purge();
-            Node temp = new Node();
-            temp.setName("Zen");
-            temp.setExpanded(false);
-            temp.setDate("1/1/1111");
-            temp.setDescription("Do or Do not, there is no try");
-            temp.setParentId(-1);
-            INSTANCE.nodeDAO().insertinto(temp);
+            initDatabase();
         }
 
     }
@@ -43,6 +37,7 @@ public abstract class AppDatabase extends RoomDatabase {
                             .allowMainThreadQueries()
                             .build();
             INSTANCE.nodeDAO().purge();
+            initDatabase();
         }
         return INSTANCE;
     }
@@ -68,6 +63,31 @@ public abstract class AppDatabase extends RoomDatabase {
         int parentId = INSTANCE.nodeDAO().findByName(name).get(0).getParentId();
         Node temp = INSTANCE.nodeDAO().findById(parentId).get(0);
         return hierarchy(temp.getName()) + "/" + name;
+    }
+
+    private static void initDatabase() {
+        Node elem;
+        elem = new Node("Zen","If you chase two rabbits, you catch none.","",-1);
+        INSTANCE.nodeDAO().insertinto(elem);
+        int id_zen = INSTANCE.nodeDAO().findByName("Zen").get(0).getId();
+        elem = new Node("Acads","Padhai ki baatein","31/12/2019",id_zen);
+        INSTANCE.nodeDAO().insertinto(elem);
+        elem = new Node("Hobbies","<3","",id_zen);
+        INSTANCE.nodeDAO().insertinto(elem);
+        int id_hobbs = INSTANCE.nodeDAO().findByName("Hobbies").get(0).getId();
+        elem = new Node("Self_improvement","Reading list, blogs, exercise, etc.","30/12/2019",id_zen);
+        INSTANCE.nodeDAO().insertinto(elem);
+        int id_selfimp = INSTANCE.nodeDAO().findByName("Self_improvement").get(0).getId();
+        elem = new Node("Research","Pet projects","",id_zen);
+        INSTANCE.nodeDAO().insertinto(elem);
+        elem = new Node("Origami","cranes and tigers.","29/10/2019",id_hobbs);
+        INSTANCE.nodeDAO().insertinto(elem);
+        elem = new Node("Drum_practice","Aim:\nHallowed be thy name,\nAcid Rain (LTE)","29/10/2019",id_hobbs);
+        INSTANCE.nodeDAO().insertinto(elem);
+        elem = new Node("Exercise","someday?","29/2/2019",id_selfimp);
+        INSTANCE.nodeDAO().insertinto(elem);
+        elem = new Node("Reading_list","My bucket list:\nHear the Wind Sing\nThe Fountainhead\nAtlas Shrugged\nA prisoner of birth","",id_selfimp);
+        INSTANCE.nodeDAO().insertinto(elem);
     }
 
 }

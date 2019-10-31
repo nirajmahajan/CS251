@@ -65,6 +65,18 @@ public class Node {
         return parentId;
     }
 
+    public Node(String name, String description, String date, int parentId){
+        this.name=name;
+        this.description=description;
+        this.date=date;
+        this.parentId=parentId;
+        this.expanded=false;
+    }
+
+    public Node(){
+        this.expanded=false;
+    }
+
     @Override
     public boolean equals(@Nullable Object obj) {
         Node other = (Node) obj;

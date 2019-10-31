@@ -15,13 +15,16 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -84,15 +87,14 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         public TextView child3;
         public LinearLayout ll_second;
         public Button edit;
+        public ListView ll_child_list;
         public NodeViewHolder(@NonNull View itemView) {
             super(itemView);
             nameText = itemView.findViewById(R.id.child_name);
             descText = itemView.findViewById(R.id.child_desc);
             dateText = itemView.findViewById(R.id.child_date);
             ll_second = itemView.findViewById(R.id.ll_second);
-            child1 = itemView.findViewById(R.id.child1);
-            child2 = itemView.findViewById(R.id.child2);
-            child3 = itemView.findViewById(R.id.child3);
+            ll_child_list = itemView.findViewById(R.id.ll_child_list);
             edit = itemView.findViewById(R.id.edit);
         }
     }
@@ -132,33 +134,7 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         String name = curr.getName();
         String desc = curr.getDescription();
         String date = curr.getDate();
-        String c1, c2, c3;
         List<Node> allChildren = AppDatabase.getAppDatabase(mContext).nodeDAO().findByParentId(curr.getId());
-        if(allChildren.size() == 1)  {
-            c1 = allChildren.get(0).getName();
-            holder.child1.setText(c1);
-        } else if(allChildren.size() == 0)  {
-            holder.child1.setText("No Child Tasks");
-        }
-        else if (allChildren.size() == 2) {
-            c1 = allChildren.get(0).getName();
-            c2 = allChildren.get(1).getName();
-            holder.child1.setText(c1);
-            holder.child2.setText(c2);
-        } else if (allChildren.size() == 3) {
-            c1 = allChildren.get(0).getName();
-            c2 = allChildren.get(1).getName();
-            c3 = allChildren.get(2).getName();
-            holder.child1.setText(c1);
-            holder.child2.setText(c2);
-            holder.child3.setText(c3);
-        } else if (allChildren.size() > 3) {
-            c1 = allChildren.get(0).getName();
-            c2 = allChildren.get(1).getName();
-            holder.child1.setText(c1);
-            holder.child2.setText(c2);
-            holder.child3.setText("...");
-        }
 
         holder.nameText.setText(name);
         holder.descText.setText(desc);
@@ -171,49 +147,33 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         TextView child_tit = holder.itemView.findViewById(R.id.tit);
         child_tit.setVisibility((expanded && !isDayView) ? View.VISIBLE : View.GONE);
 
-        Button edit_it = holder.itemView.findViewById(R.id.edit);
-        edit_it.setVisibility((expanded) ? View.VISIBLE : View.GONE);
+//        TextView dateV = holder.itemView.findViewById(R.id.child_date);
+//        dateV.setVisibility(!(curr.getDate().equals("")) ? View.VISIBLE : View.GONE);
 
-        if(isDayView){
-            TextView subItem1 = holder.itemView.findViewById(R.id.child1);
-            subItem1.setVisibility(expanded ? View.VISIBLE : View.GONE);
-            String hr =  AppDatabase.hierarchy(curr.getName());
-            subItem1.setText("Hierarchy: " + hr);
-            TextView subItem2 = holder.itemView.findViewById(R.id.child2);
-            subItem2.setVisibility(View.GONE);
-            TextView subItem3 = holder.itemView.findViewById(R.id.child3);
-            subItem3.setVisibility(View.GONE);
-        } else {
-            if (allChildren.size() == 0) {
-                TextView subItem1 = holder.itemView.findViewById(R.id.child1);
-                subItem1.setVisibility(expanded ? View.VISIBLE : View.GONE);
-                TextView subItem2 = holder.itemView.findViewById(R.id.child2);
-                subItem2.setVisibility(View.GONE);
-                TextView subItem3 = holder.itemView.findViewById(R.id.child3);
-                subItem3.setVisibility(View.GONE);
-            } else if (allChildren.size() == 1) {
-                TextView subItem1 = holder.itemView.findViewById(R.id.child1);
-                subItem1.setVisibility(expanded ? View.VISIBLE : View.GONE);
-                TextView subItem2 = holder.itemView.findViewById(R.id.child2);
-                subItem2.setVisibility(View.GONE);
-                TextView subItem3 = holder.itemView.findViewById(R.id.child3);
-                subItem3.setVisibility(View.GONE);
-            } else if (allChildren.size() == 2) {
-                TextView subItem1 = holder.itemView.findViewById(R.id.child1);
-                subItem1.setVisibility(expanded ? View.VISIBLE : View.GONE);
-                TextView subItem2 = holder.itemView.findViewById(R.id.child2);
-                subItem2.setVisibility(expanded ? View.VISIBLE : View.GONE);
-                TextView subItem3 = holder.itemView.findViewById(R.id.child3);
-                subItem3.setVisibility(View.GONE);
-            } else if (allChildren.size() >= 3) {
-                TextView subItem1 = holder.itemView.findViewById(R.id.child1);
-                subItem1.setVisibility(expanded ? View.VISIBLE : View.GONE);
-                TextView subItem2 = holder.itemView.findViewById(R.id.child2);
-                subItem2.setVisibility(expanded ? View.VISIBLE : View.GONE);
-                TextView subItem3 = holder.itemView.findViewById(R.id.child3);
-                subItem3.setVisibility(expanded ? View.VISIBLE : View.GONE);
-            }
+        Button edit_it = holder.itemView.findViewById(R.id.edit);
+        edit_it.setVisibility((expanded && !(curr.getName().equals("Zen"))) ? View.VISIBLE : View.GONE);
+
+
+        ListView listView = (ListView) holder.itemView.findViewById(R.id.ll_child_list);
+        listView.setVisibility((expanded) ? View.VISIBLE : View.GONE);
+        List<String> name_children = new ArrayList<>();
+        for(Node elem:allChildren) {
+            name_children.add(elem.getName());
         }
+
+        if (name_children.size() == 0) {
+            name_children.add("No Child Tasks Found");
+        }
+        if(isDayView){
+            String hr =  AppDatabase.hierarchy(curr.getName());
+            name_children = new ArrayList<>();
+            name_children.add("Hierarchy: " + hr);
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext,
+                android.R.layout.simple_list_item_1, android.R.id.text1, name_children);
+        listView.setAdapter(adapter);
+
 
         edit_it.setOnClickListener(new View.OnClickListener() {
             @Override
