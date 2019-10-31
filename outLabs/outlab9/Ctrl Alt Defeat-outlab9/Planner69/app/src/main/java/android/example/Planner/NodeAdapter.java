@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.example.Planner.Database.AppDatabase;
 import android.example.Planner.Database.Node;
 import android.os.Build;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,7 +88,7 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         public TextView child3;
         public LinearLayout ll_second;
         public Button edit;
-        public ListView ll_child_list;
+        public LinearLayout ll_child_list;
         public NodeViewHolder(@NonNull View itemView) {
             super(itemView);
             nameText = itemView.findViewById(R.id.child_name);
@@ -154,25 +155,33 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         edit_it.setVisibility((expanded && !(curr.getName().equals("Zen"))) ? View.VISIBLE : View.GONE);
 
 
-        ListView listView = (ListView) holder.itemView.findViewById(R.id.ll_child_list);
-        listView.setVisibility((expanded) ? View.VISIBLE : View.GONE);
-        List<String> name_children = new ArrayList<>();
-        for(Node elem:allChildren) {
-            name_children.add(elem.getName());
-        }
-
-        if (name_children.size() == 0) {
-            name_children.add("No Child Tasks Found");
-        }
+        LinearLayout linearLayout = (LinearLayout) holder.itemView.findViewById(R.id.ll_child_list);
+        linearLayout.setVisibility((expanded) ? View.VISIBLE : View.GONE);
+        linearLayout.removeAllViews();
         if(isDayView){
             String hr =  AppDatabase.hierarchy(curr.getName());
-            name_children = new ArrayList<>();
-            name_children.add("Hierarchy: " + hr);
-        }
+            final TextView rowTextView = new TextView(mContext);
+            rowTextView.setTextSize(20);
+            rowTextView.setGravity(Gravity.CENTER);
+            rowTextView.setText("Hierarchy: " + hr);
+            linearLayout.addView(rowTextView);
+        } else {
+            for (Node elem : allChildren) {
+                final TextView rowTextView = new TextView(mContext);
+                rowTextView.setTextSize(20);
+                rowTextView.setGravity(Gravity.CENTER);
+                rowTextView.setText(elem.getName());
+                linearLayout.addView(rowTextView);
+            }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext,
-                android.R.layout.simple_list_item_1, android.R.id.text1, name_children);
-        listView.setAdapter(adapter);
+            if (allChildren.size() == 0) {
+                final TextView rowTextView = new TextView(mContext);
+                rowTextView.setText("No child Tasks Found");
+                rowTextView.setTextSize(20);
+                rowTextView.setGravity(Gravity.CENTER);
+                linearLayout.addView(rowTextView);
+            }
+        }
 
 
         edit_it.setOnClickListener(new View.OnClickListener() {

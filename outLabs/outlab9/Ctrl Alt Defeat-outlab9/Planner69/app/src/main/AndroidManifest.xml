@@ -15,18 +15,14 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".TaskActivity"></activity>
         <activity android:name=".DayView" />
-        <activity android:name=".About" />
+        <activity android:name=".About"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".GameTemplate"
             android:label="@string/title_activity_game_template"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.NoActionBar" />
         <activity
-            android:name=".TemplateActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
