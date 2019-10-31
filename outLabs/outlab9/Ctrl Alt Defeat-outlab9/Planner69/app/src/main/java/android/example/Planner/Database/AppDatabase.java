@@ -1,6 +1,7 @@
 package android.example.Planner.Database;
 
 import android.content.Context;
+import android.example.Planner.NodeAdapter;
 
 import androidx.room.Database;
 import androidx.room.Room;
@@ -35,13 +36,26 @@ public abstract class AppDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-    public static String heirarchy(String node) {
-
-        if(node.equals("Zen")) {
-            return "Zen";
-        } else {
-            String parent = INSTANCE.nodeDAO().findByName(node).get(0).getParent();
-            return heirarchy(parent) + "/" + node;
+    public static void Delete(Node... nodes) {
+        INSTANCE.nodeDAO().deletefrom(nodes);
+        for(Node elem : nodes) {
+            NodeAdapter.removeFromNodes(elem);
         }
     }
+
+    public static void Insert(Node... nodes) {
+        INSTANCE.nodeDAO().insertinto(nodes);
+        for(Node elem : nodes) {
+            NodeAdapter.insertIntoNodes(elem);
+        }
+    }
+
+    public static String hierarchy(String name) {
+        if(name.equals("Zen")) {
+            return name;
+        }
+        String parent = INSTANCE.nodeDAO().findByName(name).get(0).getParent();
+        return hierarchy(parent) + "/" + name;
+    }
+
 }

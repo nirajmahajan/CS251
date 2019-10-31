@@ -23,11 +23,10 @@ public class MainActivity extends GameTemplate {
 
         AppDatabase.buildAppDatabase(getApplicationContext());
 
-        List<Node> init = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().getAllNodes();
-        for(Node elem:init) {
-            AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().Delete(elem);
+        for(Node elem : AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().getAllNodes()) {
+            AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().deletefrom(elem);
             elem.setExpanded(false);
-            AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().Insert(elem);
+            AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().insertinto(elem);
         }
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);

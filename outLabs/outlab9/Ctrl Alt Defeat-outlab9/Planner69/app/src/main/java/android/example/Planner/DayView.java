@@ -26,9 +26,9 @@ public class DayView extends GameTemplate {
 
         List<Node> init = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().getAllNodes();
         for(Node elem:init) {
-            AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().Delete(elem);
+            AppDatabase.Delete(elem);
             elem.setExpanded(false);
-            AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().Insert(elem);
+            AppDatabase.Insert(elem);
         }
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);

@@ -4,18 +4,14 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.example.Planner.Database.AppDatabase;
 import android.example.Planner.Database.Node;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -25,7 +21,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +28,7 @@ import java.util.List;
 
 public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder> {
     private Context mContext;
-    public List<Node> nodes;
+    public static List<Node> nodes;
     private Node currentexp = null;
     public boolean canGoDeeper;
     public boolean isDayView = false;
@@ -46,6 +41,12 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         for(int i = 0; i < nodes.size(); i++) {
             times.put(nodes.get(i).getId(), Long.valueOf("-1"));
         }
+    }
+    public static void removeFromNodes(Node node) {
+        nodes.remove(node);
+    }
+    public static void insertIntoNodes(Node node) {
+        nodes.add(node);
     }
 
     public class NodeViewHolder extends RecyclerView.ViewHolder{
@@ -77,11 +78,6 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         return new NodeViewHolder(view);
     }
     private void addItem(String title, String desc, String date, String parent) {
-        List<Node> temp1 = AppDatabase.getAppDatabase(mContext).nodeDAO().findByName(title);
-        if(temp1.size() != 0) {
-            Toast.makeText(mContext, "Name already taken", Toast.LENGTH_LONG);
-            return;
-        }
         Node temp = new Node();
         temp.setName(title);
         temp.setDescription(desc);
@@ -89,7 +85,7 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         temp.setExpanded(false);
         temp.setParent(parent);
 
-        AppDatabase.getAppDatabase(mContext).nodeDAO().Insert(temp);
+        AppDatabase.Insert(temp);
         nodes = AppDatabase.getAppDatabase(mContext).nodeDAO().findByParent(parent);
         notifyDataSetChanged();
     }
@@ -137,12 +133,13 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         subItem.setVisibility(expanded ? View.VISIBLE : View.GONE);
 
         Button edit_it = holder.itemView.findViewById(R.id.edit);
-        edit_it.setVisibility((expanded && canGoDeeper && !isDayView) ? View.VISIBLE : View.GONE);
+        edit_it.setVisibility((expanded && canGoDeeper) ? View.VISIBLE : View.GONE);
 
         if(isDayView){
             TextView subItem1 = holder.itemView.findViewById(R.id.child1);
             subItem1.setVisibility(expanded ? View.VISIBLE : View.GONE);
-//            subItem1.setText("Heirarchy:" + AppDatabase.heirarchy(curr.getName()));
+            String hr =  AppDatabase.hierarchy(curr.getName());
+            subItem1.setText("Hierarchy: " + hr);
             TextView subItem2 = holder.itemView.findViewById(R.id.child2);
             subItem2.setVisibility(View.GONE);
             TextView subItem3 = holder.itemView.findViewById(R.id.child3);
@@ -199,7 +196,7 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
                 dateBox.setId(12345);
                 layout.addView(dateBox);
 
-                AppDatabase.getAppDatabase(mContext).nodeDAO().Delete(curr);
+                AppDatabase.Delete(curr);
 
                 AlertDialog.Builder db = new AlertDialog.Builder(mContext);
                 db.setTitle("Edit Task Details");
@@ -259,7 +256,7 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
                         times.put(curr.getId(), System.currentTimeMillis());
                         if (curr_time - prev_time < 350) {
                             Intent intent = new Intent(mContext, TaskActivity.class);
-                            intent.putExtra("NAME", curr.getName());
+                            intent.putExtra("NAME", curr.getId());
                             mContext.startActivity(intent);
                             return;
                         }
@@ -269,15 +266,16 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
                 }
 
                 if(currentexp != null) {
-                    AppDatabase.getAppDatabase(mContext).nodeDAO().Delete(currentexp);
+                    AppDatabase.Delete(currentexp);
                     currentexp.setExpanded(false);
-                    AppDatabase.getAppDatabase(mContext).nodeDAO().Insert(currentexp);
+                    AppDatabase.Insert(currentexp);
                 }
                 NodeAdapter.this.notifyDataSetChanged();
 
                 if(curr != currentexp) {
-                    AppDatabase.getAppDatabase(mContext).nodeDAO().Delete(curr);
+                    AppDatabase.Delete(curr);
                     curr.setExpanded(true);
+                    AppDatabase.Insert(curr);
                     currentexp = curr;
                 } else {
                     currentexp = null;

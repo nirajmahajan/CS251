@@ -180,12 +180,6 @@ public class GameTemplate extends AppCompatActivity
     }
 
     private void addItem(String title, String desc, String date) {
-        List<Node> temp1 = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByName(title);
-        if(temp1.size() != 0) {
-            Toast.makeText(getApplicationContext(), "Name already taken", Toast.LENGTH_LONG);
-            return;
-        }
-
         if(date.equals("Click here to Select Date")){date = "";}
         Node temp = new Node();
         temp.setName(title);
@@ -194,7 +188,7 @@ public class GameTemplate extends AppCompatActivity
         temp.setExpanded(false);
         temp.setParent(parent);
 
-        AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().Insert(temp);
+        AppDatabase.Insert(temp);
         mAdapter.nodes = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findByParent(parent);
         mAdapter.notifyDataSetChanged();
     }

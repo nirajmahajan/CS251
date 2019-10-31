@@ -15,10 +15,10 @@ public interface NodeDAO {
     @Query("Select * FROM nodes ORDER BY name DESC")
     List<Node> getAllNodes();
 
-    @Query("Select * FROM nodes WHERE name LIKE :name ORDER BY name DESC")
+    @Query("Select * FROM nodes WHERE name LIKE :name ORDER BY name DESC LIMIT 1")
     List<Node> findByName(String name);
 
-    @Query("Select * FROM nodes WHERE id LIKE :id ORDER BY name DESC")
+    @Query("Select * FROM nodes WHERE id LIKE :id ORDER BY name DESC LIMIT 1")
     Node findById(int id);
 
     @Query("Select * FROM nodes WHERE parent LIKE :parent ORDER BY name DESC")
@@ -40,8 +40,9 @@ public interface NodeDAO {
     List<Node> getOrdered();
 
     @Insert
-    long[] Insert(Node... nodes);
+    long[] insertinto(Node... nodes);
 
     @Delete
-    void Delete(Node... nodes);
+    void deletefrom(Node... nodes);
+
 }

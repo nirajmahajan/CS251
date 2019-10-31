@@ -14,21 +14,22 @@ import java.util.List;
 
 public class TaskActivity extends GameTemplate {
     private NodeAdapter mAdapter;
-    private static String name = "Zen";
+    private String name = "temp";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        name = getIntent().getStringExtra("NAME");
+        int id = getIntent().getIntExtra("NAME", 0);
+        Node temp = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findById(id);
+        name = temp.getName();
         super.setParentName(name);
         setContentView(R.layout.activity_task);
 
         AppDatabase.buildAppDatabase(getApplicationContext());
 
-        List<Node> init = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().getAllNodes();
-        for(Node elem:init) {
-            AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().Delete(elem);
+        for(Node elem : AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().getAllNodes()) {
+            AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().deletefrom(elem);
             elem.setExpanded(false);
-            AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().Insert(elem);
+            AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().insertinto(elem);
         }
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
