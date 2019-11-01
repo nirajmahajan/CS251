@@ -259,66 +259,6 @@ public class GameTemplate extends AppCompatActivity
         return db.create();
     }
 
-    public Dialog popup2(){
-        Context context = this.getApplicationContext();
-        Dialog dialog = new Dialog(context);
-
-        final TextView title = findViewById(R.id.titledialog);
-        final TextView mess = findViewById(R.id.messdialog);
-
-        final EditText titleBox = findViewById(R.id.titlebox);
-        titleBox.setHint("Title");
-
-        final EditText descriptionBox = findViewById(R.id.descriptionbox);
-        descriptionBox.setHint("Description");
-
-        final Button dateBox = findViewById(R.id.datebox);
-        dateBox.setText("Click here to Select Date");
-
-        title.setText("Add Node");
-        mess.setVisibility(View.GONE);
-
-        findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String title = String.valueOf(titleBox.getText());
-                String desc = String.valueOf(descriptionBox.getText());
-                String date = String.valueOf(dateBox.getText());
-                if(title.trim().length() != 0 && desc.trim().length() != 0)
-                    addItem(title, desc, date);
-            }});
-
-        dialog.setContentView(R.layout.dialoglayout);
-        dateBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int mYear, mMonth, mDay, mHour, mMinute;
-                final Calendar c = Calendar.getInstance();
-                mYear = c.get(Calendar.YEAR);
-                mMonth = c.get(Calendar.MONTH);
-                mDay = c.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog datePickerDialog = new DatePickerDialog(GameTemplate.this,
-                        new DatePickerDialog.OnDateSetListener() {
-
-                            @Override
-                            public void onDateSet(DatePicker view, int year,
-                                                  int monthOfYear, int dayOfMonth) {
-
-                                String date = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
-                                dateBox.setText(date);
-
-                            }
-                        }, mYear, mMonth, mDay);
-                datePickerDialog.show();
-                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
-                datePickerDialog.setCancelable(false);
-            }
-        });
-        dialog.setCancelable(false);
-        return dialog;
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

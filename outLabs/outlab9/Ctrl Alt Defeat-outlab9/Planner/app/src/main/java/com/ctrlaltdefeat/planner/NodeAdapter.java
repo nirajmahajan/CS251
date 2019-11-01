@@ -105,13 +105,14 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
         View view = inflater.inflate(R.layout.child, parent, false);
         return new NodeViewHolder(view);
     }
-    private void addItem(String title, String desc, String date, int parentId) {
+    private void addItem(String title, String desc, String date, int parentId, int Id) {
         Node temp = new Node();
         temp.setName(title);
         temp.setDescription(desc);
         temp.setDate(date);
         temp.setExpanded(false);
         temp.setParentId(parentId);
+        temp.setId(Id);
 
         if((parent_id == -1 || parent_name == null) && !isDayView) {
             this.parent_id = parentId;
@@ -219,7 +220,7 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
                         String desc = String.valueOf(descriptionBox.getText());
                         String date = String.valueOf(dateBox.getText());
                         if(title.trim().length() != 0 && desc.trim().length() != 0) {
-                            addItem(title, desc, date, curr.getParentId());
+                            addItem(title, desc, date, curr.getParentId(), curr.getId());
                             currentexp = null;
                         }
                     }
@@ -255,69 +256,6 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
                 });
                 db.setCancelable(false);
                 db.create().show();
-            }
-
-            public void showDialog2(View v){
-                final Node curr = nodes.get(position);
-                Context context = mContext;
-                Dialog dialog = new Dialog(context);
-
-                final TextView title = v.findViewById(R.id.titledialog);
-                final TextView mess = v.findViewById(R.id.messdialog);
-
-                final EditText titleBox = v.findViewById(R.id.titlebox);
-                titleBox.setText(curr.getName());
-
-                final EditText descriptionBox = v.findViewById(R.id.descriptionbox);
-                descriptionBox.setText(curr.getDescription());
-
-                final Button dateBox = v.findViewById(R.id.datebox);
-                dateBox.setText(curr.getDate());
-
-                title.setText("Edit Task Details");
-                mess.setVisibility(View.VISIBLE);
-                mess.setText("Click to edit any attibute");
-
-                v.findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String title = String.valueOf(titleBox.getText());
-                        String desc = String.valueOf(descriptionBox.getText());
-                        String date = String.valueOf(dateBox.getText());
-                        if(title.trim().length() != 0 && desc.trim().length() != 0){
-                            addItem(title, desc, date, curr.getParentId());
-                            currentexp = null;
-                        }
-                    }});
-
-                dialog.setContentView(R.layout.dialoglayout);
-                dateBox.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int mYear, mMonth, mDay, mHour, mMinute;
-                        final Calendar c = Calendar.getInstance();
-                        mYear = c.get(Calendar.YEAR);
-                        mMonth = c.get(Calendar.MONTH);
-                        mDay = c.get(Calendar.DAY_OF_MONTH);
-
-                        DatePickerDialog datePickerDialog = new DatePickerDialog(mContext,
-                                new DatePickerDialog.OnDateSetListener() {
-
-                                    @Override
-                                    public void onDateSet(DatePicker view, int year,
-                                                          int monthOfYear, int dayOfMonth) {
-
-                                        String date = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
-                                        dateBox.setText(date);
-
-                                    }
-                                }, mYear, mMonth, mDay);
-                        datePickerDialog.show();
-                        datePickerDialog.setCancelable(false);
-                    }
-                });
-                dialog.setCancelable(false);
-                dialog.show();
             }
         });
 
@@ -367,8 +305,6 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
                     currentexp = null;
                 }
                 NodeAdapter.this.notifyDataSetChanged();
-
-
 
                 NodeAdapter.this.notifyItemChanged(position);
             }
