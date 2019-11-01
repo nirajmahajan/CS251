@@ -204,7 +204,11 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
                 layout.addView(descriptionBox);
 
                 final Button dateBox = new Button(context);
-                dateBox.setText(curr.getDate());
+                String date = curr.getDate();
+                if(date.isEmpty())
+                    dateBox.setHint("Date");
+                else
+                    dateBox.setText(curr.getDate());
                 dateBox.setId(12345);
                 layout.addView(dateBox);
 

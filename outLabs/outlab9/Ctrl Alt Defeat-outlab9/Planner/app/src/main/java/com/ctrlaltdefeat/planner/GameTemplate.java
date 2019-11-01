@@ -209,7 +209,7 @@ public class GameTemplate extends AppCompatActivity
         layout.addView(descriptionBox);
 
         final Button dateBox = new Button(context);
-        dateBox.setText("Click here to Select Date");
+        dateBox.setHint("Click here to Select Date");
         dateBox.setId(12345);
         layout.addView(dateBox);
 
