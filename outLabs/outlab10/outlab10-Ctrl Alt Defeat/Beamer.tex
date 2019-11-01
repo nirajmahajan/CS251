@@ -1,0 +1,92 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{kpfonts}
+\usepackage{boxedminipage}
+\usepackage{bcprules}
+\usetheme{CambridgeUS}
+
+%%%%%%%%%%%%%%%%Title Page%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[Lambda Calculus]{Introduction to Beamer}
+\subtitle[]{}
+\author[F. last]{Firstname Lastname}
+\institute[IITB]{
+  Department of Computer Science and Engineering\\
+  IIT Bombay.\\
+  Powai, Mumbai - 400076\\[1ex]
+  \texttt{userid@cse.iitb.ac.in}
+}
+\date[\today]{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{exercise}{Exercise}
+\begin{document}
+%--- the titlepage frame -------------------------%
+\begin{frame}[plain]
+  \titlepage 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\bf  This is the title}
+Beamer is a \LaTeX \:class for preparing presentations.
+
+\begin{enumerate}
+\item Slides are called frames in Beamer.
+\item This is the usual ordered list in \LaTeX.
+\item Following slides will contain random content which will show you various ways of using it. You need to replicate it.
+\item Of course! we will give you boilerplate code!
+\end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Type Rules}
+\begin{figure}
+    \includegraphics[width=9cm]{type-lattice.pdf}
+    \caption{This is the caption.}
+    \label{fig:boat1}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Type Rules}
+\begin{itemize}
+    \item A {\it substitution} is a list of pairs denoted as $S = \{\alpha_{1}/\tau_{1} \dots \alpha_{n}/\tau_{n}\}$.
+    \item A substitution S applied on a type expression $\sigma$, denoted by S ($\sigma$)\\
+involves simultaneous substitution of the variables $\alpha_1\dots\alpha _n$, if\\
+they occur free in $\sigma$, by the corresponding type expressions $\tau_1$ 
+$\dots\tau_n$.
+\begin{definition}Let $\sigma = \forall\alpha_1\dots\alpha_m$.$\tau$ and $\sigma' = \forall\beta_1\dots\beta_n$.$\tau'$. Then $\sigma'$ is a generic
+instance of $\sigma$, iff there is a substitution S acting only on $\{\alpha_1\dots\alpha_m\}$
+such that $\tau' = S (\tau)$ and no $\beta_i$ is free in $\sigma$.\end{definition}
+    \item Clearly, the restriction that no $\beta_i$ is free in $\sigma$ is needed, else we
+would have absurdities like $\alpha\to Int\leq\forall\alpha.\alpha\to Int$. 
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Recapitulation – Type rules for $\lambda_{2}$}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Hindley-Milner - Type checking variables}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Hindley-Milner - Type checking applications}
+\setbeamertemplate{enumerate items}[default]
+\begin{enumerate}[1]
+    \item Typecheck $e_1$ with the initial environment $\Gamma$. Result is $\tau_1$ and $\theta_1$.
+    \item Typecheck $e_2$ with the environment $\theta_1$ $\Gamma$. Result is $\tau_2$ and $\theta_2$.
+    \item Unify $\theta_2$ $\tau_1$ and $\tau_2 \to \alpha$. Assume that unifier is $\theta$. And the unified
+term ($\theta$ $\alpha$) is $\tau_3$ .
+    \item Type of the application is $\tau_3$ and the final substitution is $\theta\circ\theta_2\circ\theta_1$.
+\end{enumerate}
+\end{frame}
+
+\end{document}
