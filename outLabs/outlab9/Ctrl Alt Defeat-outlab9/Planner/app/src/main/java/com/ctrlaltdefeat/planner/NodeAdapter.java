@@ -1,4 +1,4 @@
-package com.CtrlAltDefeat.Planner;
+package com.ctrlaltdefeat.planner;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -10,10 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.CtrlAltDefeat.Planner.Database.AppDatabase;
-import com.CtrlAltDefeat.Planner.Database.Node;
+import com.ctrlaltdefeat.planner.Database.AppDatabase;
+import com.ctrlaltdefeat.planner.Database.Node;
 
-import com.CtrlAltDefeat.Planner.R;
+import com.ctrlaltdefeat.planner.R;
 import android.os.Build;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -107,6 +107,9 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.NodeViewHolder
     }
     private void addItem(String title, String desc, String date, int parentId, int Id) {
         Node temp = new Node();
+        if(date.equals("Click here to Select Date") || date.equals("")){
+            date = AppDatabase.getAppDatabase(mContext).nodeDAO().findById(parent_id).get(0).getDate();
+        }
         temp.setName(title);
         temp.setDescription(desc);
         temp.setDate(date);

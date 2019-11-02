@@ -1,9 +1,9 @@
-package com.CtrlAltDefeat.Planner;
+package com.ctrlaltdefeat.planner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import com.CtrlAltDefeat.Planner.R;
+import com.ctrlaltdefeat.planner.R;
 import android.os.Bundle;
 
 public class About extends AppCompatActivity {

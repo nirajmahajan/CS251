@@ -1,9 +1,9 @@
-package com.CtrlAltDefeat.Planner;
+package com.ctrlaltdefeat.planner;
 
-import com.CtrlAltDefeat.Planner.Database.AppDatabase;
-import com.CtrlAltDefeat.Planner.Database.Node;
+import com.ctrlaltdefeat.planner.Database.AppDatabase;
+import com.ctrlaltdefeat.planner.Database.Node;
 
-import com.CtrlAltDefeat.Planner.R;
+import com.ctrlaltdefeat.planner.R;
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.LinearLayoutManager;

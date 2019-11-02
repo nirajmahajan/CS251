@@ -1,4 +1,4 @@
-package com.CtrlAltDefeat.Planner.Database;
+package com.ctrlaltdefeat.planner.Database;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

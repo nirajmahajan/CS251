@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.CtrlAltDefeat.Planner"
+    package="com.ctrlaltdefeat.planner"
     android:versionCode="2"
     android:versionName="1.1">
 
@@ -13,16 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.CtrlAltDefeat.Planner.TaskActivity"></activity>
-        <activity android:name="com.CtrlAltDefeat.Planner.DayView" />
-        <activity android:name="com.CtrlAltDefeat.Planner.About"
+        <activity android:name="com.ctrlaltdefeat.planner.TaskActivity"></activity>
+        <activity android:name="com.ctrlaltdefeat.planner.DayView" />
+        <activity android:name="com.ctrlaltdefeat.planner.About"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.CtrlAltDefeat.Planner.GameTemplate"
+            android:name="com.ctrlaltdefeat.planner.GameTemplate"
             android:label="@string/title_activity_game_template"
             android:theme="@style/AppTheme.NoActionBar.NoActionBar" />
         <activity
-            android:name="com.CtrlAltDefeat.Planner.MainActivity">
+            android:name="com.ctrlaltdefeat.planner.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

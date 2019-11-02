@@ -1,4 +1,4 @@
-package com.CtrlAltDefeat.Planner.Database;
+package com.ctrlaltdefeat.planner.Database;
 
 import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;

@@ -1,4 +1,4 @@
-package com.CtrlAltDefeat.Planner;
+package com.ctrlaltdefeat.planner;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -6,10 +6,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 
-import com.CtrlAltDefeat.Planner.Database.AppDatabase;
-import com.CtrlAltDefeat.Planner.Database.Node;
+import com.ctrlaltdefeat.planner.Database.AppDatabase;
+import com.ctrlaltdefeat.planner.Database.Node;
 
-import com.CtrlAltDefeat.Planner.R;
+import com.ctrlaltdefeat.planner.R;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -182,7 +182,9 @@ public class GameTemplate extends AppCompatActivity
     }
 
     private void addItem(String title, String desc, String date) {
-        if(date.equals("Click here to Select Date")){date = "";}
+        if(date.equals("Click here to Select Date") || date.equals("")){
+            date = AppDatabase.getAppDatabase(getApplicationContext()).nodeDAO().findById(parent_id).get(0).getDate();
+        }
         Node temp = new Node();
         temp.setName(title);
         temp.setDescription(desc);

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/cyan"
     android:layout_height="match_parent"
-    tools:context="com.CtrlAltDefeat.Planner.About">
+    tools:context="com.ctrlaltdefeat.planner.About">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

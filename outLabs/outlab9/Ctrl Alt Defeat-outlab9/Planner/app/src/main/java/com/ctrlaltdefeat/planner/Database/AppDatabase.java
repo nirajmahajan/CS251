@@ -1,8 +1,8 @@
-package com.CtrlAltDefeat.Planner.Database;
+package com.ctrlaltdefeat.planner.Database;
 
 import android.content.Context;
 
-import com.CtrlAltDefeat.Planner.NodeAdapter;
+import com.ctrlaltdefeat.planner.NodeAdapter;
 
 import androidx.room.Database;
 import androidx.room.Room;
