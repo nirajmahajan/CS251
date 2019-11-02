@@ -86,7 +86,7 @@ public abstract class AppDatabase extends RoomDatabase {
         INSTANCE.nodeDAO().insertinto(elem);
         elem = new Node("Exercise","someday?","29/2/2019",id_selfimp);
         INSTANCE.nodeDAO().insertinto(elem);
-        elem = new Node("Reading_list","My bucket list:\nHear the Wind Sing\nThe Fountainhead\nAtlas Shrugged\nA prisoner of birth","",id_selfimp);
+        elem = new Node("Reading_list","My bucket list:\nHear the Wind Sing\nThe Fountainhead\nAtlas Shrugged\nA prisoner of birth","30/12/2019",id_selfimp);
         INSTANCE.nodeDAO().insertinto(elem);
     }
 

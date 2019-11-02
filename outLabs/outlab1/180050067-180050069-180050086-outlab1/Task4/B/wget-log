@@ -1,0 +1,477 @@
+--2019-10-23 00:59:47--  https://www.cse.iitb.ac.in/~aad/cs293/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... 10.129.3.3
+Connecting to www.cse.iitb.ac.in (www.cse.iitb.ac.in)|10.129.3.3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2723 (2.7K) [text/html]
+Saving to: ‘www.cse.iitb.ac.in/~aad/cs293/index.html’
+
+
+
+2019-10-23 00:59:47 (140 MB/s) - ‘www.cse.iitb.ac.in/~aad/cs293/index.html’ saved [2723/2723]
+
+Loading robots.txt; please ignore errors.
+--2019-10-23 00:59:47--  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:04:27--  (try: 2)  https://www.cse.iitb.ac.in/robots.txt
+Connecting to www.cse.iitb.ac.in (www.cse.iitb.ac.in)|10.129.3.3|:443... connected.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:05:29--  (try: 3)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:06:32--  (try: 4)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:07:36--  (try: 5)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:08:41--  (try: 6)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:09:47--  (try: 7)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:10:54--  (try: 8)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:12:02--  (try: 9)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:13:11--  (try:10)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:14:21--  (try:11)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:15:31--  (try:12)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:16:41--  (try:13)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:17:51--  (try:14)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:19:01--  (try:15)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:20:11--  (try:16)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:21:21--  (try:17)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:22:31--  (try:18)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:23:41--  (try:19)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:24:51--  (try:20)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Giving up.
+
+--2019-10-23 01:25:51--  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:26:52--  (try: 2)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:27:54--  (try: 3)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:28:57--  (try: 4)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:30:01--  (try: 5)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:31:06--  (try: 6)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:32:12--  (try: 7)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:33:19--  (try: 8)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:34:27--  (try: 9)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:35:36--  (try:10)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:36:46--  (try:11)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:37:56--  (try:12)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:39:06--  (try:13)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:40:16--  (try:14)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:41:26--  (try:15)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:42:36--  (try:16)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:43:46--  (try:17)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:44:56--  (try:18)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:46:06--  (try:19)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:47:16--  (try:20)  https://www.cse.iitb.ac.in/icons/blank.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Giving up.
+
+--2019-10-23 01:48:16--  https://www.cse.iitb.ac.in/~aad/cs293/?C=N;O=D
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2723 (2.7K) [text/html]
+Saving to: ‘www.cse.iitb.ac.in/~aad/cs293/index.html?C=N;O=D’
+
+     0K ..                                                    100%  179M=0s
+
+2019-10-23 01:48:16 (179 MB/s) - ‘www.cse.iitb.ac.in/~aad/cs293/index.html?C=N;O=D’ saved [2723/2723]
+
+--2019-10-23 01:48:16--  https://www.cse.iitb.ac.in/~aad/cs293/?C=M;O=A
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2723 (2.7K) [text/html]
+Saving to: ‘www.cse.iitb.ac.in/~aad/cs293/index.html?C=M;O=A’
+
+     0K ..                                                    100%  182M=0s
+
+2019-10-23 01:48:16 (182 MB/s) - ‘www.cse.iitb.ac.in/~aad/cs293/index.html?C=M;O=A’ saved [2723/2723]
+
+--2019-10-23 01:48:16--  https://www.cse.iitb.ac.in/~aad/cs293/?C=S;O=A
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2723 (2.7K) [text/html]
+Saving to: ‘www.cse.iitb.ac.in/~aad/cs293/index.html?C=S;O=A’
+
+     0K ..                                                    100%  189M=0s
+
+2019-10-23 01:48:16 (189 MB/s) - ‘www.cse.iitb.ac.in/~aad/cs293/index.html?C=S;O=A’ saved [2723/2723]
+
+--2019-10-23 01:48:16--  https://www.cse.iitb.ac.in/~aad/cs293/?C=D;O=A
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2723 (2.7K) [text/html]
+Saving to: ‘www.cse.iitb.ac.in/~aad/cs293/index.html?C=D;O=A’
+
+     0K ..                                                    100%  193M=0s
+
+2019-10-23 01:48:16 (193 MB/s) - ‘www.cse.iitb.ac.in/~aad/cs293/index.html?C=D;O=A’ saved [2723/2723]
+
+--2019-10-23 01:48:16--  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:49:17--  (try: 2)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:50:19--  (try: 3)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:51:22--  (try: 4)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:52:26--  (try: 5)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:53:31--  (try: 6)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:54:37--  (try: 7)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:55:44--  (try: 8)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:56:52--  (try: 9)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:58:01--  (try:10)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 01:59:11--  (try:11)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 02:00:21--  (try:12)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 02:01:31--  (try:13)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 02:02:41--  (try:14)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 02:03:51--  (try:15)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 02:05:01--  (try:16)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 02:06:11--  (try:17)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 02:07:21--  (try:18)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 02:08:31--  (try:19)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 02:09:41--  (try:20)  https://www.cse.iitb.ac.in/icons/back.gif
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Giving up.
+
+--2019-10-23 02:10:41--  https://www.cse.iitb.ac.in/~aad/
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 5186 (5.1K) [text/html]
+Saving to: ‘www.cse.iitb.ac.in/~aad/index.html’
+
+     0K .....                                                 100%  363M=0s
+
+2019-10-23 02:10:41 (363 MB/s) - ‘www.cse.iitb.ac.in/~aad/index.html’ saved [5186/5186]
+
+Loading robots.txt; please ignore errors.
+--2019-10-23 02:10:41--  http://www.cse.iitb.ac.in/robots.txt
+Connecting to www.cse.iitb.ac.in (www.cse.iitb.ac.in)|10.129.3.3|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://www.cse.iitb.ac.in/robots.txt [following]
+--2019-10-23 02:10:41--  https://www.cse.iitb.ac.in/robots.txt
+Connecting to www.cse.iitb.ac.in (www.cse.iitb.ac.in)|10.129.3.3|:443... connected.
+HTTP request sent, awaiting response... 504 Gateway Time-out
+Retrying.
+
+--2019-10-23 02:11:42--  (try: 2)  https://www.cse.iitb.ac.in/robots.txt
+Reusing existing connection to www.cse.iitb.ac.in:443.
+HTTP request sent, awaiting response... Read error (Connection timed out) in headers.
+Retrying.
+
+--2019-10-23 09:59:20--  (try: 3)  https://www.cse.iitb.ac.in/robots.txt
+Connecting to www.cse.iitb.ac.in (www.cse.iitb.ac.in)|10.129.3.3|:443... failed: Network is unreachable.
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/icons/folder.gif
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/Assign1/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/Assign2/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/Assign3/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/Assign4/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/Assign5/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/Assign6/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/Assign7/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/Assign8/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/Assign9/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/Assign10/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/?C=N;O=A
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/?C=M;O=D
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/?C=S;O=D
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/cs293/?C=D;O=D
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  http://www.cse.iitb.ac.in/
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/dirac.ps
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/power.ps
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/trifac.ps
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/4part.ps
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/coloredmatching.ps
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/K6.ps
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/mader.pdf
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/edge-disjoint.pdf
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/nonsep.pdf
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/pancyclic_mod_k.pdf
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/icrtgc-dm-final.pdf
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/diwan_icrtgc_2010.pdf
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/P3-decomp-directed.pdf
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/postscript/caldam.pdf
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+--2019-10-23 09:59:20--  https://www.cse.iitb.ac.in/~aad/myform.php
+Resolving www.cse.iitb.ac.in (www.cse.iitb.ac.in)... failed: Name or service not known.
+wget: unable to resolve host address ‘www.cse.iitb.ac.in’
+FINISHED --2019-10-23 09:59:20--
+Total wall clock time: 1h 26m 59s
+Downloaded: 6 files, 18K in 0s (204 MB/s)
