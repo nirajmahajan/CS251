@@ -4,7 +4,11 @@
 \usepackage{kpfonts}
 \usepackage{boxedminipage}
 \usepackage{bcprules}
+\usepackage{tikz}
 \usetheme{CambridgeUS}
+\usetikzlibrary{positioning,arrows}
+\usetikzlibrary{shapes.geometric}
+\tikzstyle{w}=[draw, thick, rectangle, align=left, inner xsep=18mm, minimum size=20mm]
 
 %%%%%%%%%%%%%%%%Title Page%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -20,6 +24,7 @@
 \date[\today]{\today}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newtheorem{exercise}{Exercise}
 \begin{document}
 %--- the titlepage frame -------------------------%
@@ -28,6 +33,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[fragile]{\bf  This is the title}
 Beamer is a \LaTeX \:class for preparing presentations.
 
@@ -68,17 +74,74 @@ would have absurdities like $\alpha\to Int\leq\forall\alpha.\alpha\to Int$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Recapitulation – Type rules for $\lambda_{2}$}
+\begin{frame}[fragile]{\textbf{Recapitulation – Type rules for $\lambda_{2}$}}
+\begin{equation}
+\tag{\textsc{Var}}
+\Gamma \cup \{x :: \sigma\} \vdash x :: \sigma
+\label{eqn:Var}
+\end{equation}
+
+\begin{equation}
+\tag{\textsc{Con}}
+\Gamma \cup \{c :: \sigma\} \vdash c :: \sigma
+\label{eqn:Con}
+\end{equation}
+
+\begin{equation}
+\tag{\textsc{Inst}}
+\frac{\Gamma \vdash M :: \sigma \qquad \sigma^{'} \geq \sigma}{\Gamma \vdash M :: \sigma^{'}}
+\label{eqn:Inst}
+\end{equation}
+
+\begin{equation}
+\tag{\textsc{Gen}}
+\frac{\Gamma \vdash M :: \sigma \qquad \alpha \notin FV(\Gamma)}{\Gamma \vdash M :: \forall\alpha.\sigma}
+\label{eqn:Gen}
+\end{equation}
+
+\begin{equation}
+\tag{\textsc{M-App}}
+\frac{\Gamma \vdash M :: \tau_{1} \rightarrow \tau_{2}\qquad\Gamma \vdash N :: \tau_{1}}{\Gamma \vdash M\ N :: \tau_{2}}
+\label{eqn:M-App}
+\end{equation}
+
+\begin{equation}
+\tag{\textsc{M-Abs}}
+\frac{\Gamma,x :: \tau_{1} \vdash M :: \tau_{2}}{\Gamma \vdash \lambda x.M :: \tau_{1} \rightarrow \tau_{2}}
+\label{eqn:M-Abs}
+\end{equation}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Hindley-Milner - Type checking variables}
+\begin{frame}[fragile]{\textbf{Hindley-Milner - Type checking variables}}
+\setbeamertemplate{enumerate items}[default]
+\begin{enumerate}[1:]
+\item $t \textbf{ is a variable } x$
+\begin{figure}[h]
+\begin{tikzpicture}[auto,>=latex']
+\node[w] (x) {$x$};
+\node[font=\fontsize{9}{0}\selectfont, below = 6pt of x] {$\Gamma x = \forall\alpha_{1},...\alpha_{n}\cdot\tau$};
+\draw[<-, thick, >=stealth, near end] (x.west) -- node[font=\fontsize{9}{0}\selectfont, above, xshift=-5mm] {$\Gamma$} +(-15mm,0pt);
+
+\draw[->, thick, >=stealth, near end] ([yshift=15pt]x.east) -- node[font=\fontsize{9}{0}\selectfont, above, xshift=9mm, yshift=1pt] {$\tau[\alpha_{1}/\beta_{1},\ldots\alpha_{n}/\beta_{n}],$ $\beta_{1},\ldots\beta_{n}\notin\Gamma$} +(20mm,0pt);
+
+\draw[->, thick, >=stealth] ([yshift=-15pt]x.east) -- node[font=\fontsize{9}{0}\selectfont, below, xshift=12mm, yshift=-4pt] {The identity substitution $\theta_{id}$} +(20mm,0pt);
+
+\end{tikzpicture}
+\end{figure}
+\begin{itemize}
+  \item $\beta_{1},\ldots,\beta_{n}$ are fresh variables.
+  \item Reason for monomorphising the type of x: We try to find the type of
+  a variable only in the context of an application, and our application
+  is monomorphic.
+\end{itemize}
+\end{enumerate}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Hindley-Milner - Type checking applications}
+\begin{frame}[fragile]{\textbf{Hindley-Milner - Type checking applications}}
 \setbeamertemplate{enumerate items}[default]
 \begin{enumerate}[1]
     \item Typecheck $e_1$ with the initial environment $\Gamma$. Result is $\tau_1$ and $\theta_1$.
