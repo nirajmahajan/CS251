@@ -1,11 +1,16 @@
-\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{3}
-\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!insertFront@{insertFront}|hyperpage}{3}
-\indexentry{insertFront@{insertFront}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{3}
-\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!insertRear@{insertRear}|hyperpage}{4}
-\indexentry{insertRear@{insertRear}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{4}
-\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!main@{main}|hyperpage}{4}
-\indexentry{main@{main}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{4}
-\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!removeFront@{removeFront}|hyperpage}{4}
-\indexentry{removeFront@{removeFront}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{4}
-\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!removeRear@{removeRear}|hyperpage}{4}
-\indexentry{removeRear@{removeRear}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{4}
+\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{5}
+\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!insertFront@{insertFront}|hyperpage}{5}
+\indexentry{insertFront@{insertFront}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{5}
+\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!insertRear@{insertRear}|hyperpage}{6}
+\indexentry{insertRear@{insertRear}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{6}
+\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!main@{main}|hyperpage}{6}
+\indexentry{main@{main}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{6}
+\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!removeFront@{removeFront}|hyperpage}{6}
+\indexentry{removeFront@{removeFront}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{6}
+\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!removeRear@{removeRear}|hyperpage}{6}
+\indexentry{removeRear@{removeRear}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{6}
+\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!front@{front}|hyperpage}{6}
+\indexentry{front@{front}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{6}
+\indexentry{LinkList$<$ T $>$@{LinkList$<$ T $>$}!rear@{rear}|hyperpage}{7}
+\indexentry{rear@{rear}!LinkList$<$ T $>$@{LinkList$<$ T $>$}|hyperpage}{7}
+\indexentry{LinkList.java@{LinkList.java}|hyperpage}{9}

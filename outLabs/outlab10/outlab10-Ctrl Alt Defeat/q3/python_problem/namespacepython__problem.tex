@@ -1,0 +1,87 @@
+\hypertarget{namespacepython__problem}{}\doxysection{python\+\_\+problem Namespace Reference}
+\label{namespacepython__problem}\index{python\_problem@{python\_problem}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacepython__problem_a3e14eabd673d5450fc9ad0f55944ddbc}{make}} (filename)
+\item 
+def \mbox{\hyperlink{namespacepython__problem_aa5fcea23fc1ba14c5e21dfeb25a73376}{fun1}} (l)
+\item 
+def \mbox{\hyperlink{namespacepython__problem_aeb8631d95a0e5c21716de1efa0a93f88}{fun2}} (l, x)
+\item 
+def \mbox{\hyperlink{namespacepython__problem_aecd5932c95cd5087a63f7a9cdd9a9261}{fun3}} (L)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacepython__problem_a57cd50d64eeaf609bf3db7738032930d}\label{namespacepython__problem_a57cd50d64eeaf609bf3db7738032930d}} 
+def {\bfseries L} = \mbox{\hyperlink{namespacepython__problem_a3e14eabd673d5450fc9ad0f55944ddbc}{make}}(\char`\"{}data\char`\"{})
+\item 
+\mbox{\Hypertarget{namespacepython__problem_a7e9d5a08cba97a3d06f7ae7352de605c}\label{namespacepython__problem_a7e9d5a08cba97a3d06f7ae7352de605c}} 
+def {\bfseries ans} = \mbox{\hyperlink{namespacepython__problem_aeb8631d95a0e5c21716de1efa0a93f88}{fun2}}(L, 48)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This program four different functions, all of them involving arrays 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepython__problem_aa5fcea23fc1ba14c5e21dfeb25a73376}\label{namespacepython__problem_aa5fcea23fc1ba14c5e21dfeb25a73376}} 
+\index{python\_problem@{python\_problem}!fun1@{fun1}}
+\index{fun1@{fun1}!python\_problem@{python\_problem}}
+\doxysubsubsection{\texorpdfstring{fun1()}{fun1()}}
+{\footnotesize\ttfamily def python\+\_\+problem.\+fun1 (\begin{DoxyParamCaption}\item[{}]{l }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & a list of any data type, provided that ordering for such data exists \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the original list, but with elements sorted in ascending order
+\end{DoxyReturn}
+This function implements the bubblesort algorithm to sort a given array, this function builds the sorted array from end of the array \mbox{\Hypertarget{namespacepython__problem_aeb8631d95a0e5c21716de1efa0a93f88}\label{namespacepython__problem_aeb8631d95a0e5c21716de1efa0a93f88}} 
+\index{python\_problem@{python\_problem}!fun2@{fun2}}
+\index{fun2@{fun2}!python\_problem@{python\_problem}}
+\doxysubsubsection{\texorpdfstring{fun2()}{fun2()}}
+{\footnotesize\ttfamily def python\+\_\+problem.\+fun2 (\begin{DoxyParamCaption}\item[{}]{l,  }\item[{}]{x }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & the sorted list (of integers) to be used for searching \\
+\hline
+{\em x} & any data type which can be converted to integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of iterations in which binary search finds a given integer
+\end{DoxyReturn}
+This function finds the number of binary searches it takes to find a given number in a list, but returns -\/1 if element is not found \mbox{\Hypertarget{namespacepython__problem_aecd5932c95cd5087a63f7a9cdd9a9261}\label{namespacepython__problem_aecd5932c95cd5087a63f7a9cdd9a9261}} 
+\index{python\_problem@{python\_problem}!fun3@{fun3}}
+\index{fun3@{fun3}!python\_problem@{python\_problem}}
+\doxysubsubsection{\texorpdfstring{fun3()}{fun3()}}
+{\footnotesize\ttfamily def python\+\_\+problem.\+fun3 (\begin{DoxyParamCaption}\item[{}]{L }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em L} & any nxn matrix (list of 2 dimensions) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the determinant of the input matrix
+\end{DoxyReturn}
+This function computes the determinant of a given matrix, by recursively calling itself and reducing the matrix size each time \mbox{\Hypertarget{namespacepython__problem_a3e14eabd673d5450fc9ad0f55944ddbc}\label{namespacepython__problem_a3e14eabd673d5450fc9ad0f55944ddbc}} 
+\index{python\_problem@{python\_problem}!make@{make}}
+\index{make@{make}!python\_problem@{python\_problem}}
+\doxysubsubsection{\texorpdfstring{make()}{make()}}
+{\footnotesize\ttfamily def python\+\_\+problem.\+make (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & the string which contains the path of the file to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of elements where each element is a line from file
+\end{DoxyReturn}
+This function loads and reads a given file and stores each line of the file in the form of a list 

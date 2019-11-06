@@ -1,5 +1,5 @@
 /** @file array.cpp 
-This code is used to print spiral segments of a 7x7 array,
+* This code is used to print spiral segments of a 7x7 array,
 * its minimum element and prints its selected columns
 */
 #include <iostream>

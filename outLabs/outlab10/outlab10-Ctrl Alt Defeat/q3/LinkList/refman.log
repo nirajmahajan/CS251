@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050) (preloaded format=pdflatex 2019.9.25)  6 NOV 2019 19:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050) (preloaded format=pdflatex 2019.9.25)  6 NOV 2019 20:36
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -998,6 +998,10 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ]
 Chapter 2.
+(files.tex) [3] [4
+
+]
+Chapter 3.
 (classLinkList.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1026,34 +1030,39 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 6.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 29.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 29.
+(Font)              scaled to size 7.19995pt on input line 36.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 36.
 
 (/home/neelaryan2/.miktex/texmfs/install/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 29.
- [3])
-[4] (refman.ind [5
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 36.
+ [5]
+[6]) [7] [8
 
+]
+Chapter 4.
+(LinkList_8java.tex) [9] [10
+
+] (refman.ind [11
 
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
  (refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 188.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 188.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 3234C8BDE4C63A14691FDA23BF3D3F4B;2074.
+(rerunfilecheck)             Checksum: 23ADCED4EEB7F7965D4F94B6FBF1B4B0;3185.
  ) 
 Here is how much of TeX's memory you used:
- 16453 strings out of 494857
- 239284 string characters out of 3177932
- 336521 words of memory out of 3000000
- 19813 multiletter control sequences out of 15000+200000
+ 16486 strings out of 494857
+ 240309 string characters out of 3177932
+ 336693 words of memory out of 3000000
+ 19823 multiletter control sequences out of 15000+200000
  55137 words of font info for 82 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  53i,15n,92p,944b,635s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1067,9 +1076,9 @@ home/neelaryan2/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvb8a.pfb></ho
 me/neelaryan2/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvb8ac.pfb></hom
 e/neelaryan2/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvr8a.pfb></home/
 neelaryan2/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (9 pages, 97799 bytes).
+Output written on refman.pdf (15 pages, 113626 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 285 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

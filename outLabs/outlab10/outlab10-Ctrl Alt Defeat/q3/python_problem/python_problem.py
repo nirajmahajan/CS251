@@ -1,6 +1,14 @@
+## @package python_problem
+# This program four different functions, all of them involving arrays
 from sys import argv
 from copy import deepcopy
 
+##
+# @param filename the string which contains the path of the file to be read
+# @return a list of elements where each element is a line from file
+#
+# This function loads and reads a given file and stores each line of the file 
+# in the form of a list
 def make(filename):
 	file = open (filename)
 	l=[]
@@ -9,6 +17,12 @@ def make(filename):
 		l.append(a)
 	return l
 
+##
+# @param l a list of any data type, provided that ordering for such data exists
+# @return the original list, but with elements sorted in ascending order
+#
+# This function implements the bubblesort algorithm to sort a given array, 
+# this function builds the sorted array from end of the array 
 def fun1(l):	
 	size=len(l)
 	for i in range(0,size-1):
@@ -20,6 +34,13 @@ def fun1(l):
 			
 	return l
 
+##
+# @param l the sorted list (of integers) to be used for searching
+# @param x any data type which can be converted to integer
+# @return the number of iterations in which binary search finds a given integer
+#
+# This function finds the number of binary searches it takes to find 
+# a given number in a list, but returns -1 if element is not found
 def fun2(l,x):
 	n=int(x)
 	probes=0
@@ -42,6 +63,12 @@ def fun2(l,x):
 	else:	
 		return -1
 
+##
+# @param L any nxn matrix (list of 2 dimensions)
+# @return the determinant of the input matrix
+#
+# This function computes the determinant of a given matrix, by 
+# recursively calling itself and reducing the matrix size each time
 def fun3(L):
 	d=0
 	n=len(L)
@@ -55,7 +82,7 @@ def fun3(L):
 		d=d+L[0][i]*((-1)**i)*fun3(A)
 	return d
 
-
+# The main driver code for testing the functions defined in this file
 L = make("data")
 print (L)
 L = fun1(L)
