@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050) (preloaded format=pdflatex 2019.9.25)  2 NOV 2019 10:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050) (preloaded format=pdflatex 2019.9.25)  6 NOV 2019 19:05
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -806,8 +806,7 @@ Package: etoc 2019/03/09 v1.09 Completely customisable TOCs (JFB)
 \c@etoc@tocdepth=\count147
 \etoc@framed@titlebox=\box74
 \etoc@framed@contentsbox=\box75
-)
-No file refman.aux.
+) (refman.aux)
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 146.
@@ -824,6 +823,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 146.
 LaTeX Font Info:    ... okay on input line 146.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 146.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 146.
+
 
 (/home/neelaryan2/.miktex/texmfs/install/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -915,13 +915,13 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 146.
 LaTeX Info: Redefining \pageref on input line 146.
 LaTeX Info: Redefining \nameref on input line 146.
+ (refman.out) (refman.out)
 \@outlinefile=\write5
 \openout5 = `refman.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
-No file refman.toc.
+\Etoc@tf=\read3
 Package hyperref Info: Option `pageanchor' set `false' on input line 152.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 152.
 
@@ -930,7 +930,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 12.9599pt on input line 157.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 10.79993pt on input line 159.
-[1
+ [1
 
 
 {/home/neelaryan2/.miktex/texmfs/data/pdftex/config/pdftex.map}] [2
@@ -939,37 +939,137 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 \tf@toc=\write6
 \openout6 = `refman.toc'.
 
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 165.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 165.
+LaTeX Font Info:    Try loading font information for U+msa on input line 165.
+
+(/home/neelaryan2/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 165.
+
+(/home/neelaryan2/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+wasy on input line 165.
+
+(/home/neelaryan2/.miktex/texmfs/install/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 165.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 165.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 165.
+ [1]
+[2
+
+]
 Package hyperref Info: Option `pageanchor' set `true' on input line 167.
 
-No file refman.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
-(refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Chapter 1.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 18.66588pt on input line 170.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 170.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 18.66588pt on input line 170.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 18.66588pt on input line 170.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 22.39185pt on input line 170.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 170.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 22.39185pt on input line 170.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 22.39185pt on input line 170.
+(annotated.tex
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+) [1
+
+] [2
+
+]
+Chapter 2.
+(classLinkList.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
 
 
-Package rerunfilecheck Warning: File `refman.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
 
-Package rerunfilecheck Info: Checksums for `refman.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
+
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 3.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 6.
+(/home/neelaryan2/.miktex/texmfs/install/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
+)
+LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 6.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 29.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 29.
+
+(/home/neelaryan2/.miktex/texmfs/install/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 29.
+ [3])
+[4] (refman.ind [5
+
+
+
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
+ (refman.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
+Package rerunfilecheck Info: File `refman.out' has not changed.
+(rerunfilecheck)             Checksum: 3234C8BDE4C63A14691FDA23BF3D3F4B;2074.
  ) 
 Here is how much of TeX's memory you used:
- 16205 strings out of 494857
- 234995 string characters out of 3177932
- 329966 words of memory out of 3000000
- 19659 multiletter control sequences out of 15000+200000
- 12025 words of font info for 21 fonts, out of 3000000 for 9000
+ 16453 strings out of 494857
+ 239284 string characters out of 3177932
+ 336521 words of memory out of 3000000
+ 19813 multiletter control sequences out of 15000+200000
+ 55137 words of font info for 82 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 53i,5n,92p,944b,357s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,15n,92p,944b,635s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/neelaryan2/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc}</home/n
-eelaryan2/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (2 pages, 8005 bytes).
+eelaryan2/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></ho
+me/neelaryan2/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</home/neelaryan2/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.p
+fb></home/neelaryan2/.miktex/texmfs/install/fonts/type1/urw/courier/ucrr8a.pfb>
+</home/neelaryan2/.miktex/texmfs/install/fonts/type1/urw/courier/ucrro8a.pfb></
+home/neelaryan2/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvb8a.pfb></ho
+me/neelaryan2/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvb8ac.pfb></hom
+e/neelaryan2/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvr8a.pfb></home/
+neelaryan2/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (9 pages, 97799 bytes).
 PDF statistics:
- 18 PDF objects out of 1000 (max. 8388607)
- 1 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 202 PDF objects out of 1000 (max. 8388607)
+ 29 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
