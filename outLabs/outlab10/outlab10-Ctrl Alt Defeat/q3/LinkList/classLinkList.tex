@@ -1,0 +1,91 @@
+\hypertarget{classLinkList}{}\doxysection{Link\+List$<$ T $>$ Class Template Reference}
+\label{classLinkList}\index{LinkList$<$ T $>$@{LinkList$<$ T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLinkList_a38b2e77462f2733bc9254c3fd86b453f}{insert\+Front}} (T item)
+\item 
+void \mbox{\hyperlink{classLinkList_af0f013b563ae0abaec5c22037ec31e28}{insert\+Rear}} (T item)
+\item 
+void \mbox{\hyperlink{classLinkList_ae4d698669105fff350b578de53e7e389}{remove\+Front}} ()
+\item 
+void \mbox{\hyperlink{classLinkList_af7894809851c2478fdb3272bd0584b6c}{remove\+Rear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classLinkList_a62eb2e6bd32c8bdaa9bd26b5cef6c2c8}{main}} (String a\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Node$<$ T $>$ \mbox{\hyperlink{classLinkList_a9c8c193c200e3f98e811d75a34481aa5}{front}}
+\item 
+Node$<$ T $>$ \mbox{\hyperlink{classLinkList_a43583d89b1ad2305fc5787d4c637a377}{rear}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class implements the data structure \mbox{\hyperlink{classLinkList}{Link\+List}}, which consists of sequential nodes containing information, and links to the previous and the next nodes 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLinkList_a38b2e77462f2733bc9254c3fd86b453f}\label{classLinkList_a38b2e77462f2733bc9254c3fd86b453f}} 
+\index{LinkList$<$ T $>$@{LinkList$<$ T $>$}!insertFront@{insertFront}}
+\index{insertFront@{insertFront}!LinkList$<$ T $>$@{LinkList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insertFront()}{insertFront()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classLinkList}{Link\+List}}$<$ T $>$.insert\+Front (\begin{DoxyParamCaption}\item[{T}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The element to be inserted at the front of the \mbox{\hyperlink{classLinkList}{Link\+List}} Inserts the element to the front of the \mbox{\hyperlink{classLinkList}{Link\+List}}, links the old front node to the new one and updates the front node of \mbox{\hyperlink{classLinkList}{Link\+List}} Prints the element being added to the front \\
+\hline
+\end{DoxyParams}
+add element at the beginning of the queue\mbox{\Hypertarget{classLinkList_af0f013b563ae0abaec5c22037ec31e28}\label{classLinkList_af0f013b563ae0abaec5c22037ec31e28}} 
+\index{LinkList$<$ T $>$@{LinkList$<$ T $>$}!insertRear@{insertRear}}
+\index{insertRear@{insertRear}!LinkList$<$ T $>$@{LinkList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insertRear()}{insertRear()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classLinkList}{Link\+List}}$<$ T $>$.insert\+Rear (\begin{DoxyParamCaption}\item[{T}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The element to be inserted at the rear of the \mbox{\hyperlink{classLinkList}{Link\+List}} Inserts the element to the rear of the \mbox{\hyperlink{classLinkList}{Link\+List}}, links the old rear node to the new one and updates the rear node of \mbox{\hyperlink{classLinkList}{Link\+List}} Prints the element being added to the rear \\
+\hline
+\end{DoxyParams}
+add element at the end of the queue\mbox{\Hypertarget{classLinkList_a62eb2e6bd32c8bdaa9bd26b5cef6c2c8}\label{classLinkList_a62eb2e6bd32c8bdaa9bd26b5cef6c2c8}} 
+\index{LinkList$<$ T $>$@{LinkList$<$ T $>$}!main@{main}}
+\index{main@{main}!LinkList$<$ T $>$@{LinkList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void \mbox{\hyperlink{classLinkList}{Link\+List}}$<$ T $>$.main (\begin{DoxyParamCaption}\item[{String}]{a\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+The main driver code for building the \mbox{\hyperlink{classLinkList}{Link\+List}} \mbox{\Hypertarget{classLinkList_ae4d698669105fff350b578de53e7e389}\label{classLinkList_ae4d698669105fff350b578de53e7e389}} 
+\index{LinkList$<$ T $>$@{LinkList$<$ T $>$}!removeFront@{removeFront}}
+\index{removeFront@{removeFront}!LinkList$<$ T $>$@{LinkList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{removeFront()}{removeFront()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classLinkList}{Link\+List}}$<$ T $>$.remove\+Front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Removes the element at the front of the \mbox{\hyperlink{classLinkList}{Link\+List}}, links the new front node to null and updates the front node of \mbox{\hyperlink{classLinkList}{Link\+List}} to the second node in the old List Prints the element being removed from the front remove an item from the beginning of the queue\mbox{\Hypertarget{classLinkList_af7894809851c2478fdb3272bd0584b6c}\label{classLinkList_af7894809851c2478fdb3272bd0584b6c}} 
+\index{LinkList$<$ T $>$@{LinkList$<$ T $>$}!removeRear@{removeRear}}
+\index{removeRear@{removeRear}!LinkList$<$ T $>$@{LinkList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{removeRear()}{removeRear()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classLinkList}{Link\+List}}$<$ T $>$.remove\+Rear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Removes the element at the rear of the \mbox{\hyperlink{classLinkList}{Link\+List}}, links the new rear node to null and updates the rear node of \mbox{\hyperlink{classLinkList}{Link\+List}} to the second last node in the old List Prints the element being removed from the rear remove an item from the beginning of the queue
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLinkList_a9c8c193c200e3f98e811d75a34481aa5}\label{classLinkList_a9c8c193c200e3f98e811d75a34481aa5}} 
+\index{LinkList$<$ T $>$@{LinkList$<$ T $>$}!front@{front}}
+\index{front@{front}!LinkList$<$ T $>$@{LinkList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front}{front}}
+{\footnotesize\ttfamily Node$<$T$>$ \mbox{\hyperlink{classLinkList}{Link\+List}}$<$ T $>$.front\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLinkList_a43583d89b1ad2305fc5787d4c637a377}\label{classLinkList_a43583d89b1ad2305fc5787d4c637a377}} 
+\index{LinkList$<$ T $>$@{LinkList$<$ T $>$}!rear@{rear}}
+\index{rear@{rear}!LinkList$<$ T $>$@{LinkList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{rear}{rear}}
+{\footnotesize\ttfamily Node$<$T$>$ \mbox{\hyperlink{classLinkList}{Link\+List}}$<$ T $>$.rear\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LinkList_8java}{Link\+List.\+java}}\end{DoxyCompactItemize}

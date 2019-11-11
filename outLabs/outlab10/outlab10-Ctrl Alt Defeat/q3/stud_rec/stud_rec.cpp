@@ -1,5 +1,7 @@
-/**
-This Code is taken from http://www.worldbestlearningcenter.com for learning/teaching purpose
+/** @file stud_rec.cpp 
+* This Code is taken from http://www.worldbestlearningcenter.com for learning/teaching purpose
+* This program implements a working, editable student database in the form of array
+* with the help of structs
 **/
 
 #include <cstdlib>
@@ -8,7 +10,10 @@ This Code is taken from http://www.worldbestlearningcenter.com for learning/teac
 #include <string.h>
 using namespace std;
 
-
+/** 
+  * This struct is the basic student object which holds all the details of
+  * a student
+*/
 struct student
 {
 	string stnumber;
@@ -26,6 +31,10 @@ struct student
 int search(struct student st[],string id, int itemcount);
 void clean(struct student st[],int deleteitem);
 
+/** 
+  * This function is used to display all of the actions which 
+  * can be performed on the given database of student objects
+*/
 void displaymenu(){
 	cout<<"=========================================="<<"\n";
 	cout<<" MENU "<<"\n";
@@ -41,6 +50,12 @@ void displaymenu(){
 	cout<<" 9.Sort records by TOTAL"<<"\n"; 
 }
 
+/** \param st the array of Student objects containing each student's information
+  * \param itemcount total number of records so far
+  * 
+  * This function takes in input a student's Id and confirm if it doesn't exist already,
+  * if not, it asks for the details of the student to be added into the database
+*/
 void add_rec(struct student st[],int& itemcount){
 	again:
 	cout<<"\nEnter student's ID:";
@@ -61,6 +76,14 @@ void add_rec(struct student st[],int& itemcount){
 	++itemcount;
 }
 
+/** \param st the array of Student objects containing each student's information
+  * \param id the ID of the student to be searched in the record array
+  * \param itemcount total number of records so far
+  * \return Always returns index of the search id in the record array st
+  * 
+  * This function searches a given id of a student in the records array and returns -1 
+  * the given id is not present in the records array st
+*/
 int search(struct student st[], string id,int itemcount){
 	int found =-1;
 	for (int i = 0; i < itemcount && found==-1; i++)
@@ -72,8 +95,11 @@ int search(struct student st[], string id,int itemcount){
 	return found;
 }
 
-
-
+/** \param st the array of Student objects containing each student's information
+  * \param itemcount total number of records so far
+  * 
+  * This function prints all the records inserted so far in st array in a tabular format woth proper headings  
+*/
 void viewall(struct student st[], int itemcount){
 	int i=0;
 	cout<<left<<setw(5)<<"ID"<<setw(20)<<"NAME"<<setw(5)<<"SEX"
@@ -97,6 +123,12 @@ void viewall(struct student st[], int itemcount){
 	}
 }
 
+/** \param st the array of Student objects containing each student's information
+  * \param itemcount total number of records so far
+  * 
+  * This function deletes a given student's details from the st array, if it originally existed 
+  * in the array, otherwise does nothing except printing the error message
+*/
 void delete_rec(struct student st[], int& itemcount){
 	string id;
 	int index;
@@ -127,6 +159,12 @@ void delete_rec(struct student st[], int& itemcount){
 	else cout<<"No record to delete\n";
 }
 
+/** \param st the array of Student objects containing each student's information
+  * \param index the index of the student in the record array
+  * 
+  * This function clears all the details of the student present at a given index in the original
+  * record array st, that resets all the details of a given student to a default array  
+*/
 void clean(struct student st[],int index){
 	st[index].stnumber = "";
 	st[index].stname = "";
@@ -139,7 +177,12 @@ void clean(struct student st[],int index){
 	st[index].total = 0;
 }
 
-
+/** \param st the array of Student objects containing each student's information
+  * \param itemcount total number of records so far
+  * 
+  * This function takes input ID and the detail of the student of that ID which needs to be changed 
+  * in the database (st array), in the form of column index as input
+*/
 void update_rec(struct student st[],int itemcount){
 	string id;
 	int column_index;
@@ -190,6 +233,11 @@ void update_rec(struct student st[],int itemcount){
 	else cout<<"The record deosn't exits.Check the ID and try again.";
 }
 
+/** \param st the array of Student objects containing each student's information
+  * \param itemcount total number of records so far
+  * 
+  * This function prints the ID of the student with the maximum total marks
+*/
 void showmax(struct student st[], int itemcount){
 	float max = st[0].total;
 	int index=0;
@@ -212,6 +260,11 @@ void showmax(struct student st[], int itemcount){
 		cout<<"The student with ID "<<st[index].stnumber<<" gets the highest score "<<max<<endl;
 }
 
+/** \param st the array of Student objects containing each student's information
+  * \param itemcount total number of records so far
+  * 
+  * This function prints the ID of the student with the minimum total marks
+*/
 void showmin(struct student st[], int itemcount){
 
 	float min = st[0].total;
@@ -235,6 +288,11 @@ void showmin(struct student st[], int itemcount){
 
 }
 
+/** \param st the array of Student objects containing each student's information
+  * \param itemcount total number of records so far
+  * 
+  * This function takes in input ID of a student and prints all his/her details in a tabular format 
+*/
 void find(struct student st[], int itemcount){
 	string id;
 	cout<<"Enter student's ID:";
@@ -255,6 +313,12 @@ void find(struct student st[], int itemcount){
 
 }
 
+/** \param dataset the array of Student objects containing each student's information
+  * \param n The length of the dataset array
+  * 
+  * This function sorts the dataset array consisting of Student objects using the
+  * BubbleSort Algorithm which is an O(n^2) time algorithm (repeated swapping of elements) 
+*/
 void bubblesort(struct student dataset[], int n){
 	int i, j;
 	for (i = 0; i < n; i++)
@@ -267,6 +331,12 @@ void bubblesort(struct student dataset[], int n){
 
 }
 
+/** \param st the array of Student objects containing each student's information
+  * \param itemcount total number of records so far
+  * 
+  * This function takes in input as ID of a student and prints the 
+  * average marks of that student (considering equal weightage)
+*/
 void average(struct student st[], int itemcount){
 	string id;
 	float avg=0;
@@ -284,7 +354,10 @@ void average(struct student st[], int itemcount){
 	cout<<"The average score is "<<avg;
 }
 
-
+/**  
+  * This function is the main driver code for this program which 
+  * uses all the functions defined in this file
+*/
 int main(int argc, char *argv[]){
 
 	student st[80];

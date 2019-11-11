@@ -1,4 +1,8 @@
- 
+/*!
+* This class implements the data structure LinkList,
+* which consists of sequential nodes containing information,
+* and links to the previous and the next nodes
+*/    
 public class LinkList<T> {
  
     private Node<T> front;
